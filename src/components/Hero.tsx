@@ -1,4 +1,4 @@
-import React from 'react';
+import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
@@ -7,10 +7,13 @@ const Hero = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         {/* Logo */}
         <div className="flex justify-center mb-16">
-          <img 
-            src="/api/placeholder/400/120" 
+          <Image 
+            src="/images/vibrant-tech-logo.png" 
             alt="Vibrant Technology" 
-            className="h-20" 
+            width={400}
+            height={120}
+            className="h-20 w-auto" 
+            priority
           />
         </div>
         
