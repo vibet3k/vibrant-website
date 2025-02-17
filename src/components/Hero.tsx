@@ -10,9 +10,9 @@ const Hero = () => {
           <Image 
             src="/images/vibrant-tech-logo.png" 
             alt="Vibrant Technology" 
-            width={400}
-            height={120}
-            className="h-20 w-auto" 
+            width={600}
+            height={180}
+            className="h-32 w-auto mb-10" 
             priority
           />
         </div>
