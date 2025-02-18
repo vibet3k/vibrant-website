@@ -37,7 +37,7 @@ const Hero = () => {
           {/* Supporting Statement */}
           <p 
             className="max-w-2xl mx-auto text-xl mb-8" 
-            style={{ color: '#808080', fontFamily: 'Lexand Deca' }}
+            style={{ color: '#808080', fontFamily: 'Lexend Deca' }}
           >
             Transform your technology from a cost center to a competitive advantage with comprehensive IT solutions backed by experienced strategic guidance.
           </p>
