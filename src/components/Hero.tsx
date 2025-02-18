@@ -21,7 +21,7 @@ const Hero = () => {
           {/* Tagline */}
           <p 
             className="text-lg font-semibold tracking-wide uppercase mb-4" 
-            style={{ color: '#0074bc', fontFamily: 'Lexend Deca' }}
+            style={{ color: '#ef5ba1', fontFamily: 'Lexend Deca' }}
           >
             Vivid Innovation. Boundless Possibilities.
           </p>
@@ -37,7 +37,7 @@ const Hero = () => {
           {/* Supporting Statement */}
           <p 
             className="max-w-2xl mx-auto text-xl mb-8" 
-            style={{ color: '#808080', fontFamily: 'Radley' }}
+            style={{ color: '#808080', fontFamily: 'Lexand Deca' }}
           >
             Transform your technology from a cost center to a competitive advantage with comprehensive IT solutions backed by experienced strategic guidance.
           </p>
