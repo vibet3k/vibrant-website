@@ -5,14 +5,16 @@ import { useEffect, useState } from 'react';
 
 interface GleamingCircle {
   id: number;
-  top: string;
-  left: string;
+  top: number;
+  left: number;
   animationDuration: number;
   delay: number;
 }
 
 const Hero = () => {
   const [gleamingCircles, setGleamingCircles] = useState<GleamingCircle[]>([]);
+  
+  const GRID_SIZE = 33; // Size of our grid cells
   
   // Base circle pattern SVG
   const svgCircle = encodeURIComponent(`
@@ -21,12 +23,23 @@ const Hero = () => {
     </svg>
   `);
 
-  // Function to create a new gleaming circle
+  // Function to create a new gleaming circle on the grid
   const createGleamingCircle = (): GleamingCircle => {
+    // Calculate grid positions that align with our pattern
+    const cols = Math.floor(window.innerWidth / GRID_SIZE);
+    const rows = Math.floor(window.innerHeight / GRID_SIZE);
+    
+    // Keep circles in the middle section (20%-70% of height)
+    const minRow = Math.floor(rows * 0.2);
+    const maxRow = Math.floor(rows * 0.7);
+    
+    const randomRow = minRow + Math.floor(Math.random() * (maxRow - minRow));
+    const randomCol = Math.floor(Math.random() * cols);
+
     return {
       id: Math.random(),
-      top: `${20 + Math.random() * 50}%`, // Keep in middle section
-      left: `${Math.random() * 100}%`,
+      top: randomRow * GRID_SIZE,
+      left: randomCol * GRID_SIZE,
       animationDuration: 2 + Math.random() * 2, // 2-4 seconds
       delay: Math.random() * 2 // 0-2 second delay
     };
@@ -34,8 +47,15 @@ const Hero = () => {
 
   // Initialize and manage gleaming circles
   useEffect(() => {
-    // Start with 3 circles
-    setGleamingCircles(Array(3).fill(null).map(() => createGleamingCircle()));
+    const updateCircles = () => {
+      setGleamingCircles(Array(3).fill(null).map(() => createGleamingCircle()));
+    };
+
+    // Initial creation
+    updateCircles();
+
+    // Update on window resize
+    window.addEventListener('resize', updateCircles);
 
     // Every few seconds, replace a random circle
     const interval = setInterval(() => {
@@ -47,7 +67,10 @@ const Hero = () => {
       });
     }, 3000);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('resize', updateCircles);
+    };
   }, []);
 
   return (
@@ -95,19 +118,19 @@ const Hero = () => {
           key={circle.id}
           className="absolute w-8 h-8"
           style={{
-            top: circle.top,
-            left: circle.left,
+            top: `${circle.top}px`,
+            left: `${circle.left}px`,
             animation: `gleam ${circle.animationDuration}s ease-in-out ${circle.delay}s`
           }}
         >
-          <svg width="32" height="32" viewBox="0 0 32 32">
+          <svg width="33" height="33" viewBox="0 0 33 33">
             <circle
-              cx="16"
-              cy="16"
+              cx="16.5"
+              cy="16.5"
               r="14"
               fill="none"
               stroke="white"
-              strokeWidth="3"
+              strokeWidth="2.5"
               className="opacity-0"
               style={{
                 animation: `gleamOpacity ${circle.animationDuration}s ease-in-out ${circle.delay}s`
@@ -146,12 +169,12 @@ const Hero = () => {
       <style jsx>{`
         @keyframes gleam {
           0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.1); }
+          50% { transform: scale(1.05); }
         }
         
         @keyframes gleamOpacity {
           0%, 100% { opacity: 0; }
-          50% { opacity: 1; }
+          50% { opacity: 0.6; }
         }
       `}</style>
     </div>
