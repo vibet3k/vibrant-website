@@ -6,35 +6,13 @@ import { ArrowRight } from 'lucide-react';
 const Hero = () => {
   return (
     <div className="fixed inset-0 overflow-hidden">
-      {/* Base background */}
-      <div className="absolute inset-0 bg-gray-900" />
-      
-      {/* Aurora layers */}
+      {/* Base gradient */}
       <div 
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(45deg, rgba(57, 181, 74, 0.8) 0%, transparent 50%, rgba(239, 91, 161, 0.8) 100%)',
+          background: 'linear-gradient(135deg, #39b54a 0%, #0074bc 50%, #ef5ba1 100%)',
           backgroundSize: '200% 200%',
-          animation: 'aurora1 20s ease infinite',
-          mixBlendMode: 'screen',
-        }}
-      />
-      <div 
-        className="absolute inset-0"
-        style={{
-          background: 'linear-gradient(135deg, rgba(0, 116, 188, 0.8) 0%, transparent 50%, rgba(57, 181, 74, 0.8) 100%)',
-          backgroundSize: '200% 200%',
-          animation: 'aurora2 25s ease infinite',
-          mixBlendMode: 'screen',
-        }}
-      />
-      <div 
-        className="absolute inset-0"
-        style={{
-          background: 'linear-gradient(90deg, rgba(239, 91, 161, 0.8) 0%, transparent 50%, rgba(0, 116, 188, 0.8) 100%)',
-          backgroundSize: '200% 200%',
-          animation: 'aurora3 30s ease infinite',
-          mixBlendMode: 'screen',
+          animation: 'moveGradient 8s ease infinite',
         }}
       />
 
@@ -70,39 +48,15 @@ const Hero = () => {
       </div>
 
       <style jsx>{`
-        @keyframes aurora1 {
+        @keyframes moveGradient {
           0% {
-            transform: translate3d(0, 0, 0) scale(2);
+            background-position: 0% 50%;
           }
           50% {
-            transform: translate3d(-50%, -50%, 0) scale(2.5);
+            background-position: 100% 50%;
           }
           100% {
-            transform: translate3d(-100%, -100%, 0) scale(2);
-          }
-        }
-
-        @keyframes aurora2 {
-          0% {
-            transform: translate3d(100%, 100%, 0) scale(2);
-          }
-          50% {
-            transform: translate3d(50%, 50%, 0) scale(2.5);
-          }
-          100% {
-            transform: translate3d(0, 0, 0) scale(2);
-          }
-        }
-
-        @keyframes aurora3 {
-          0% {
-            transform: translate3d(-50%, 50%, 0) scale(2);
-          }
-          50% {
-            transform: translate3d(0, 0, 0) scale(2.5);
-          }
-          100% {
-            transform: translate3d(50%, -50%, 0) scale(2);
+            background-position: 0% 50%;
           }
         }
       `}</style>
