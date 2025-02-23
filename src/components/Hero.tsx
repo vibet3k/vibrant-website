@@ -1,13 +1,46 @@
 'use client';
 
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 const Hero = () => {
+  const [gleamingCircles, setGleamingCircles] = useState([]);
+  
+  // Base circle pattern SVG
   const svgCircle = encodeURIComponent(`
     <svg width="33" height="33" viewBox="0 0 33 33" xmlns="http://www.w3.org/2000/svg">
       <circle cx="16.5" cy="16.5" r="14" fill="none" stroke="white" stroke-width="2"/>
     </svg>
   `);
+
+  // Function to create a new gleaming circle
+  const createGleamingCircle = () => {
+    return {
+      id: Math.random(),
+      top: `${20 + Math.random() * 50}%`, // Keep in middle section
+      left: `${Math.random() * 100}%`,
+      animationDuration: 2 + Math.random() * 2, // 2-4 seconds
+      delay: Math.random() * 2 // 0-2 second delay
+    };
+  };
+
+  // Initialize and manage gleaming circles
+  useEffect(() => {
+    // Start with 3 circles
+    setGleamingCircles(Array(3).fill(null).map(createGleamingCircle));
+
+    // Every few seconds, replace a random circle
+    const interval = setInterval(() => {
+      setGleamingCircles(prev => {
+        const newCircles = [...prev];
+        const indexToReplace = Math.floor(Math.random() * newCircles.length);
+        newCircles[indexToReplace] = createGleamingCircle();
+        return newCircles;
+      });
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="fixed inset-0 overflow-hidden">
@@ -35,7 +68,7 @@ const Hero = () => {
         }}
       />
 
-      {/* Circle pattern overlay with smoother fade */}
+      {/* Base circle pattern */}
       <div 
         className="absolute inset-0"
         style={{
@@ -47,6 +80,34 @@ const Hero = () => {
           opacity: 0.35
         }}
       />
+
+      {/* Gleaming circles overlay */}
+      {gleamingCircles.map(circle => (
+        <div
+          key={circle.id}
+          className="absolute w-8 h-8"
+          style={{
+            top: circle.top,
+            left: circle.left,
+            animation: `gleam ${circle.animationDuration}s ease-in-out ${circle.delay}s`
+          }}
+        >
+          <svg width="32" height="32" viewBox="0 0 32 32">
+            <circle
+              cx="16"
+              cy="16"
+              r="14"
+              fill="none"
+              stroke="white"
+              strokeWidth="3"
+              className="opacity-0"
+              style={{
+                animation: `gleamOpacity ${circle.animationDuration}s ease-in-out ${circle.delay}s`
+              }}
+            />
+          </svg>
+        </div>
+      ))}
 
       {/* Content container */}
       <div className="relative h-full flex flex-col p-12">
@@ -73,6 +134,18 @@ const Hero = () => {
           />
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes gleam {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.1); }
+        }
+        
+        @keyframes gleamOpacity {
+          0%, 100% { opacity: 0; }
+          50% { opacity: 1; }
+        }
+      `}</style>
     </div>
   );
 };
