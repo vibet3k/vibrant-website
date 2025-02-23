@@ -6,32 +6,35 @@ import { ArrowRight } from 'lucide-react';
 const Hero = () => {
   return (
     <div className="fixed inset-0 overflow-hidden">
-      {/* Base layer */}
-      <div className="absolute inset-0 bg-blue-900" />
+      {/* Base background */}
+      <div className="absolute inset-0 bg-gray-900" />
       
       {/* Aurora layers */}
       <div 
-        className="absolute inset-0 opacity-70"
+        className="absolute inset-0"
         style={{
-          background: 'linear-gradient(45deg, transparent 0%, rgba(57, 181, 74, 0.4) 40%, transparent 100%)',
+          background: 'linear-gradient(45deg, rgba(57, 181, 74, 0.8) 0%, transparent 50%, rgba(239, 91, 161, 0.8) 100%)',
           backgroundSize: '200% 200%',
-          animation: 'aurora1 25s ease infinite',
+          animation: 'aurora1 20s ease infinite',
+          mixBlendMode: 'screen',
         }}
       />
       <div 
-        className="absolute inset-0 opacity-60"
+        className="absolute inset-0"
         style={{
-          background: 'linear-gradient(135deg, transparent 0%, rgba(0, 116, 188, 0.5) 50%, transparent 100%)',
-          backgroundSize: '300% 300%',
-          animation: 'aurora2 30s ease infinite',
+          background: 'linear-gradient(135deg, rgba(0, 116, 188, 0.8) 0%, transparent 50%, rgba(57, 181, 74, 0.8) 100%)',
+          backgroundSize: '200% 200%',
+          animation: 'aurora2 25s ease infinite',
+          mixBlendMode: 'screen',
         }}
       />
       <div 
-        className="absolute inset-0 opacity-50"
+        className="absolute inset-0"
         style={{
-          background: 'linear-gradient(90deg, transparent 0%, rgba(239, 91, 161, 0.4) 30%, transparent 100%)',
+          background: 'linear-gradient(90deg, rgba(239, 91, 161, 0.8) 0%, transparent 50%, rgba(0, 116, 188, 0.8) 100%)',
           backgroundSize: '200% 200%',
-          animation: 'aurora3 35s ease infinite',
+          animation: 'aurora3 30s ease infinite',
+          mixBlendMode: 'screen',
         }}
       />
 
@@ -69,46 +72,37 @@ const Hero = () => {
       <style jsx>{`
         @keyframes aurora1 {
           0% {
-            transform: translate(0, 0) scale(1.5);
-            opacity: 0.5;
+            transform: translate3d(0, 0, 0) scale(2);
           }
           50% {
-            transform: translate(-10%, 10%) scale(1.2);
-            opacity: 0.7;
+            transform: translate3d(-50%, -50%, 0) scale(2.5);
           }
           100% {
-            transform: translate(0, 0) scale(1.5);
-            opacity: 0.5;
+            transform: translate3d(-100%, -100%, 0) scale(2);
           }
         }
 
         @keyframes aurora2 {
           0% {
-            transform: translate(-15%, -15%) scale(1.3);
-            opacity: 0.4;
+            transform: translate3d(100%, 100%, 0) scale(2);
           }
           50% {
-            transform: translate(15%, 15%) scale(1.6);
-            opacity: 0.6;
+            transform: translate3d(50%, 50%, 0) scale(2.5);
           }
           100% {
-            transform: translate(-15%, -15%) scale(1.3);
-            opacity: 0.4;
+            transform: translate3d(0, 0, 0) scale(2);
           }
         }
 
         @keyframes aurora3 {
           0% {
-            transform: translate(10%, -10%) scale(1.4);
-            opacity: 0.3;
+            transform: translate3d(-50%, 50%, 0) scale(2);
           }
           50% {
-            transform: translate(-5%, 5%) scale(1.7);
-            opacity: 0.5;
+            transform: translate3d(0, 0, 0) scale(2.5);
           }
           100% {
-            transform: translate(10%, -10%) scale(1.4);
-            opacity: 0.3;
+            transform: translate3d(50%, -50%, 0) scale(2);
           }
         }
       `}</style>
