@@ -3,9 +3,19 @@ import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <div className="fixed inset-0 bg-gradient-to-tr from-green-500 via-blue-600 to-pink-500 flex flex-col items-center justify-between">
-      {/* Main Content */}
-      <div className="flex-grow flex flex-col items-center justify-center text-center px-4 max-w-6xl mx-auto">
+    <div className="fixed inset-0 overflow-hidden">
+      {/* Animated gradient background */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: 'linear-gradient(to top right, #39b54a, #0074bc, #ef5ba1, #0074bc, #39b54a)',
+          backgroundSize: '400% 400%',
+          animation: 'gradientMove 15s ease infinite',
+        }}
+      />
+
+      {/* Content overlay */}
+      <div className="relative h-full flex flex-col items-center justify-center text-center px-4 max-w-6xl mx-auto">
         <Image
           src="/images/vibrant-tech-logo-white.png"
           alt="Vibrant Technology"
@@ -34,6 +44,20 @@ const Hero = () => {
           30-minute consultation • Custom assessment • Clear recommendations
         </p>
       </div>
+
+      <style jsx>{`
+        @keyframes gradientMove {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+      `}</style>
     </div>
   );
 };
