@@ -3,8 +3,16 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
+interface GleamingCircle {
+  id: number;
+  top: string;
+  left: string;
+  animationDuration: number;
+  delay: number;
+}
+
 const Hero = () => {
-  const [gleamingCircles, setGleamingCircles] = useState([]);
+  const [gleamingCircles, setGleamingCircles] = useState<GleamingCircle[]>([]);
   
   // Base circle pattern SVG
   const svgCircle = encodeURIComponent(`
@@ -14,7 +22,7 @@ const Hero = () => {
   `);
 
   // Function to create a new gleaming circle
-  const createGleamingCircle = () => {
+  const createGleamingCircle = (): GleamingCircle => {
     return {
       id: Math.random(),
       top: `${20 + Math.random() * 50}%`, // Keep in middle section
@@ -27,7 +35,7 @@ const Hero = () => {
   // Initialize and manage gleaming circles
   useEffect(() => {
     // Start with 3 circles
-    setGleamingCircles(Array(3).fill(null).map(createGleamingCircle));
+    setGleamingCircles(Array(3).fill(null).map(() => createGleamingCircle()));
 
     // Every few seconds, replace a random circle
     const interval = setInterval(() => {
