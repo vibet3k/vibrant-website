@@ -10,16 +10,16 @@ const Hero = () => {
       <div 
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(to top right, #39b54a, #0074bc, #ef5ba1, #0074bc, #39b54a)',
-          backgroundSize: '400% 400%',
-          animation: 'gradientMove 15s ease infinite',
+          background: 'linear-gradient(135deg, #39b54a 0%, #0074bc 50%, #ef5ba1 100%)',
+          backgroundSize: '300% 300%',
+          animation: 'gradientMove 20s ease infinite',
         }}
       />
 
       {/* Content overlay */}
       <div className="relative h-full flex flex-col items-center justify-center text-center px-4 max-w-6xl mx-auto">
         <Image
-          src="/images/vibrant-tech-logo-white.png"
+          src="/images/vibrant-tech-logo.png"
           alt="Vibrant Technology"
           width={600}
           height={180}
@@ -50,13 +50,13 @@ const Hero = () => {
       <style jsx>{`
         @keyframes gradientMove {
           0% {
-            background-position: 0% 50%;
+            background-position: 0% 0%;
           }
           50% {
-            background-position: 100% 50%;
+            background-position: 100% 100%;
           }
           100% {
-            background-position: 0% 50%;
+            background-position: 0% 0%;
           }
         }
       `}</style>
