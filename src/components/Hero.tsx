@@ -1,65 +1,61 @@
 'use client';
 
 import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   return (
     <div className="fixed inset-0 overflow-hidden">
-      {/* Base gradient */}
+      {/* Background with gradient */}
+      <div 
+        className="absolute inset-0 bg-gradient-to-b from-blue-600 to-blue-100"
+      />
+
+      {/* Dot pattern overlay */}
       <div 
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(135deg, #39b54a 0%, #0074bc 50%, #ef5ba1 100%)',
-          backgroundSize: '200% 200%',
-          animation: 'moveGradient 8s ease infinite',
+          backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+          backgroundSize: '30px 30px',
+          backgroundPosition: '0 0',
+          opacity: 0.5
         }}
       />
 
-      {/* Content overlay */}
-      <div className="relative h-full flex flex-col items-center justify-center text-center px-4 max-w-6xl mx-auto">
-        <Image
-          src="/images/vibrant-tech-logo.png"
-          alt="Vibrant Technology"
-          width={600}
-          height={180}
-          className="h-32 w-auto mb-16"
-          priority
-        />
-        
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 font-['Lexend_Deca']">
-          IT solutions that<br />work for you
-        </h1>
-        
-        <p className="text-white text-xl mb-12 max-w-3xl opacity-90 font-['Lexend_Deca']">
-          Transform your technology from a cost center to a competitive advantage with comprehensive IT solutions backed by experienced strategic guidance.
-        </p>
-        
-        <button 
-          className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors mb-8 inline-flex items-center font-['Lexend_Deca']"
-        >
-          Schedule Your Strategy Session
-          <ArrowRight className="ml-2 h-5 w-5" />
-        </button>
-        
-        <p className="text-white opacity-80 font-['Lexend_Deca']">
-          30-minute consultation • Custom assessment • Clear recommendations
-        </p>
-      </div>
+      {/* Content container */}
+      <div className="relative h-full flex flex-col p-12">
+        {/* Main heading */}
+        <div className="flex-grow">
+          <h1 className="text-6xl md:text-8xl font-bold text-white max-w-3xl font-['Lexend_Deca'] leading-tight">
+            IT solutions
+            <br />
+            that work
+            <br />
+            for you.
+          </h1>
+        </div>
 
-      <style jsx>{`
-        @keyframes moveGradient {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
-        }
-      `}</style>
+        {/* Bottom section with contact info and logo */}
+        <div className="flex justify-between items-end">
+          {/* Contact information */}
+          <div className="text-left">
+            <p className="text-green-500 text-xl font-['Lexend_Deca']">216.354.1572</p>
+            <p className="text-green-500 text-xl font-['Lexend_Deca']">info@vibetechneo.com</p>
+            <p className="text-green-500 text-xl font-['Lexend_Deca']">vibetechneo.com</p>
+          </div>
+
+          {/* Logo */}
+          <div className="text-right">
+            <Image
+              src="/images/vibrant-tech-logo.png"
+              alt="Vibrant Technology"
+              width={400}
+              height={120}
+              className="w-auto h-24"
+              priority
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
