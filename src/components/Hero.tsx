@@ -5,19 +5,22 @@ import Image from 'next/image';
 const Hero = () => {
   return (
     <div className="fixed inset-0 overflow-hidden">
-      {/* Background with gradient */}
-      <div 
-        className="absolute inset-0 bg-gradient-to-b from-blue-600 to-blue-100"
-      />
-
-      {/* Dot pattern overlay */}
+      {/* Background with correct Tech Blue gradient */}
       <div 
         className="absolute inset-0"
         style={{
-          backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-          backgroundSize: '30px 30px',
+          background: 'linear-gradient(to bottom, #0074bc 0%, #0074bc 40%, white 100%)'
+        }}
+      />
+
+      {/* Circle pattern overlay */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.8) 8px, transparent 8px)`,
+          backgroundSize: '60px 60px',
           backgroundPosition: '0 0',
-          opacity: 0.5
+          opacity: 0.15
         }}
       />
 
