@@ -28,16 +28,16 @@ const Hero = () => {
         }}
       />
 
-      {/* Circle pattern overlay with more gradual opacity change */}
+      {/* Circle pattern overlay with increased opacity */}
       <div 
         className="absolute inset-0"
         style={{
           backgroundImage: `url("data:image/svg+xml,${svgCircle}")`,
           backgroundSize: '33px 33px', // 28px circle + 5px spacing
           backgroundPosition: '0 0',
-          WebkitMaskImage: 'linear-gradient(to bottom, transparent 20%, rgba(255,255,255,0.15) 33%, rgba(255,255,255,0.3) 66%, rgba(255,255,255,0.4) 85%, transparent 100%)',
-          maskImage: 'linear-gradient(to bottom, transparent 20%, rgba(255,255,255,0.15) 33%, rgba(255,255,255,0.3) 66%, rgba(255,255,255,0.4) 85%, transparent 100%)',
-          opacity: 0.2
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent 20%, rgba(255,255,255,0.3) 33%, rgba(255,255,255,0.5) 66%, rgba(255,255,255,0.7) 85%, transparent 100%)',
+          maskImage: 'linear-gradient(to bottom, transparent 20%, rgba(255,255,255,0.3) 33%, rgba(255,255,255,0.5) 66%, rgba(255,255,255,0.7) 85%, transparent 100%)',
+          opacity: 0.35  // Increased from 0.2
         }}
       />
 
