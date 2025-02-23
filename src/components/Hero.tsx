@@ -7,7 +7,7 @@ const Hero = () => {
       {/* Main Content */}
       <div className="flex-grow flex flex-col items-center justify-center text-center px-4">
         <Image
-          src="/images/vibrant-tech-logo.png"
+          src="/images/vibrant-tech-logo-white.png"
           alt="Vibrant Technology"
           width={600}
           height={180}
