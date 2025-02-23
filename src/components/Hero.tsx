@@ -3,6 +3,13 @@
 import Image from 'next/image';
 
 const Hero = () => {
+  // Create an SVG string for the circle pattern
+  const svgCircle = encodeURIComponent(`
+    <svg width="34" height="34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="17" cy="17" r="12" fill="none" stroke="white" stroke-width="1"/>
+    </svg>
+  `);
+
   return (
     <div className="fixed inset-0 overflow-hidden">
       {/* Background with correct Tech Blue gradient */}
@@ -17,8 +24,8 @@ const Hero = () => {
       <div 
         className="absolute inset-0"
         style={{
-          backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.8) 8px, transparent 8px)`,
-          backgroundSize: '60px 60px',
+          backgroundImage: `url("data:image/svg+xml,${svgCircle}")`,
+          backgroundSize: '34px 34px', // 24px circle + 10px spacing
           backgroundPosition: '0 0',
           opacity: 0.15
         }}
