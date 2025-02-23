@@ -3,65 +3,44 @@ import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <div className="relative bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-        {/* Logo */}
-        <div className="flex justify-center mb-16">
-          <Image 
-            src="/images/vibrant-tech-logo.png" 
-            alt="Vibrant Technology" 
-            width={600}
-            height={180}
-            className="h-32 w-auto mb-10" 
-            priority
-          />
-        </div>
+    <div className="h-screen bg-gradient-to-tr from-green-500 via-blue-600 to-pink-500 flex flex-col">
+      {/* Main Content */}
+      <div className="flex-grow flex flex-col items-center justify-center text-center px-4">
+        <Image
+          src="/images/vibrant-tech-logo.png"
+          alt="Vibrant Technology"
+          width={600}
+          height={180}
+          className="h-32 w-auto mb-12"
+          priority
+        />
         
-        <div className="text-center">
-          {/* Tagline */}
-          <p 
-            className="text-lg font-semibold tracking-wide uppercase mb-4" 
-            style={{ color: '#ef5ba1', fontFamily: 'Lexend Deca' }}
-          >
-            Vivid Innovation. Boundless Possibilities.
-          </p>
-          
-          {/* Main Headline */}
-          <h1 
-            className="text-4xl font-bold sm:text-5xl md:text-6xl mb-6" 
-            style={{ color: '#39b54a', fontFamily: 'Lexend Deca' }}
-          >
-            Strategic IT Leadership for Growing Businesses
-          </h1>
-          
-          {/* Supporting Statement */}
-          <p 
-            className="max-w-2xl mx-auto text-xl mb-8" 
-            style={{ color: '#808080', fontFamily: 'Lexend Deca' }}
-          >
-            Transform your technology from a cost center to a competitive advantage with comprehensive IT solutions backed by experienced strategic guidance.
-          </p>
-          
-          {/* CTA Section */}
-          <div className="mt-8">
-            <button 
-              className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-md text-white transition-colors duration-150 ease-in-out shadow-sm hover:opacity-90" 
-              style={{ backgroundColor: '#0074bc', fontFamily: 'Lexend Deca' }}
-            >
-              Schedule Your Strategy Session
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </button>
-            
-            {/* Micro Copy */}
-            <p 
-              className="mt-4 text-sm" 
-              style={{ color: '#808080', fontFamily: 'Lexend Deca' }}
-            >
-              30-minute consultation • Custom assessment • Clear recommendations
-            </p>
-          </div>
-        </div>
+        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 font-['Lexend_Deca']">
+          IT solutions that<br />work for you
+        </h1>
+        
+        <p className="text-white text-xl mb-8 max-w-3xl opacity-90 font-['Lexend_Deca']">
+          Transform your technology from a cost center to a competitive advantage with comprehensive IT solutions backed by experienced strategic guidance.
+        </p>
+        
+        <button 
+          className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors mb-8 inline-flex items-center font-['Lexend_Deca']"
+        >
+          Schedule Your Strategy Session
+          <ArrowRight className="ml-2 h-5 w-5" />
+        </button>
+        
+        <p className="text-white opacity-80 font-['Lexend_Deca']">
+          30-minute consultation • Custom assessment • Clear recommendations
+        </p>
       </div>
+
+      {/* Bottom Navigation */}
+      <nav className="flex justify-center space-x-8 p-8 text-white font-['Lexend_Deca']">
+        <a href="/services" className="hover:opacity-80 transition-opacity">Our Services</a>
+        <a href="/pricing" className="hover:opacity-80 transition-opacity">Pricing</a>
+        <a href="/contact" className="hover:opacity-80 transition-opacity">Contact Us</a>
+      </nav>
     </div>
   );
 };
