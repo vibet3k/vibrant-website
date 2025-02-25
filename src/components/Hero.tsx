@@ -156,7 +156,7 @@ const Hero = () => {
         {/* Bottom section with logo */}
         <div className="flex justify-end items-end">
           <Image
-            src="/images/vibrant-tech-logo-noTL.png"
+            src="/images/vibrant-tech-logo.png"
             alt="Vibrant Technology"
             width={800}
             height={240}
@@ -169,12 +169,14 @@ const Hero = () => {
       <style jsx>{`
         @keyframes gleam {
           0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.05); }
+          40% { transform: scale(1.05); }
+          60% { transform: scale(1.05); }
         }
         
         @keyframes gleamOpacity {
           0%, 100% { opacity: 0; }
-          50% { opacity: 0.6; }
+          35% { opacity: 0.6; }
+          65% { opacity: 0.6; }
         }
       `}</style>
     </div>
