@@ -156,7 +156,7 @@ const Hero = () => {
         {/* Bottom section with logo */}
         <div className="flex justify-end items-end">
           <Image
-            src="/images/vibrant-tech-logo.png"
+            src="/images/vibrant-tech-logo-noTL.png"
             alt="Vibrant Technology"
             width={800}
             height={240}
