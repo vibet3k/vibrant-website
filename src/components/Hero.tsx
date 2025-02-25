@@ -145,11 +145,9 @@ const Hero = () => {
         {/* Main heading */}
         <div className="flex-grow">
           <h1 className="text-6xl md:text-8xl font-bold text-white max-w-3xl font-['Lexend_Deca'] leading-tight">
-            IT solutions
+            Vivid Innovation.
             <br />
-            that work
-            <br />
-            for you.
+            Boundless Possibilities.
           </h1>
         </div>
 
