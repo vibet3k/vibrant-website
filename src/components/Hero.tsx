@@ -144,11 +144,10 @@ const Hero = () => {
       <div className="relative h-full flex flex-col p-12">
         {/* Main heading */}
         <div className="flex-grow">
-          <h1 className="text-5xl md:text-7xl font-bold text-white max-w-3xl font-['Lexend_Deca'] leading-tight">
-            Vivid Innovation.
-            <br />
-            Boundless Possibilities.
-          </h1>
+          <div className="text-4xl md:text-6xl font-bold text-white font-['Lexend_Deca'] leading-tight">
+            <h1>Vivid Innovation.</h1>
+            <h1 className="pl-12">Boundless Possibilities.</h1>
+          </div>
         </div>
 
         {/* Bottom section with logo */}
