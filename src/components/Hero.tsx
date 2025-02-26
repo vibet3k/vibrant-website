@@ -146,7 +146,7 @@ const Hero = () => {
         <div className="absolute top-24 left-12 right-12">
           <div className="text-4xl md:text-6xl font-bold text-white font-['Lexend_Deca']">
             <h1>Vivid Innovation.</h1>
-            <h1 className="pl-12 mt-6">Boundless Possibilities.</h1>
+            <h1 className="pl-12 mt-2">Boundless Possibilities.</h1>
           </div>
         </div>
 
