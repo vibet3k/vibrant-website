@@ -151,7 +151,7 @@ const Hero = () => {
         </div>
 
         {/* Logo - positioned in lower white area */}
-        <div className="absolute bottom-16 right-12">
+        <div className="absolute bottom-8 right-12">
           <Image
             src="/images/vibrant-tech-logo-noTL.png"
             alt="Vibrant Technology"
