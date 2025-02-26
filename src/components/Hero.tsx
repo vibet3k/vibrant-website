@@ -140,18 +140,18 @@ const Hero = () => {
         </div>
       ))}
 
-      {/* Content container */}
-      <div className="relative h-full p-12">
-        {/* Main heading */}
-        <div className="pt-12">
-          <div className="text-4xl md:text-6xl font-bold text-white font-['Lexend_Deca'] leading-tight">
+      {/* Content positioned with fixed measurements */}
+      <div className="absolute inset-0">
+        {/* Headline - positioned in upper section */}
+        <div className="absolute top-24 left-12 right-12">
+          <div className="text-4xl md:text-6xl font-bold text-white font-['Lexend_Deca']">
             <h1>Vivid Innovation.</h1>
-            <h1 className="pl-12">Boundless Possibilities.</h1>
+            <h1 className="pl-12 mt-6">Boundless Possibilities.</h1>
           </div>
         </div>
 
-        {/* Logo positioned in lower section */}
-        <div className="absolute bottom-24 right-12">
+        {/* Logo - positioned in lower white area */}
+        <div className="absolute bottom-16 right-12">
           <Image
             src="/images/vibrant-tech-logo-noTL.png"
             alt="Vibrant Technology"
