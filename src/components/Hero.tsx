@@ -150,8 +150,8 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Bottom section with logo - adjusted position */}
-        <div className="flex justify-end items-center mt-auto" style={{ height: '25vh' }}>
+        {/* Bottom section with logo - moved down with padding */}
+        <div className="flex justify-end pt-20 pb-12">
           <Image
             src="/images/vibrant-tech-logo-noTL.png"
             alt="Vibrant Technology"
