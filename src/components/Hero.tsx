@@ -143,10 +143,10 @@ const Hero = () => {
       {/* Content positioned with fixed measurements */}
       <div className="absolute inset-0">
         {/* Headline - positioned in upper section */}
-        <div className="absolute top-24 left-12 right-12">
+        <div className="absolute top-12 left-12 right-12">
           <div className="text-4xl md:text-6xl font-bold text-white font-['Lexend_Deca']">
             <h1>Vivid Innovation.</h1>
-            <h1 className="pl-12 mt-2">Boundless Possibilities.</h1>
+            <h1 className="pl-12 mt-3">Boundless Possibilities.</h1>
           </div>
         </div>
 
