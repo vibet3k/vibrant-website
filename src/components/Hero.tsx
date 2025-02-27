@@ -16,7 +16,6 @@ const Hero = () => {
   
   const GRID_SIZE = 33; // Size of our grid cells
   
-  // Base circle pattern SVG
   const svgCircle = encodeURIComponent(`
     <svg width="33" height="33" viewBox="0 0 33 33" xmlns="http://www.w3.org/2000/svg">
       <circle cx="16.5" cy="16.5" r="14" fill="none" stroke="white" stroke-width="2"/>
