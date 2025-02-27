@@ -142,22 +142,22 @@ const Hero = () => {
 
       {/* Content positioned with fixed measurements - with responsive adjustments */}
       <div className="absolute inset-0">
-        {/* Headline - sized down for mobile */}
-        <div className="absolute top-12 left-6 sm:left-12 right-6 sm:right-12">
-          <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white font-['Lexend_Deca']">
+        {/* Headline - positioned lower and with width constraints to prevent line breaks */}
+        <div className="absolute top-16 sm:top-20 left-6 sm:left-12 right-6 sm:right-12">
+          <div className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white font-['Lexend_Deca']">
             <h1>Vivid Innovation.</h1>
-            <h1 className="pl-4 sm:pl-8 md:pl-12 mt-2 md:mt-3">Boundless Possibilities.</h1>
+            <h1 className="pl-3 sm:pl-8 md:pl-12 mt-2 md:mt-3 whitespace-nowrap">Boundless Possibilities.</h1>
           </div>
         </div>
 
-        {/* Logo - positioned and sized better for mobile */}
+        {/* Logo - with increased size on mobile */}
         <div className="absolute bottom-6 right-6 sm:right-12 flex justify-end">
           <Image
             src="/images/vibrant-tech-logo-noTL.png"
             alt="Vibrant Technology"
             width={800}
             height={240}
-            className="w-auto h-24 sm:h-24 md:h-32 lg:h-48"
+            className="w-auto h-24 sm:h-28 md:h-36 lg:h-48"
             style={{ objectFit: 'contain' }}
             priority
           />
