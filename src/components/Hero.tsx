@@ -16,6 +16,7 @@ const Hero = () => {
   
   const GRID_SIZE = 33; // Size of our grid cells
   
+  // Base circle pattern SVG
   const svgCircle = encodeURIComponent(`
     <svg width="33" height="33" viewBox="0 0 33 33" xmlns="http://www.w3.org/2000/svg">
       <circle cx="16.5" cy="16.5" r="14" fill="none" stroke="white" stroke-width="2"/>
@@ -162,21 +163,10 @@ const Hero = () => {
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes gleam {
-          0%, 100% { transform: scale(1); }
-          40% { transform: scale(1.05); }
-          60% { transform: scale(1.05); }
-        }
-        
-        @keyframes gleamOpacity {
-          0%, 100% { opacity: 0; }
-          35% { opacity: 0.6; }
-          65% { opacity: 0.6; }
-        }
-      `}</style>
+      {/* Use global CSS for animations instead of styled-jsx */}
     </div>
   );
 };
 
+// Export the component
 export default Hero;
