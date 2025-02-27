@@ -157,7 +157,7 @@ const Hero = () => {
             alt="Vibrant Technology"
             width={800}
             height={240}
-            className="w-auto h-12 sm:h-24 md:h-32 lg:h-48"
+            className="w-auto h-24 sm:h-24 md:h-32 lg:h-48"
             style={{ objectFit: 'contain' }}
             priority
           />
