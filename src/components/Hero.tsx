@@ -140,33 +140,30 @@ const Hero = () => {
         </div>
       ))}
 
-      {/* Responsive content container */}
-      <div className="flex flex-col justify-between h-full p-4 sm:p-8 md:p-12">
-        {/* Headline - responsive sizing */}
-        <div className="pt-8 md:pt-12">
-          <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white font-['Lexend_Deca']">
+      {/* Content positioned with fixed measurements - back to what was working */}
+      <div className="absolute inset-0">
+        {/* Headline - positioned in upper section */}
+        <div className="absolute top-12 left-12 right-12">
+          <div className="text-4xl md:text-6xl font-bold text-white font-['Lexend_Deca']">
             <h1>Vivid Innovation.</h1>
-            <h1 className="pl-4 sm:pl-8 md:pl-12 mt-2 md:mt-3">Boundless Possibilities.</h1>
+            <h1 className="pl-12 mt-3">Boundless Possibilities.</h1>
           </div>
         </div>
 
-        {/* Logo - responsive sizing */}
-        <div className="flex justify-end mb-4 md:mb-6">
+        {/* Logo - positioned in lower white area */}
+        <div className="absolute bottom-4 right-12">
           <Image
             src="/images/vibrant-tech-logo-noTL.png"
             alt="Vibrant Technology"
             width={800}
             height={240}
-            className="w-auto h-20 sm:h-32 md:h-40 lg:h-48"
+            className="w-auto h-48"
             priority
           />
         </div>
       </div>
-
-      {/* Use global CSS for animations instead of styled-jsx */}
     </div>
   );
 };
 
-// Export the component
 export default Hero;
