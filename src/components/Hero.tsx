@@ -142,8 +142,8 @@ const Hero = () => {
 
       {/* Content positioned with fixed measurements - with responsive adjustments */}
       <div className="absolute inset-0">
-        {/* Headline - positioned lower and with width constraints to prevent line breaks */}
-        <div className="absolute top-16 sm:top-20 left-6 sm:left-12 right-6 sm:right-12">
+        {/* Headline - positioned slightly higher */}
+        <div className="absolute top-12 sm:top-16 left-6 sm:left-12 right-6 sm:right-12">
           <div className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white font-['Lexend_Deca']">
             <h1>Vivid Innovation.</h1>
             <h1 className="pl-3 sm:pl-8 md:pl-12 mt-2 md:mt-3 whitespace-nowrap">Boundless Possibilities.</h1>
