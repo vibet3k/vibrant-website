@@ -75,35 +75,39 @@ const Hero = () => {
 
   return (
     <div className="fixed inset-0 overflow-hidden">
-      {/* Background with improved gradient that matches desktop for mobile too */}
+      {/* Background with LIGHTER gradient that better matches desktop */}
       <div 
         className="absolute inset-0"
         style={{
           background: `linear-gradient(to bottom, 
-            #0074bc 0%, 
-            #0074bc 20%, 
-            rgba(0, 116, 188, 0.95) 30%,
-            rgba(0, 116, 188, 0.85) 40%,
-            rgba(0, 116, 188, 0.75) 50%,
-            rgba(0, 116, 188, 0.6) 60%,
-            rgba(0, 116, 188, 0.4) 70%,
-            rgba(0, 116, 188, 0.2) 80%,
-            rgba(255, 255, 255, 0.8) 90%,
-            white 95%,
+            #0088d6 0%, 
+            #0088d6 25%, 
+            rgba(0, 136, 214, 0.95) 30%,
+            rgba(0, 136, 214, 0.85) 35%,
+            rgba(0, 136, 214, 0.75) 40%,
+            rgba(0, 136, 214, 0.65) 45%,
+            rgba(0, 136, 214, 0.55) 50%,
+            rgba(0, 136, 214, 0.45) 55%,
+            rgba(0, 136, 214, 0.35) 60%,
+            rgba(0, 136, 214, 0.25) 65%,
+            rgba(0, 136, 214, 0.15) 70%,
+            rgba(255, 255, 255, 0.9) 75%,
+            rgba(255, 255, 255, 0.95) 80%,
+            white 85%,
             white 100%
           )`
         }}
       />
 
-      {/* Base circle pattern with adjusted mask for better fade */}
+      {/* Base circle pattern */}
       <div 
         className="absolute inset-0"
         style={{
           backgroundImage: `url("data:image/svg+xml,${svgCircle}")`,
           backgroundSize: '33px 33px',
           backgroundPosition: '0 0',
-          WebkitMaskImage: 'linear-gradient(to bottom, transparent 20%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0.5) 80%, rgba(255,255,255,0.2) 90%, transparent 95%)',
-          maskImage: 'linear-gradient(to bottom, transparent 20%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0.5) 80%, rgba(255,255,255,0.2) 90%, transparent 95%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent 20%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0.7) 80%, transparent 90%)',
+          maskImage: 'linear-gradient(to bottom, transparent 20%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0.7) 80%, transparent 90%)',
           opacity: 0.35
         }}
       />
@@ -146,14 +150,14 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Logo - with responsive sizing */}
+        {/* Logo - with appropriate sizing */}
         <div className="absolute bottom-6 right-6 sm:right-12 flex justify-end">
           <Image
             src="/images/vibrant-tech-logo-noTL.png"
             alt="Vibrant Technology"
             width={800}
             height={240}
-            className="w-auto h-16 sm:h-24 md:h-36 lg:h-48"
+            className="w-auto h-20 sm:h-24 md:h-36 lg:h-48"
             style={{ objectFit: 'contain' }}
             priority
           />
