@@ -73,36 +73,16 @@ const Hero = () => {
     };
   }, []);
 
-  // Create the CSS gradient string with cross-browser prefixes
-  const gradientCSS = `
-    #c4e4f5,
-    linear-gradient(
-      to bottom,
-      #c4e4f5 0%, 
-      #c4e4f5 25%, 
-      rgba(196, 228, 245, 0.95) 30%,
-      rgba(196, 228, 245, 0.85) 35%,
-      rgba(196, 228, 245, 0.75) 40%,
-      rgba(196, 228, 245, 0.65) 45%,
-      rgba(196, 228, 245, 0.55) 50%,
-      rgba(196, 228, 245, 0.45) 55%,
-      rgba(196, 228, 245, 0.35) 60%,
-      rgba(196, 228, 245, 0.25) 65%,
-      rgba(196, 228, 245, 0.15) 70%,
-      rgba(255, 255, 255, 0.9) 75%,
-      rgba(255, 255, 255, 0.95) 80%,
-      white 85%,
-      white 100%
-    )
-  `;
-
   return (
     <div className="fixed inset-0 overflow-hidden">
-      {/* Background with cross-browser compatible gradient */}
+      {/* Simple background image approach */}
       <div 
         className="absolute inset-0"
         style={{
-          background: gradientCSS
+          backgroundColor: '#c4e4f5', // Fallback color
+          backgroundImage: 'url("/images/blue-gradient-bg.jpg")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center top'
         }}
       />
 
