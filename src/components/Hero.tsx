@@ -75,13 +75,8 @@ const Hero = () => {
 
   return (
     <div className="fixed inset-0 overflow-hidden">
-      {/* Background with updated gradient transitions - adjusted to reach white between 75-80% */}
-      <div 
-        className="absolute inset-0"
-        style={{
-          background: `linear-gradient(180deg, hsla(203, 100%, 37%, 1) 0%, hsla(203, 100%, 37%, 1) 20%, hsla(0, 0%, 100%, 1) 75%, hsla(0, 0%, 100%, 1) 100%)`
-        }}
-      />
+      {/* Gradient background using exact CSS from coolors */}
+      <div className="absolute inset-0 tech-blue-gradient" />
 
       {/* Base circle pattern */}
       <div 
@@ -130,23 +125,44 @@ const Hero = () => {
         <div className="absolute top-12 sm:top-16 left-6 sm:left-12 right-6 sm:right-12">
           <div className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white font-['Lexend_Deca']">
             <h1>Vivid Innovation.</h1>
-            <h1 className="pl-3 sm:pl-8 md:pl-12 mt-2 md:mt-3 whitespace-nowrap">Boundless Possibilities.</h1>
+            <h1 className="pl-3 sm:pl-8 md:pl-12 mt-2 md:mt-3">Boundless Possibilities.</h1>
           </div>
         </div>
 
-        {/* Logo - with increased size on mobile */}
+        {/* Logo - with appropriate sizing */}
         <div className="absolute bottom-6 right-6 sm:right-12 flex justify-end">
           <Image
             src="/images/vibrant-tech-logo-noTL.png"
             alt="Vibrant Technology"
             width={800}
             height={240}
-            className="w-auto h-24 sm:h-28 md:h-36 lg:h-48"
+            className="w-auto h-20 sm:h-24 md:h-36 lg:h-48"
             style={{ objectFit: 'contain' }}
             priority
           />
         </div>
       </div>
+
+      <style jsx>{`
+        .tech-blue-gradient {
+          background: hsla(203, 100%, 37%, 1);
+          background: linear-gradient(to bottom, hsla(203, 100%, 37%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+          background: -moz-linear-gradient(top, hsla(203, 100%, 37%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+          background: -webkit-linear-gradient(top, hsla(203, 100%, 37%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+        }
+        
+        @keyframes gleam {
+          0%, 100% { transform: scale(1); }
+          40% { transform: scale(1.05); }
+          60% { transform: scale(1.05); }
+        }
+        
+        @keyframes gleamOpacity {
+          0%, 100% { opacity: 0; }
+          35% { opacity: 0.6; }
+          65% { opacity: 0.6; }
+        }
+      `}</style>
     </div>
   );
 };
