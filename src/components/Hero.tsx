@@ -75,16 +75,8 @@ const Hero = () => {
 
   return (
     <div className="fixed inset-0 overflow-hidden">
-      {/* Simple background image approach */}
-      <div 
-        className="absolute inset-0"
-        style={{
-          backgroundColor: '#c4e4f5', // Fallback color
-          backgroundImage: 'url("/images/blue-gradient-bg.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center top'
-        }}
-      />
+      {/* Simplified gradient approach with className */}
+      <div className="absolute inset-0 blue-gradient-bg" />
 
       {/* Base circle pattern */}
       <div 
@@ -152,6 +144,11 @@ const Hero = () => {
       </div>
 
       <style jsx>{`
+        .blue-gradient-bg {
+          background: #c4e4f5;
+          background: linear-gradient(to bottom, #c4e4f5 0%, #c4e4f5 70%, white 100%);
+        }
+        
         @keyframes gleam {
           0%, 100% { transform: scale(1); }
           40% { transform: scale(1.05); }
