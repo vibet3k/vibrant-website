@@ -146,9 +146,9 @@ const Hero = () => {
       <style jsx>{`
         .tech-blue-gradient {
           background: hsla(203, 100%, 37%, 1);
-          background: linear-gradient(180deg, hsla(203, 100%, 37%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
-          background: -moz-linear-gradient(180deg, hsla(203, 100%, 37%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
-          background: -webkit-linear-gradient(180deg, hsla(203, 100%, 37%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+          background: linear-gradient(to bottom, hsla(203, 100%, 37%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+          background: -moz-linear-gradient(top, hsla(203, 100%, 37%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+          background: -webkit-linear-gradient(top, hsla(203, 100%, 37%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
         }
         
         @keyframes gleam {
