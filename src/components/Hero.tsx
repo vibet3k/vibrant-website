@@ -79,8 +79,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0"
         style={{
-          background: `hsla(203, 100%, 37%, 1)`,
-          background: `linear-gradient(180deg, hsla(203, 100%, 37%, 1) 0%, hsla(0, 0%, 100%, 1) 75%)`,
+          background: `linear-gradient(180deg, hsla(203, 100%, 37%, 1) 0%, hsla(203, 100%, 37%, 1) 20%, hsla(0, 0%, 100%, 1) 75%, hsla(0, 0%, 100%, 1) 100%)`
         }}
       />
 
