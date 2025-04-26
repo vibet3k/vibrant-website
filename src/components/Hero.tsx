@@ -82,12 +82,8 @@ const Hero = () => {
           background: `linear-gradient(180deg, 
             #0074bc 0%, 
             #0074bc 20%, 
-            #127ec1 30%,
-            #4998cd 45%, 
-            #7bb5dc 60%, 
-            #b5d4ea 75%, 
-            white 85%, 
-            white 100%)`
+            #ffffff 75%, 
+            #ffffff 100%)`
         }}
       />
 
