@@ -9,6 +9,7 @@ interface GleamingCircle {
   left: number;
   animationDuration: number;
   delay: number;
+  isPink: boolean;
 }
 
 const Hero = () => {
@@ -24,26 +25,31 @@ const Hero = () => {
   `);
 
   // Function to create a new gleaming circle on the grid
-  const createGleamingCircle = (): GleamingCircle => {
-    // Calculate grid positions that align with our pattern
-    const cols = Math.floor(window.innerWidth / GRID_SIZE);
-    const rows = Math.floor(window.innerHeight / GRID_SIZE);
-    
-    // Keep circles in the middle section (20%-70% of height)
-    const minRow = Math.floor(rows * 0.2);
-    const maxRow = Math.floor(rows * 0.7);
-    
-    const randomRow = minRow + Math.floor(Math.random() * (maxRow - minRow));
-    const randomCol = Math.floor(Math.random() * cols);
+// In the createGleamingCircle function, add a property to track if it's a pink circle
+const createGleamingCircle = (): GleamingCircle => {
+  // Calculate grid positions that align with our pattern
+  const cols = Math.floor(window.innerWidth / GRID_SIZE);
+  const rows = Math.floor(window.innerHeight / GRID_SIZE);
+  
+  // Keep circles in the middle section (20%-70% of height)
+  const minRow = Math.floor(rows * 0.2);
+  const maxRow = Math.floor(rows * 0.7);
+  
+  const randomRow = minRow + Math.floor(Math.random() * (maxRow - minRow));
+  const randomCol = Math.floor(Math.random() * cols);
+  
+  // Randomly make ~10% of circles pink
+  const isPink = Math.random() < 0.1;
 
-    return {
-      id: Math.random(),
-      top: randomRow * GRID_SIZE,
-      left: randomCol * GRID_SIZE,
-      animationDuration: 2 + Math.random() * 2, // 2-4 seconds
-      delay: Math.random() * 2 // 0-2 second delay
-    };
+  return {
+    id: Math.random(),
+    top: randomRow * GRID_SIZE,
+    left: randomCol * GRID_SIZE,
+    animationDuration: 2 + Math.random() * 2, // 2-4 seconds
+    delay: Math.random() * 2, // 0-2 second delay
+    isPink: isPink // New property
   };
+};
 
   // Initialize and manage gleaming circles
   useEffect(() => {
@@ -96,33 +102,33 @@ const Hero = () => {
         }}
       />
 
-      {/* Gleaming circles overlay */}
-      {gleamingCircles.map(circle => (
-        <div
-          key={circle.id}
-          className="absolute w-8 h-8"
-          style={{
-            top: `${circle.top}px`,
-            left: `${circle.left}px`,
-            animation: `gleam ${circle.animationDuration}s ease-in-out ${circle.delay}s infinite`
-          }}
-        >
-          <svg width="33" height="33" viewBox="0 0 33 33">
-            <circle
-              cx="16.5"
-              cy="16.5"
-              r="14"
-              fill="none"
-              stroke="white"
-              strokeWidth="2.5"
-              className="opacity-0"
-              style={{
-                animation: `gleamOpacity ${circle.animationDuration}s ease-in-out ${circle.delay}s infinite`
-              }}
-            />
-          </svg>
-        </div>
-      ))}
+{/* Gleaming circles overlay */}
+{gleamingCircles.map(circle => (
+  <div
+    key={circle.id}
+    className="absolute w-8 h-8"
+    style={{
+      top: `${circle.top}px`,
+      left: `${circle.left}px`,
+      animation: `gleam ${circle.animationDuration}s ease-in-out ${circle.delay}s infinite`
+    }}
+  >
+    <svg width="33" height="33" viewBox="0 0 33 33">
+      <circle
+        cx="16.5"
+        cy="16.5"
+        r="14"
+        fill="none"
+        stroke={circle.isPink ? "#ef5ba1" : "white"}
+        strokeWidth={circle.isPink ? "3" : "2.5"}
+        className="opacity-0"
+        style={{
+          animation: `gleamOpacity ${circle.animationDuration}s ease-in-out ${circle.delay}s infinite`
+        }}
+      />
+    </svg>
+  </div>
+))}
 
       {/* Content positioned with fixed measurements - with responsive adjustments */}
       <div className="absolute inset-0">
