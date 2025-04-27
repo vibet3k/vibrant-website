@@ -208,7 +208,7 @@ useEffect(() => {
         }}
       />
 
-      // Update the part where we render the circles:
+      {/* Update the part where we render the circles:*/}
 
       {/* Gleaming circles overlay */}
       {gleamingCircles.map(circle => (
