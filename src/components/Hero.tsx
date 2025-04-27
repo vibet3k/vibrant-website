@@ -150,40 +150,40 @@ const Hero = () => {
     constellationTimerRef.current = setTimeout(createCrossConstellation, nextConstellationTime);
   };
 
-  // Initialize and manage gleaming circles
-  useEffect(() => {
-    // Initial circles
-    const initialCircles = Array(5).fill(null).map(() => createGleamingCircle());
-    setGleamingCircles(initialCircles);
+// Initialize and manage gleaming circles
+useEffect(() => {
+  // Initial circles
+  const initialCircles = Array(5).fill(null).map(() => createGleamingCircle());
+  setGleamingCircles(initialCircles);
 
-    // Update on window resize
-    const handleResize = () => {
-      setGleamingCircles(Array(5).fill(null).map(() => createGleamingCircle()));
-    };
-    window.addEventListener('resize', handleResize);
+  // Update on window resize
+  const handleResize = () => {
+    setGleamingCircles(Array(5).fill(null).map(() => createGleamingCircle()));
+  };
+  window.addEventListener('resize', handleResize);
 
-    // Regularly add new circles
-    const interval = setInterval(() => {
-      // Add a new circle
-      setGleamingCircles(prev => {
-        // Keep array at a reasonable size by removing older circles
-        const updatedCircles = prev.slice(-11); // Keep at most 12 circles (including the new one)
-        return [...updatedCircles, createGleamingCircle()];
-      });
-    }, 3000);
-    
-    // Start constellation timer
-    const initialConstellationDelay = 10000 + Math.random() * 5000; // First one after 10-15 seconds
-    constellationTimerRef.current = setTimeout(createCrossConstellation, initialConstellationDelay);
+  // Regularly add new circles
+  const interval = setInterval(() => {
+    // Add a new circle
+    setGleamingCircles(prev => {
+      // Keep array at a reasonable size by removing older circles
+      const updatedCircles = prev.slice(-11); // Keep at most 12 circles (including the new one)
+      return [...updatedCircles, createGleamingCircle()];
+    });
+  }, 3000);
+  
+  // Start constellation timer
+  const initialConstellationDelay = 10000 + Math.random() * 5000; // First one after 10-15 seconds
+  constellationTimerRef.current = setTimeout(createCrossConstellation, initialConstellationDelay);
 
-    return () => {
-      clearInterval(interval);
-      if (constellationTimerRef.current) {
-        clearTimeout(constellationTimerRef.current);
-      }
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  return () => {
+    clearInterval(interval);
+    if (constellationTimerRef.current) {
+      clearTimeout(constellationTimerRef.current);
+    }
+    window.removeEventListener('resize', handleResize);
+  };
+}, []);  // We'll keep this empty for now to avoid implementation issues
 
   return (
     <div className="fixed inset-0 overflow-hidden">
