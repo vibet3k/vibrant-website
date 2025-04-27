@@ -10,6 +10,7 @@ interface GleamingCircle {
   animationDuration: number;
   delay: number;
   color: string;
+  filled: boolean;
 }
 
 const Hero = () => {
@@ -20,7 +21,6 @@ const Hero = () => {
   const GRID_SIZE = 33; // Size of our grid cells
   const BRAND_COLORS = {
     pink: "#ef5ba1",
-    blue: "#0074bc",
     green: "#39b54a",
     white: "white"
   };
@@ -50,10 +50,17 @@ const Hero = () => {
     
     // Determine circle color - occasionally make it a brand color
     let color = BRAND_COLORS.white;
-    const colorNum = circleCountRef.current % 20; // Use modulo to determine color
-    if (colorNum === 0) color = BRAND_COLORS.pink;
-    else if (colorNum === 7) color = BRAND_COLORS.blue;
-    else if (colorNum === 14) color = BRAND_COLORS.green;
+    let filled = false;
+    
+    const colorNum = circleCountRef.current % 15; // Use modulo to determine color
+    if (colorNum === 0) {
+      color = BRAND_COLORS.pink;
+      filled = true;
+    }
+    else if (colorNum === 7) {
+      color = BRAND_COLORS.green;
+      filled = true;
+    }
 
     return {
       id: Math.random(),
@@ -61,7 +68,8 @@ const Hero = () => {
       left: randomCol * GRID_SIZE,
       animationDuration: 2 + Math.random() * 2, // 2-4 seconds
       delay: Math.random() * 0.8, // 0-0.8 seconds delay
-      color: color
+      color: color,
+      filled: filled
     };
   };
   
@@ -82,50 +90,55 @@ const Hero = () => {
     
     // Create the 5 circles for the cross pattern
     const crossCircles = [
-      // Center (white)
+      // Center (white outline)
       {
         id: Math.random(),
         top: centerRow * GRID_SIZE,
         left: centerCol * GRID_SIZE,
         animationDuration: 2.5 + Math.random() * 1, 
         delay: Math.random() * 0.2,
-        color: BRAND_COLORS.white
+        color: BRAND_COLORS.white,
+        filled: false
       },
-      // Top (green)
+      // Top (green filled)
       {
         id: Math.random(),
         top: (centerRow - 1) * GRID_SIZE,
         left: centerCol * GRID_SIZE,
         animationDuration: 2.5 + Math.random() * 1,
         delay: Math.random() * 0.2,
-        color: BRAND_COLORS.green
+        color: BRAND_COLORS.green,
+        filled: true
       },
-      // Bottom (green)
+      // Bottom (green filled)
       {
         id: Math.random(),
         top: (centerRow + 1) * GRID_SIZE,
         left: centerCol * GRID_SIZE,
         animationDuration: 2.5 + Math.random() * 1,
         delay: Math.random() * 0.2,
-        color: BRAND_COLORS.green
+        color: BRAND_COLORS.green,
+        filled: true
       },
-      // Left (pink)
+      // Left (pink filled)
       {
         id: Math.random(),
         top: centerRow * GRID_SIZE,
         left: (centerCol - 1) * GRID_SIZE,
         animationDuration: 2.5 + Math.random() * 1,
         delay: Math.random() * 0.2,
-        color: BRAND_COLORS.pink
+        color: BRAND_COLORS.pink,
+        filled: true
       },
-      // Right (pink)
+      // Right (pink filled)
       {
         id: Math.random(),
         top: centerRow * GRID_SIZE,
         left: (centerCol + 1) * GRID_SIZE,
         animationDuration: 2.5 + Math.random() * 1,
         delay: Math.random() * 0.2,
-        color: BRAND_COLORS.pink
+        color: BRAND_COLORS.pink,
+        filled: true
       }
     ];
     
@@ -211,9 +224,9 @@ const Hero = () => {
               cx="16.5"
               cy="16.5"
               r="14"
-              fill="none"
+              fill={circle.filled ? circle.color : "none"}
               stroke={circle.color}
-              strokeWidth={circle.color !== "white" ? "3" : "2.5"}
+              strokeWidth={circle.filled ? "1" : "2.5"}
               className="opacity-0"
               style={{
                 animation: `gleamOpacity ${circle.animationDuration}s ease-in-out ${circle.delay}s 1`  // Run once
