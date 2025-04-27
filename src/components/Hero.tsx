@@ -208,6 +208,8 @@ const Hero = () => {
         }}
       />
 
+      // Update the part where we render the circles:
+
       {/* Gleaming circles overlay */}
       {gleamingCircles.map(circle => (
         <div
@@ -229,7 +231,9 @@ const Hero = () => {
               strokeWidth={circle.filled ? "1" : "2.5"}
               className="opacity-0"
               style={{
-                animation: `gleamOpacity ${circle.animationDuration}s ease-in-out ${circle.delay}s 1`  // Run once
+                animation: circle.filled 
+                  ? `gleamFilledOpacity ${circle.animationDuration}s ease-in-out ${circle.delay}s 1`  // Filled circles use new animation
+                  : `gleamOpacity ${circle.animationDuration}s ease-in-out ${circle.delay}s 1`  // Outline circles use original animation
               }}
             />
           </svg>
