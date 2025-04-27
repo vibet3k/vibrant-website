@@ -33,7 +33,7 @@ const Hero = () => {
   `);
 
   // Function to create a new gleaming circle on the grid
-  const createGleamingCircle = (isConstellation = false): GleamingCircle => {
+  const createGleamingCircle = (): GleamingCircle => {
     // Calculate grid positions that align with our pattern
     const cols = Math.floor(window.innerWidth / GRID_SIZE);
     const rows = Math.floor(window.innerHeight / GRID_SIZE);
@@ -48,20 +48,12 @@ const Hero = () => {
     // Increment counter
     circleCountRef.current += 1;
     
-    // Determine circle color
+    // Determine circle color - occasionally make it a brand color
     let color = BRAND_COLORS.white;
-    
-    if (isConstellation) {
-      // During a constellation, randomly pick a brand color
-      const colorKeys = Object.keys(BRAND_COLORS);
-      color = BRAND_COLORS[colorKeys[Math.floor(Math.random() * colorKeys.length)] as keyof typeof BRAND_COLORS];
-    } else {
-      // Normal circle - occasionally make it a brand color
-      const colorNum = circleCountRef.current % 20; // Use modulo to determine color
-      if (colorNum === 0) color = BRAND_COLORS.pink;
-      else if (colorNum === 7) color = BRAND_COLORS.blue;
-      else if (colorNum === 14) color = BRAND_COLORS.green;
-    }
+    const colorNum = circleCountRef.current % 20; // Use modulo to determine color
+    if (colorNum === 0) color = BRAND_COLORS.pink;
+    else if (colorNum === 7) color = BRAND_COLORS.blue;
+    else if (colorNum === 14) color = BRAND_COLORS.green;
 
     return {
       id: Math.random(),
@@ -73,22 +65,76 @@ const Hero = () => {
     };
   };
   
-  // Create a constellation of circles
-  const createConstellation = () => {
-    // Number of circles in the constellation (3-5)
-    const numCircles = 3 + Math.floor(Math.random() * 3);
+  // Function to create a cross-shaped constellation
+  const createCrossConstellation = () => {
+    // Calculate a random center point that's well within view
+    const cols = Math.floor(window.innerWidth / GRID_SIZE);
+    const rows = Math.floor(window.innerHeight / GRID_SIZE);
     
-    // Create constellation circles
-    const constellationCircles = Array(numCircles).fill(null).map(() => 
-      createGleamingCircle(true)
-    );
+    // Keep the center in the visible middle section
+    const minRow = Math.floor(rows * 0.3);
+    const maxRow = Math.floor(rows * 0.6);
+    const minCol = Math.floor(cols * 0.2);
+    const maxCol = Math.floor(cols * 0.8);
     
-    // Add them to existing circles
-    setGleamingCircles(prev => [...prev, ...constellationCircles]);
+    const centerRow = minRow + Math.floor(Math.random() * (maxRow - minRow));
+    const centerCol = minCol + Math.floor(Math.random() * (maxCol - minCol));
+    
+    // Create the 5 circles for the cross pattern
+    const crossCircles = [
+      // Center (white)
+      {
+        id: Math.random(),
+        top: centerRow * GRID_SIZE,
+        left: centerCol * GRID_SIZE,
+        animationDuration: 2.5 + Math.random() * 1, 
+        delay: Math.random() * 0.2,
+        color: BRAND_COLORS.white
+      },
+      // Top (green)
+      {
+        id: Math.random(),
+        top: (centerRow - 1) * GRID_SIZE,
+        left: centerCol * GRID_SIZE,
+        animationDuration: 2.5 + Math.random() * 1,
+        delay: Math.random() * 0.2,
+        color: BRAND_COLORS.green
+      },
+      // Bottom (green)
+      {
+        id: Math.random(),
+        top: (centerRow + 1) * GRID_SIZE,
+        left: centerCol * GRID_SIZE,
+        animationDuration: 2.5 + Math.random() * 1,
+        delay: Math.random() * 0.2,
+        color: BRAND_COLORS.green
+      },
+      // Left (pink)
+      {
+        id: Math.random(),
+        top: centerRow * GRID_SIZE,
+        left: (centerCol - 1) * GRID_SIZE,
+        animationDuration: 2.5 + Math.random() * 1,
+        delay: Math.random() * 0.2,
+        color: BRAND_COLORS.pink
+      },
+      // Right (pink)
+      {
+        id: Math.random(),
+        top: centerRow * GRID_SIZE,
+        left: (centerCol + 1) * GRID_SIZE,
+        animationDuration: 2.5 + Math.random() * 1,
+        delay: Math.random() * 0.2,
+        color: BRAND_COLORS.pink
+      }
+    ];
+    
+    // Add the cross pattern to existing circles
+    setGleamingCircles(prev => [...prev, ...crossCircles]);
     
     // Schedule next constellation in 25-35 seconds
     const nextConstellationTime = 25000 + Math.random() * 10000;
-    constellationTimerRef.current = setTimeout(createConstellation, nextConstellationTime);
+    constellationTimerRef.current = setTimeout(createCrossConstellation, nextConstellationTime);
   };
 
   // Initialize and manage gleaming circles
@@ -115,7 +161,7 @@ const Hero = () => {
     
     // Start constellation timer
     const initialConstellationDelay = 10000 + Math.random() * 5000; // First one after 10-15 seconds
-    constellationTimerRef.current = setTimeout(createConstellation, initialConstellationDelay);
+    constellationTimerRef.current = setTimeout(createCrossConstellation, initialConstellationDelay);
 
     return () => {
       clearInterval(interval);
