@@ -137,7 +137,7 @@ const Hero = () => {
         
         {/* Middle section - Vision Statement */}
         <div className="flex-grow flex flex-col justify-center items-center">
-          <div className="text-center mb-16 mt-[-30px]">
+          <div className="text-center mb-16 mt-[-100px]">
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white font-lexend-deca">
               Vision<span className="text-white">.</span> Strategy<span className="text-white">.</span> Execution<span className="text-vt-pink">.</span>
             </h2>
