@@ -75,7 +75,7 @@ export const CircleBackground = () => {
       color: color,
       filled: filled
     };
-  }, [GRID_SIZE, BRAND_COLORS]);
+  }, [GRID_SIZE]);
 
   // Add circles with varying timing for organic effect
   const addRandomCircle = useCallback(() => {
@@ -104,13 +104,13 @@ export const CircleBackground = () => {
 
   useEffect(() => {
     // Initial circles
-    const initialCircles = Array(5).fill(null).map(() => createGleamingCircle());
+    const initialCircles = Array(3).fill(null).map(() => createGleamingCircle());
     setGleamingCircles(initialCircles);
     lastCircleTimeRef.current = Date.now();
 
     // Update on window resize
     const handleResize = () => {
-      setGleamingCircles(Array(5).fill(null).map(() => createGleamingCircle()));
+      setGleamingCircles(Array(3).fill(null).map(() => createGleamingCircle()));
       lastCircleTimeRef.current = Date.now();
     };
     window.addEventListener('resize', handleResize);
@@ -127,22 +127,24 @@ export const CircleBackground = () => {
 
   return (
     <>
-      {/* Background with gradient - reversed from hero page */}
+      {/* Background with gradient - matching hero page */}
       <div 
         className="absolute inset-0"
         style={{
-          background: `linear-gradient(180deg, hsla(203, 100%, 37%, 1) 0%, hsla(203, 100%, 25%, 1) 100%)`
+          background: `linear-gradient(180deg, #0074bc 0%, #4a9cda 70%, #f8fbff 100%)`
         }}
       />
 
-      {/* Base circle pattern */}
+      {/* Base circle pattern - with much lower opacity */}
       <div 
         className="absolute inset-0"
         style={{
           backgroundImage: `url("data:image/svg+xml,${svgCircle}")`,
           backgroundSize: '33px 33px',
           backgroundPosition: '0 0',
-          opacity: 0.35
+          opacity: 0.15,
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent 20%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0.7) 80%, transparent 90%)',
+          maskImage: 'linear-gradient(to bottom, transparent 20%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0.7) 80%, transparent 90%)'
         }}
       />
 
