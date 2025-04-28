@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 
 interface GleamingCircle {
   id: number;
@@ -33,7 +33,7 @@ export const CircleBackground = () => {
   `);
 
   // Function to create a new gleaming circle on the grid
-  const createGleamingCircle = (): GleamingCircle => {
+  const createGleamingCircle = useCallback((): GleamingCircle => {
     // Calculate grid positions that align with our pattern
     const cols = Math.floor(window.innerWidth / GRID_SIZE);
     const rows = Math.floor(window.innerHeight / GRID_SIZE);
@@ -75,10 +75,10 @@ export const CircleBackground = () => {
       color: color,
       filled: filled
     };
-  };
+  }, [GRID_SIZE, BRAND_COLORS]);
 
   // Add circles with varying timing for organic effect
-  const addRandomCircle = () => {
+  const addRandomCircle = useCallback(() => {
     const now = Date.now();
     const timeSinceLastCircle = now - lastCircleTimeRef.current;
     
@@ -100,7 +100,7 @@ export const CircleBackground = () => {
         lastCircleTimeRef.current = now;
       }
     }
-  };
+  }, [createGleamingCircle]);
 
   useEffect(() => {
     // Initial circles
@@ -123,7 +123,7 @@ export const CircleBackground = () => {
       clearInterval(circleInterval);
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [createGleamingCircle, addRandomCircle]);
 
   return (
     <>
