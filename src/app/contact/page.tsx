@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import ContactForm from '@/components/ContactForm';
 import Image from 'next/image';
 import Link from 'next/link';
-import { CircleBackground } from '@/components/CircleBackground';
+import BackgroundLayout from '@/components/BackgroundLayout';
 
 export const metadata: Metadata = {
   title: 'Contact Us | Vibrant Technology',
@@ -11,12 +11,9 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen overflow-hidden relative">
-      {/* Animated background with circles */}
-      <CircleBackground />
-      
+    <BackgroundLayout>
       {/* Header with Logo and Nav */}
-      <header className="relative w-full py-6 px-6 z-10">
+      <header className="w-full py-6 px-6">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link href="/" className="flex items-center">
             <Image
@@ -43,7 +40,7 @@ export default function ContactPage() {
       </header>
 
       {/* Main Content */}
-      <main className="relative z-10 max-w-7xl mx-auto px-4 py-16">
+      <main className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
           {/* Contact information (2 columns) */}
           <div className="lg:col-span-2 flex flex-col justify-center space-y-10">
@@ -112,7 +109,7 @@ export default function ContactPage() {
       </main>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-white/20 py-8 mt-24">
+      <footer className="border-t border-white/20 py-8 mt-24">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
@@ -130,6 +127,6 @@ export default function ContactPage() {
           </div>
         </div>
       </footer>
-    </div>
+    </BackgroundLayout>
   );
 }
