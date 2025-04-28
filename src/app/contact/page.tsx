@@ -44,12 +44,12 @@ export default function ContactPage() {
           {/* Contact information */}
           <div className="flex flex-col justify-center">
             <h1 className="text-4xl md:text-5xl font-bold text-vt-blue mb-6 font-lexend-deca">
-              Let's Start Your <br />Strategic Journey
+              Let&apos;s Start Your <br />Strategic Journey
             </h1>
             
             <p className="text-lg text-gray-700 mb-8 font-radley">
               Ready to transform your technology from a cost center to a strategic advantage? 
-              Fill out the form and we'll get in touch to discuss how we can help chart your course.
+              Fill out the form and we&apos;ll get in touch to discuss how we can help chart your course.
             </p>
             
             <div className="grid grid-cols-1 gap-6">

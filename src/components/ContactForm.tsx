@@ -65,7 +65,7 @@ export default function ContactForm() {
       {formStatus === 'success' ? (
         <div className="bg-vt-green/10 p-6 rounded-lg border border-vt-green">
           <h3 className="text-xl font-semibold text-vt-green mb-2">Message Sent Successfully!</h3>
-          <p className="text-gray-700">Thank you for reaching out. We'll be in touch with you shortly.</p>
+          <p className="text-gray-700">Thank you for reaching out. We&apos;ll be in touch with you shortly.</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">

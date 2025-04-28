@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
 interface GleamingCircle {
   id: number;
@@ -25,7 +25,7 @@ const Hero = () => {
   `);
 
   // Function to create a new gleaming circle on the grid
-  const createGleamingCircle = (): GleamingCircle => {
+  const createGleamingCircle = useCallback((): GleamingCircle => {
     // Calculate grid positions that align with our pattern
     const cols = Math.floor(window.innerWidth / GRID_SIZE);
     const rows = Math.floor(window.innerHeight / GRID_SIZE);
@@ -44,7 +44,7 @@ const Hero = () => {
       animationDuration: 2 + Math.random() * 2, // 2-4 seconds
       delay: Math.random() * 2 // 0-2 second delay
     };
-  };
+  }, [GRID_SIZE]);
 
   // Initialize and manage gleaming circles
   useEffect(() => {
@@ -72,7 +72,7 @@ const Hero = () => {
       clearInterval(interval);
       window.removeEventListener('resize', updateCircles);
     };
-  }, []);
+  }, [createGleamingCircle]);
 
   return (
     <div className="fixed inset-0 overflow-hidden">
@@ -161,7 +161,7 @@ const Hero = () => {
             alt="Vibrant Technology"
             width={300}
             height={90}
-            className="w-auto h-20 sm:h-28 md:h-36 lg:h-48"
+            className="w-auto h-20 sm:h-28 md:h-32 lg:h-48"
             style={{ objectFit: 'contain' }}
             priority
           />
