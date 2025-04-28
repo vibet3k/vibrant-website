@@ -11,13 +11,11 @@ interface GleamingCircle {
   delay: number;
   color: string;
   filled: boolean;
-  isConstellation: boolean;
 }
 
 const Hero = () => {
   const [gleamingCircles, setGleamingCircles] = useState<GleamingCircle[]>([]);
   const circleCountRef = useRef(0); // Counter to track total circles created
-  const constellationTimerRef = useRef<NodeJS.Timeout | null>(null);
   const lastCircleTimeRef = useRef(0); // Track last time a circle was added
   
   const GRID_SIZE = 33; // Size of our grid cells
@@ -35,7 +33,7 @@ const Hero = () => {
   `);
 
   // Function to create a new gleaming circle on the grid
-  const createGleamingCircle = (isConstellation = false): GleamingCircle => {
+  const createGleamingCircle = (): GleamingCircle => {
     // Calculate grid positions that align with our pattern
     const cols = Math.floor(window.innerWidth / GRID_SIZE);
     const rows = Math.floor(window.innerHeight / GRID_SIZE);
@@ -54,110 +52,25 @@ const Hero = () => {
     let color = BRAND_COLORS.white;
     let filled = false;
     
-    if (!isConstellation) {
-      const colorNum = circleCountRef.current % 15; // Use modulo to determine color
-      if (colorNum === 0) {
-        color = BRAND_COLORS.pink;
-        filled = true;
-      }
-      else if (colorNum === 7) {
-        color = BRAND_COLORS.green;
-        filled = true;
-      }
+    const colorNum = circleCountRef.current % 15; // Use modulo to determine color
+    if (colorNum === 0) {
+      color = BRAND_COLORS.pink;
+      filled = true;
+    }
+    else if (colorNum === 7) {
+      color = BRAND_COLORS.green;
+      filled = true;
     }
 
     return {
       id: Math.random(),
       top: randomRow * GRID_SIZE,
       left: randomCol * GRID_SIZE,
-      animationDuration: isConstellation ? 1 : (2 + Math.random() * 2), // Constellations last 1 second exact
-      delay: isConstellation ? 0 : (Math.random() * 0.8), // No delay for constellations
+      animationDuration: 2 + Math.random() * 2, // 2-4 seconds
+      delay: Math.random() * 0.8, // 0-0.8 seconds delay
       color: color,
-      filled: filled,
-      isConstellation: isConstellation
+      filled: filled
     };
-  };
-  
-  // Function to create a cross-shaped constellation with simultaneous appearance/disappearance
-  const createCrossConstellation = () => {
-    // Calculate a random center point that's well within view
-    const cols = Math.floor(window.innerWidth / GRID_SIZE);
-    const rows = Math.floor(window.innerHeight / GRID_SIZE);
-    
-    // Keep the center in the visible middle section
-    const minRow = Math.floor(rows * 0.3);
-    const maxRow = Math.floor(rows * 0.6);
-    const minCol = Math.floor(cols * 0.2);
-    const maxCol = Math.floor(cols * 0.8);
-    
-    const centerRow = minRow + Math.floor(Math.random() * (maxRow - minRow));
-    const centerCol = minCol + Math.floor(Math.random() * (maxCol - minCol));
-    
-    // Create the 5 circles for the cross pattern - all with identical timing
-    const crossCircles = [
-      // Center (white outline)
-      {
-        id: Math.random(),
-        top: centerRow * GRID_SIZE,
-        left: centerCol * GRID_SIZE,
-        animationDuration: 1, // Fixed 1 second duration for all constellation circles
-        delay: 0, // No delay - all appear at once
-        color: BRAND_COLORS.white,
-        filled: false,
-        isConstellation: true
-      },
-      // Top (green filled)
-      {
-        id: Math.random(),
-        top: (centerRow - 1) * GRID_SIZE,
-        left: centerCol * GRID_SIZE,
-        animationDuration: 1,
-        delay: 0,
-        color: BRAND_COLORS.green,
-        filled: true,
-        isConstellation: true
-      },
-      // Bottom (green filled)
-      {
-        id: Math.random(),
-        top: (centerRow + 1) * GRID_SIZE,
-        left: centerCol * GRID_SIZE,
-        animationDuration: 1,
-        delay: 0,
-        color: BRAND_COLORS.green,
-        filled: true,
-        isConstellation: true
-      },
-      // Left (pink filled)
-      {
-        id: Math.random(),
-        top: centerRow * GRID_SIZE,
-        left: (centerCol - 1) * GRID_SIZE,
-        animationDuration: 1,
-        delay: 0,
-        color: BRAND_COLORS.pink,
-        filled: true,
-        isConstellation: true
-      },
-      // Right (pink filled)
-      {
-        id: Math.random(),
-        top: centerRow * GRID_SIZE,
-        left: (centerCol + 1) * GRID_SIZE,
-        animationDuration: 1,
-        delay: 0,
-        color: BRAND_COLORS.pink,
-        filled: true,
-        isConstellation: true
-      }
-    ];
-    
-    // Add the cross pattern to existing circles
-    setGleamingCircles(prev => [...prev, ...crossCircles]);
-    
-    // Schedule next constellation exactly once per minute (60 seconds)
-    const nextConstellationTime = 60000;
-    constellationTimerRef.current = setTimeout(createCrossConstellation, nextConstellationTime);
   };
 
   // Add circles with varying timing for organic effect
@@ -202,16 +115,9 @@ const Hero = () => {
     // Frequently check if we should add a new circle (more organic timing)
     const circleInterval = setInterval(addRandomCircle, 300);
     
-    // Start constellation timer - first one after 30 seconds, then every minute
-    const initialConstellationDelay = 30000;
-    constellationTimerRef.current = setTimeout(createCrossConstellation, initialConstellationDelay);
-
     // Cleanup
     return () => {
       clearInterval(circleInterval);
-      if (constellationTimerRef.current) {
-        clearTimeout(constellationTimerRef.current);
-      }
       window.removeEventListener('resize', handleResize);
     };
   }, []);
@@ -247,9 +153,7 @@ const Hero = () => {
           style={{
             top: `${circle.top}px`,
             left: `${circle.left}px`,
-            animation: circle.isConstellation 
-              ? `gleam ${circle.animationDuration}s ease-in-out ${circle.delay}s 1` 
-              : `gleam ${circle.animationDuration}s ease-in-out ${circle.delay}s 1`
+            animation: `gleam ${circle.animationDuration}s ease-in-out ${circle.delay}s 1`
           }}
         >
           <svg width="33" height="33" viewBox="0 0 33 33">
@@ -264,7 +168,7 @@ const Hero = () => {
               style={{
                 animation: circle.filled 
                   ? `gleamFilledOpacity ${circle.animationDuration}s ease-in-out ${circle.delay}s 1`
-                  : `gleamOpacity ${circle.animationDuration}s ease-in-out ${circle.delay}s 1`  
+                  : `gleamOpacity ${circle.animationDuration}s ease-in-out ${circle.delay}s 1`
               }}
             />
           </svg>
