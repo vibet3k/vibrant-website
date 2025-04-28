@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import ContactForm from '@/components/ContactForm';
 import Image from 'next/image';
 import Link from 'next/link';
-{/*import { CircleBackground } from '@/components/CircleBackground';*/}
+import { CircleBackground } from '@/components/CircleBackground';
 
 export const metadata: Metadata = {
   title: 'Contact Us | Vibrant Technology',
@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="min-h-screen overflow-hidden relative">
-      {/* Animated background with circles
-      <CircleBackground /> */}
+      {/* Animated background with circles */}
+      <CircleBackground />
       
       {/* Header with Logo and Nav */}
       <header className="relative w-full py-6 px-6 z-10">

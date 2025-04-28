@@ -29,7 +29,7 @@ export default function ContactForm() {
     try {
       // Here we'll use Formspree as a simple solution
       // Replace 'YOUR_FORM_ID' with the form ID you get from Formspree
-      const response = await fetch('https://formspree.io/f/mzzrdppe', {
+      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
