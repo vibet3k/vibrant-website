@@ -129,7 +129,7 @@ const Hero = () => {
       <div className="absolute inset-0 flex flex-col">
         {/* Top headline - made 15% smaller */}
         <div className="px-12 pt-12">
-          <div className="text-[1.7rem] sm:text-[2.55rem] md:text-[3.4rem] lg:text-[5.1rem] font-bold text-white font-lexend-deca">
+          <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white font-lexend-deca">
             <h1>Vivid Innovation.</h1>
             <h1 className="pl-3 sm:pl-8 md:pl-12 mt-2 md:mt-3">Boundless Possibilities.</h1>
           </div>
@@ -167,8 +167,6 @@ const Hero = () => {
           />
         </div>
         
-        {/* Pink dot accent */}
-        <div className="absolute left-[250px] bottom-[45%] w-4 h-4 rounded-full bg-vt-pink"></div>
       </div>
     </div>
   );
