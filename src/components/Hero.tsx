@@ -1,7 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useState, useRef } from 'react';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 interface GleamingCircle {
   id: number;
@@ -9,21 +10,12 @@ interface GleamingCircle {
   left: number;
   animationDuration: number;
   delay: number;
-  color: string;
-  filled: boolean;
 }
 
 const Hero = () => {
   const [gleamingCircles, setGleamingCircles] = useState<GleamingCircle[]>([]);
-  const circleCountRef = useRef(0); // Counter to track total circles created
-  const lastCircleTimeRef = useRef(0); // Track last time a circle was added
   
   const GRID_SIZE = 33; // Size of our grid cells
-  const BRAND_COLORS = {
-    pink: "#ef5ba1",
-    green: "#39b54a",
-    white: "white"
-  };
   
   // Base circle pattern SVG
   const svgCircle = encodeURIComponent(`
@@ -38,93 +30,53 @@ const Hero = () => {
     const cols = Math.floor(window.innerWidth / GRID_SIZE);
     const rows = Math.floor(window.innerHeight / GRID_SIZE);
     
-    // Keep circles in the middle section
+    // Keep circles in the middle section (20%-70% of height)
     const minRow = Math.floor(rows * 0.2);
     const maxRow = Math.floor(rows * 0.7);
     
     const randomRow = minRow + Math.floor(Math.random() * (maxRow - minRow));
     const randomCol = Math.floor(Math.random() * cols);
-    
-    // Increment counter
-    circleCountRef.current += 1;
-    
-    // Determine circle color - occasionally make it a brand color
-    let color = BRAND_COLORS.white;
-    let filled = false;
-    
-    const colorNum = circleCountRef.current % 15; // Use modulo to determine color
-    if (colorNum === 0) {
-      color = BRAND_COLORS.pink;
-      filled = true;
-    }
-    else if (colorNum === 7) {
-      color = BRAND_COLORS.green;
-      filled = true;
-    }
 
     return {
       id: Math.random(),
       top: randomRow * GRID_SIZE,
       left: randomCol * GRID_SIZE,
       animationDuration: 2 + Math.random() * 2, // 2-4 seconds
-      delay: Math.random() * 0.8, // 0-0.8 seconds delay
-      color: color,
-      filled: filled
+      delay: Math.random() * 2 // 0-2 second delay
     };
-  };
-
-  // Add circles with varying timing for organic effect
-  const addRandomCircle = () => {
-    const now = Date.now();
-    const timeSinceLastCircle = now - lastCircleTimeRef.current;
-    
-    // Add a new circle if enough time has passed
-    if (timeSinceLastCircle > 1500) { // Minimum 1.5s between circle adds
-      const shouldAddCircle = Math.random() < 0.7; // 70% chance to add circle
-      
-      if (shouldAddCircle) {
-        setGleamingCircles(prev => {
-          // Keep array at a reasonable size
-          const updatedCircles = [...prev];
-          // Remove older circles if we have too many
-          if (updatedCircles.length > 15) {
-            updatedCircles.splice(0, updatedCircles.length - 15);
-          }
-          return [...updatedCircles, createGleamingCircle()];
-        });
-        
-        lastCircleTimeRef.current = now;
-      }
-    }
   };
 
   // Initialize and manage gleaming circles
   useEffect(() => {
-    // Initial circles
-    const initialCircles = Array(3).fill(null).map(() => createGleamingCircle());
-    setGleamingCircles(initialCircles);
-    lastCircleTimeRef.current = Date.now();
+    const updateCircles = () => {
+      setGleamingCircles(Array(3).fill(null).map(() => createGleamingCircle()));
+    };
+
+    // Initial creation
+    updateCircles();
 
     // Update on window resize
-    const handleResize = () => {
-      setGleamingCircles(Array(3).fill(null).map(() => createGleamingCircle()));
-      lastCircleTimeRef.current = Date.now();
-    };
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', updateCircles);
 
-    // Frequently check if we should add a new circle (more organic timing)
-    const circleInterval = setInterval(addRandomCircle, 300);
-    
-    // Cleanup
+    // Every few seconds, replace a random circle
+    const interval = setInterval(() => {
+      setGleamingCircles(prev => {
+        const newCircles = [...prev];
+        const indexToReplace = Math.floor(Math.random() * newCircles.length);
+        newCircles[indexToReplace] = createGleamingCircle();
+        return newCircles;
+      });
+    }, 3000);
+
     return () => {
-      clearInterval(circleInterval);
-      window.removeEventListener('resize', handleResize);
+      clearInterval(interval);
+      window.removeEventListener('resize', updateCircles);
     };
   }, []);
 
   return (
     <div className="fixed inset-0 overflow-hidden">
-      {/* Background with gradient */}
+      {/* Background with gradient transitions */}
       <div 
         className="absolute inset-0"
         style={{
@@ -153,7 +105,7 @@ const Hero = () => {
           style={{
             top: `${circle.top}px`,
             left: `${circle.left}px`,
-            animation: `gleam ${circle.animationDuration}s ease-in-out ${circle.delay}s 1`
+            animation: `gleam ${circle.animationDuration}s ease-in-out ${circle.delay}s infinite`
           }}
         >
           <svg width="33" height="33" viewBox="0 0 33 33">
@@ -161,42 +113,62 @@ const Hero = () => {
               cx="16.5"
               cy="16.5"
               r="14"
-              fill={circle.filled ? circle.color : "none"}
-              stroke={circle.color}
-              strokeWidth={circle.filled ? "1" : "2.5"}
+              fill="none"
+              stroke="white"
+              strokeWidth="2.5"
               className="opacity-0"
               style={{
-                animation: circle.filled 
-                  ? `gleamFilledOpacity ${circle.animationDuration}s ease-in-out ${circle.delay}s 1`
-                  : `gleamOpacity ${circle.animationDuration}s ease-in-out ${circle.delay}s 1`
+                animation: `gleamOpacity ${circle.animationDuration}s ease-in-out ${circle.delay}s infinite`
               }}
             />
           </svg>
         </div>
       ))}
 
-      {/* Content */}
-      <div className="absolute inset-0">
-        {/* Headline */}
-        <div className="absolute top-12 sm:top-16 left-6 sm:left-12 right-6 sm:right-12">
-          <div className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white font-['Lexend_Deca']">
+      {/* Content container */}
+      <div className="absolute inset-0 flex flex-col">
+        {/* Top headline - made 15% smaller */}
+        <div className="px-12 pt-12">
+          <div className="text-[1.7rem] sm:text-[2.55rem] md:text-[3.4rem] lg:text-[5.1rem] font-bold text-white font-lexend-deca">
             <h1>Vivid Innovation.</h1>
-            <h1 className="pl-3 sm:pl-8 md:pl-12 mt-2 md:mt-3 whitespace-nowrap">Boundless Possibilities.</h1>
+            <h1 className="pl-3 sm:pl-8 md:pl-12 mt-2 md:mt-3">Boundless Possibilities.</h1>
           </div>
         </div>
-
-        {/* Logo */}
-        <div className="absolute bottom-6 right-6 sm:right-12 flex justify-end">
+        
+        {/* Middle section - Vision Statement */}
+        <div className="flex-grow flex flex-col justify-center items-center">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white font-lexend-deca">
+              Vision<span className="text-white">.</span> Strategy<span className="text-white">.</span> Execution<span className="text-vt-pink">.</span>
+            </h2>
+          </div>
+          
+          {/* CTA Button */}
+          <div>
+            <Link 
+              href="/contact" 
+              className="inline-block px-8 py-3 bg-vt-blue text-white rounded-md text-xl font-semibold hover:bg-vt-blue/90 transition-colors"
+            >
+              Chart Your Course
+            </Link>
+          </div>
+        </div>
+        
+        {/* Logo - positioned in corner */}
+        <div className="absolute bottom-4 right-12">
           <Image
             src="/images/vibrant-tech-logo-noTL.png"
             alt="Vibrant Technology"
-            width={800}
-            height={240}
-            className="w-auto h-24 sm:h-28 md:h-36 lg:h-48"
+            width={300}
+            height={90}
+            className="w-auto h-20 sm:h-28 md:h-36 lg:h-48"
             style={{ objectFit: 'contain' }}
             priority
           />
         </div>
+        
+        {/* Pink dot accent */}
+        <div className="absolute left-[250px] bottom-[45%] w-4 h-4 rounded-full bg-vt-pink"></div>
       </div>
     </div>
   );
