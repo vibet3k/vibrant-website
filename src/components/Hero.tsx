@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 interface GleamingCircle {
   id: number;
@@ -10,12 +10,21 @@ interface GleamingCircle {
   left: number;
   animationDuration: number;
   delay: number;
+  color: string;
+  filled: boolean;
 }
 
 const Hero = () => {
   const [gleamingCircles, setGleamingCircles] = useState<GleamingCircle[]>([]);
+  const circleCountRef = useRef(0); // Counter to track total circles created
+  const lastCircleTimeRef = useRef(0); // Track last time a circle was added
   
   const GRID_SIZE = 33; // Size of our grid cells
+  const BRAND_COLORS = {
+    pink: "#ef5ba1",
+    green: "#39b54a",
+    white: "white"
+  };
   
   // Base circle pattern SVG
   const svgCircle = encodeURIComponent(`
@@ -25,54 +34,94 @@ const Hero = () => {
   `);
 
   // Function to create a new gleaming circle on the grid
-  const createGleamingCircle = useCallback((): GleamingCircle => {
+  const createGleamingCircle = (): GleamingCircle => {
     // Calculate grid positions that align with our pattern
     const cols = Math.floor(window.innerWidth / GRID_SIZE);
     const rows = Math.floor(window.innerHeight / GRID_SIZE);
     
-    // Keep circles in the middle section (20%-70% of height)
+    // Keep circles in the middle section
     const minRow = Math.floor(rows * 0.2);
     const maxRow = Math.floor(rows * 0.7);
     
     const randomRow = minRow + Math.floor(Math.random() * (maxRow - minRow));
     const randomCol = Math.floor(Math.random() * cols);
+    
+    // Increment counter
+    circleCountRef.current += 1;
+    
+    // Determine circle color - occasionally make it a brand color
+    let color = BRAND_COLORS.white;
+    let filled = false;
+    
+    const colorNum = circleCountRef.current % 15; // Use modulo to determine color
+    if (colorNum === 0) {
+      color = BRAND_COLORS.pink;
+      filled = true;
+    }
+    else if (colorNum === 7) {
+      color = BRAND_COLORS.green;
+      filled = true;
+    }
 
     return {
       id: Math.random(),
       top: randomRow * GRID_SIZE,
       left: randomCol * GRID_SIZE,
       animationDuration: 2 + Math.random() * 2, // 2-4 seconds
-      delay: Math.random() * 2 // 0-2 second delay
+      delay: Math.random() * 0.8, // 0-0.8 seconds delay
+      color: color,
+      filled: filled
     };
-  }, [GRID_SIZE]);
+  };
+
+  // Add circles with varying timing for organic effect
+  const addRandomCircle = () => {
+    const now = Date.now();
+    const timeSinceLastCircle = now - lastCircleTimeRef.current;
+    
+    // Add a new circle if enough time has passed
+    if (timeSinceLastCircle > 1500) { // Minimum 1.5s between circle adds
+      const shouldAddCircle = Math.random() < 0.7; // 70% chance to add circle
+      
+      if (shouldAddCircle) {
+        setGleamingCircles(prev => {
+          // Keep array at a reasonable size
+          const updatedCircles = [...prev];
+          // Remove older circles if we have too many
+          if (updatedCircles.length > 15) {
+            updatedCircles.splice(0, updatedCircles.length - 15);
+          }
+          return [...updatedCircles, createGleamingCircle()];
+        });
+        
+        lastCircleTimeRef.current = now;
+      }
+    }
+  };
 
   // Initialize and manage gleaming circles
   useEffect(() => {
-    const updateCircles = () => {
-      setGleamingCircles(Array(3).fill(null).map(() => createGleamingCircle()));
-    };
-
-    // Initial creation
-    updateCircles();
+    // Initial circles
+    const initialCircles = Array(3).fill(null).map(() => createGleamingCircle());
+    setGleamingCircles(initialCircles);
+    lastCircleTimeRef.current = Date.now();
 
     // Update on window resize
-    window.addEventListener('resize', updateCircles);
-
-    // Every few seconds, replace a random circle
-    const interval = setInterval(() => {
-      setGleamingCircles(prev => {
-        const newCircles = [...prev];
-        const indexToReplace = Math.floor(Math.random() * newCircles.length);
-        newCircles[indexToReplace] = createGleamingCircle();
-        return newCircles;
-      });
-    }, 3000);
-
-    return () => {
-      clearInterval(interval);
-      window.removeEventListener('resize', updateCircles);
+    const handleResize = () => {
+      setGleamingCircles(Array(3).fill(null).map(() => createGleamingCircle()));
+      lastCircleTimeRef.current = Date.now();
     };
-  }, [createGleamingCircle]);
+    window.addEventListener('resize', handleResize);
+
+    // Frequently check if we should add a new circle (more organic timing)
+    const circleInterval = setInterval(addRandomCircle, 300);
+    
+    // Cleanup
+    return () => {
+      clearInterval(circleInterval);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <div className="fixed inset-0 overflow-hidden">
@@ -105,7 +154,7 @@ const Hero = () => {
           style={{
             top: `${circle.top}px`,
             left: `${circle.left}px`,
-            animation: `gleam ${circle.animationDuration}s ease-in-out ${circle.delay}s infinite`
+            animation: `gleam ${circle.animationDuration}s ease-in-out ${circle.delay}s 1`
           }}
         >
           <svg width="33" height="33" viewBox="0 0 33 33">
@@ -113,12 +162,14 @@ const Hero = () => {
               cx="16.5"
               cy="16.5"
               r="14"
-              fill="none"
-              stroke="white"
-              strokeWidth="2.5"
+              fill={circle.filled ? circle.color : "none"}
+              stroke={circle.color}
+              strokeWidth={circle.filled ? "1" : "2.5"}
               className="opacity-0"
               style={{
-                animation: `gleamOpacity ${circle.animationDuration}s ease-in-out ${circle.delay}s infinite`
+                animation: circle.filled 
+                  ? `gleamFilledOpacity ${circle.animationDuration}s ease-in-out ${circle.delay}s 1`
+                  : `gleamOpacity ${circle.animationDuration}s ease-in-out ${circle.delay}s 1`
               }}
             />
           </svg>
@@ -166,7 +217,6 @@ const Hero = () => {
             priority
           />
         </div>
-        
       </div>
     </div>
   );
