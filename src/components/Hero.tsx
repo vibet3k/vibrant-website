@@ -19,20 +19,20 @@ const Hero = () => {
         {/* Middle section - Vision Statement */}
         <div className="flex-grow flex flex-col justify-center items-center">
           <div className="text-center mb-16 mt-[-100px]">
-            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white font-lexend-deca">
+            {/* <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white font-lexend-deca">
               Vision<span className="text-white">.</span> Strategy<span className="text-white">.</span> Execution<span className="text-vt-pink">.</span>
-            </h2>
+            </h2> */}
           </div>
           
           {/* CTA Button */}
-          <div>
+          {/* <div>
             <Link 
               href="/contact" 
               className="inline-block px-8 py-3 bg-vt-blue text-white rounded-md text-xl font-semibold hover:bg-vt-blue/90 transition-colors"
             >
               Chart Your Course
             </Link>
-          </div>
+          </div> */}
         </div>
         
         {/* Logo - positioned in corner */}
