@@ -12,7 +12,7 @@ export default function ContactPage() {
   return (
     <BackgroundLayout>
       {/* Main Content - Moved up with reduced padding */}
-      <main className="max-w-7xl mx-auto px-4 pt-8 md:pt-16">
+      <main className="max-w-7xl mx-auto px-4 pt-6 md:pt-16">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16">
           {/* Contact information (2 columns) */}
           <div className="lg:col-span-2 flex flex-col justify-center space-y-10 lg:pr-8">
