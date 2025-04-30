@@ -1,6 +1,7 @@
+// In src/app/contact/page.tsx
 import { Metadata } from 'next';
 import ContactForm from '@/components/ContactForm';
-//import Image from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import BackgroundLayout from '@/components/BackgroundLayout';
 
@@ -12,25 +13,8 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <BackgroundLayout>
-      {/* Header with Logo and Nav */}
-      <header className="w-full py-6 px-6">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">   
-          <nav className="hidden md:flex space-x-8">
-            <Link href="/services" className="text-white hover:text-white/80 transition-colors font-lexend-deca">
-              Services
-            </Link>
-            <Link href="/about" className="text-white hover:text-white/80 transition-colors font-lexend-deca">
-              About
-            </Link>
-            <Link href="/blog" className="text-white hover:text-white/80 transition-colors font-bold font-lexend-deca">
-              Blog
-            </Link>
-          </nav>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 py-16">
+      {/* Main Content - Note the increased top padding to move content up */}
+      <main className="max-w-7xl mx-auto px-4 py-8 md:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
           {/* Contact information (2 columns) */}
           <div className="lg:col-span-2 flex flex-col justify-center space-y-10">
@@ -39,7 +23,7 @@ export default function ContactPage() {
                 Chart Your Strategic Journey
               </h1>
               
-              <p className="text-lg text-white/80 mb-8 font-lexedn-deca leading-relaxed">
+              <p className="text-lg text-white/80 mb-8 font-lexend-deca leading-relaxed">
                 Ready to transform your technology from a cost center to a strategic advantage? 
                 We&apos;re here to help you navigate the evolving tech landscape with confidence.
               </p>
