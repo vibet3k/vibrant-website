@@ -19,7 +19,7 @@ export default function ContactPage() {
           {/* Contact information (2 columns) */}
             <div className="lg:col-span-2 flex flex-col justify-center space-y-10 lg:pr-8">
             <div>
-                <h1 className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 font-lexend-deca whitespace-nowrap">
+                <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6 font-lexend-deca whitespace-nowrap">
                 Start Your Journey
                 </h1>
                 
