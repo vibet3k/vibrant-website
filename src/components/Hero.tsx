@@ -70,6 +70,9 @@ const Hero = () => {
         
         {/* Footer navigation */}
         <div className="w-full flex justify-center mt-auto mb-12">
+          <div className="text-sm text-vt-pink/70">
+              © {new Date().getFullYear()} Vibrant Technology. All rights reserved.
+          </div>
           <nav className="text-[#808080] flex space-x-8 font-lexend-deca">
             <Link href="/services" className="hover:text-vt-blue transition-colors">
               Services
