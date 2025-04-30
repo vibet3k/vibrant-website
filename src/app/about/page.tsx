@@ -46,41 +46,41 @@ export default function AboutPage() {
       </main>
 
     {/* Footer */}
-        <footer className="border-t border-white/20 py-8 mt-24">
-        <div className="max-w-7xl mx-auto px-4">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-sm text-vt-pink/70">
-                © {new Date().getFullYear()} Vibrant Technology. All rights reserved.
-            </div>
-            <nav className="text-[#808080] flex space-x-8 font-lexend-deca mt-4 md:mt-0">
-                <Link href="/services" className="hover:text-vt-blue transition-colors">
-                Services
-                </Link>
-                <Link href="/about" className="hover:text-vt-blue transition-colors">
-                About
-                </Link>
-                <Link href="/blog" className="hover:text-vt-blue transition-colors">
-                Blog
-                </Link>
-            </nav>
-            </div>
+    <footer className="border-t border-white/20 py-8 mt-auto relative">
+    <div className="max-w-7xl mx-auto px-4">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="text-sm text-vt-pink/70">
+            © {new Date().getFullYear()} Vibrant Technology. All rights reserved.
         </div>
-
-        {/* Logo in bottom right */}
-        <div className="absolute bottom-4 right-12">
-            <Link href="/">
-            <Image
-                src="/images/vibrant-tech-logo-noTL.png"
-                alt="Vibrant Technology"
-                width={300}
-                height={90}
-                className="w-auto h-20 sm:h-24 md:h-28 lg:h-36"
-                style={{ objectFit: 'contain' }}
-                priority
-            />
+        <nav className="text-[#808080] flex space-x-8 font-lexend-deca mt-4 md:mt-0 justify-center">
+            <Link href="/services" className="hover:text-vt-blue transition-colors">
+            Services
             </Link>
+            <Link href="/about" className="hover:text-vt-blue transition-colors">
+            About
+            </Link>
+            <Link href="/blog" className="hover:text-vt-blue transition-colors">
+            Blog
+            </Link>
+        </nav>
         </div>
-        </footer>
+        
+        {/* Logo in bottom right - INSIDE the footer */}
+        <div className="absolute bottom-4 right-12">
+        <Link href="/">
+            <Image
+            src="/images/vibrant-tech-logo-noTL.png"
+            alt="Vibrant Technology"
+            width={300}
+            height={90}
+            className="w-auto h-20 sm:h-24 md:h-28 lg:h-36"
+            style={{ objectFit: 'contain' }}
+            priority
+            />
+        </Link>
+        </div>
+    </div>
+    </footer>
     </BackgroundLayout>
   );
 }
