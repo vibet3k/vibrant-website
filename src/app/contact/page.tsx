@@ -86,16 +86,7 @@ export default function ContactPage() {
       <footer className="border-t border-white/20 py-8 mt-24">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
-              <Image
-                src="/images/vibrant-tech-logo-noTL.png"
-                alt="Vibrant Technology"
-                width={150}
-                height={45}
-                className="h-10 w-auto"
-              />
-            </div>
-            <div className="text-sm text-white/70">
+            <div className="text-sm text-vt-pink/70">
               © {new Date().getFullYear()} Vibrant Technology. All rights reserved.
             </div>
           </div>
