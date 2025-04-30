@@ -49,7 +49,7 @@ export default function AboutPage() {
         <footer className="border-t border-white/20 py-8 mt-24">
         <div className="max-w-7xl mx-auto px-4">
             <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-sm text-white/70">
+            <div className="text-sm text-vt-pink/70">
                 © {new Date().getFullYear()} Vibrant Technology. All rights reserved.
             </div>
             <nav className="text-[#808080] flex space-x-8 font-lexend-deca mt-4 md:mt-0">
