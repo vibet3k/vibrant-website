@@ -34,7 +34,7 @@ const Hero = () => {
         <div className="mt-20 md:mt-32 px-6 sm:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Column 1 */}
-            <div className="bg-vt-silver/75 backdrop-blur-sm p-6 rounded-lg">
+            <div className="bg-vt-blue/75 backdrop-blur-sm p-6 rounded-lg">
               <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
                 Tailored to Your Needs
               </h3>
@@ -45,7 +45,7 @@ const Hero = () => {
             </div>
             
             {/* Column 2 */}
-            <div className="bg-vt-silver/75 backdrop-blur-sm p-6 rounded-lg">
+            <div className="bg-vt-red-orange/75 backdrop-blur-sm p-6 rounded-lg">
               <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
                 The Right Roadmap
               </h3>
