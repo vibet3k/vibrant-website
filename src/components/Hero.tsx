@@ -35,7 +35,7 @@ const Hero = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Column 1 */}
             <div className="bg-white/30 backdrop-blur-sm p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-vt-blue font-lexend-deca mb-3">
+              <h3 className="text-xl font-bold text-vt-green font-lexend-deca mb-3">
                 Tailored to Your Needs
               </h3>
               <p className="text-vt-blue font-lexend-deca">
@@ -46,7 +46,7 @@ const Hero = () => {
             
             {/* Column 2 */}
             <div className="bg-white/30 backdrop-blur-sm p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-vt-blue font-lexend-deca mb-3">
+              <h3 className="text-xl font-bold text-vt-green font-lexend-deca mb-3">
                 The Right Roadmap
               </h3>
               <p className="text-vt-blue font-lexend-deca">
@@ -57,7 +57,7 @@ const Hero = () => {
             
             {/* Column 3 */}
             <div className="bg-white/30 backdrop-blur-sm p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-vt-blue font-lexend-deca mb-3">
+              <h3 className="text-xl font-bold text-vt-green font-lexend-deca mb-3">
                 Better Outcomes
               </h3>
               <p className="text-vt-blue font-lexend-deca">
