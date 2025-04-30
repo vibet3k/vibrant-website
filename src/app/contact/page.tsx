@@ -14,26 +14,16 @@ export default function ContactPage() {
     <BackgroundLayout>
       {/* Header with Logo and Nav */}
       <header className="w-full py-6 px-6">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/images/vibrant-tech-logo-noTL.png"
-              alt="Vibrant Technology"
-              width={180}
-              height={54}
-              className="h-12 w-auto"
-            />
-          </Link>
-          
+        <div className="max-w-7xl mx-auto flex justify-between items-center">   
           <nav className="hidden md:flex space-x-8">
-            <Link href="/" className="text-white hover:text-white/80 transition-colors font-lexend-deca">
-              Home
-            </Link>
             <Link href="/services" className="text-white hover:text-white/80 transition-colors font-lexend-deca">
               Services
             </Link>
-            <Link href="/contact" className="text-white hover:text-white/80 transition-colors font-bold font-lexend-deca">
-              Contact
+            <Link href="/about" className="text-white hover:text-white/80 transition-colors font-lexend-deca">
+              About
+            </Link>
+            <Link href="/blog" className="text-white hover:text-white/80 transition-colors font-bold font-lexend-deca">
+              Blog
             </Link>
           </nav>
         </div>
@@ -46,10 +36,10 @@ export default function ContactPage() {
           <div className="lg:col-span-2 flex flex-col justify-center space-y-10">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-lexend-deca">
-                Chart Your <span className="text-vt-pink">Strategic</span> Journey
+                Chart Your Strategic Journey
               </h1>
               
-              <p className="text-lg text-white/80 mb-8 font-radley leading-relaxed">
+              <p className="text-lg text-white/80 mb-8 font-lexedn-deca leading-relaxed">
                 Ready to transform your technology from a cost center to a strategic advantage? 
                 We&apos;re here to help you navigate the evolving tech landscape with confidence.
               </p>
@@ -77,22 +67,6 @@ export default function ContactPage() {
                 <div>
                   <h3 className="text-xl font-semibold text-white font-lexend-deca">Phone</h3>
                   <a href="tel:4405551234" className="text-white/80 hover:text-white transition-colors">(440) 555-1234</a>
-                </div>
-              </div>
-              
-              <div className="mt-8">
-                <h2 className="text-2xl font-bold text-white mb-4 font-lexend-deca">Our Approach</h2>
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-vt-green font-bold">•</span>
-                  <span className="text-white/90">Strategic Consulting</span>
-                </div>
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-vt-blue font-bold">•</span>
-                  <span className="text-white/90">Proactive Management</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-vt-pink font-bold">•</span>
-                  <span className="text-white/90">Customized Technology Solutions</span>
                 </div>
               </div>
             </div>
