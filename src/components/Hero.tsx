@@ -69,7 +69,7 @@ const Hero = () => {
         </div>
         
         {/* Footer navigation */}
-        <div className="w-full flex justify-center mt-auto mb-12">
+        {/* <div className="w-full flex justify-center mt-auto mb-12">
           <nav className="text-[#808080] flex space-x-8 font-lexend-deca">
             <Link href="/services" className="hover:text-vt-blue transition-colors">
               Services
@@ -81,7 +81,7 @@ const Hero = () => {
               Blog
             </Link>
           </nav>
-        </div>
+        </div> */}
         
         {/* Logo - positioned in bottom right corner */}
         <div className="absolute bottom-4 right-12">
