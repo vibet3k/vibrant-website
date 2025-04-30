@@ -13,7 +13,7 @@ export default function BlogPage() {
   return (
     <BackgroundLayout>
       {/* Header with Logo and Nav */}
-      <header className="w-full py-6 px-6">
+      {/* <header className="w-full py-6 px-6">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           
           <nav className="hidden md:flex space-x-8">
@@ -31,7 +31,7 @@ export default function BlogPage() {
             </Link>
           </nav>
         </div>
-      </header>
+      </header> */}
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 py-16">
