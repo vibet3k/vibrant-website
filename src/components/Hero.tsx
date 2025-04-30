@@ -46,10 +46,10 @@ const Hero = () => {
             
             {/* Column 2 */}
             <div className="bg-white/30 backdrop-blur-sm p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
+              <h3 className="text-xl font-bold bg-vt-blue font-lexend-deca mb-3">
                 The Right Roadmap
               </h3>
-              <p className="text-white font-lexend-deca">
+              <p className="bg-vt-blue font-lexend-deca">
                 We don&apos;t lead with products. We lead with strategy — built for your 
                 business, not someone else&apos;s.
               </p>
@@ -57,10 +57,10 @@ const Hero = () => {
             
             {/* Column 3 */}
             <div className="bg-white/30 backdrop-blur-sm p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
+              <h3 className="text-xl font-bold bg-vt-green font-lexend-deca mb-3">
                 Better Outcomes
               </h3>
-              <p className="text-white font-lexend-deca">
+              <p className="bg-vt-green font-lexend-deca">
                 When IT aligns with your business, things just work. Less noise, fewer 
                 tickets. More time for what matters.
               </p>
