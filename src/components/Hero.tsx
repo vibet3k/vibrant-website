@@ -31,36 +31,36 @@ const Hero = () => {
         </div>
         
         {/* Three column features */}
-        <div className="mt-20 md:mt-32 px-6 sm:px-12">
+        <div className="mt-16 md:mt-24 px-6 sm:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Column 1 */}
-            <div className="bg-white/20 backdrop-blur-sm p-6 rounded-lg">
+            <div className="bg-white/30 backdrop-blur-sm p-6 rounded-lg">
               <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
                 Tailored to Your Needs
               </h3>
-              <p className="text-white/90 font-radley">
+              <p className="text-white font-lexend-deca">
                 Our experienced team helps you choose technologies that support your goals — 
                 not what&apos;s hot, what&apos;s right.
               </p>
             </div>
             
             {/* Column 2 */}
-            <div className="bg-white/20 backdrop-blur-sm p-6 rounded-lg">
+            <div className="bg-white/30 backdrop-blur-sm p-6 rounded-lg">
               <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
                 The Right Roadmap
               </h3>
-              <p className="text-white/90 font-radley">
+              <p className="text-white font-lexend-deca">
                 We don&apos;t lead with products. We lead with strategy — built for your 
                 business, not someone else&apos;s.
               </p>
             </div>
             
             {/* Column 3 */}
-            <div className="bg-white/20 backdrop-blur-sm p-6 rounded-lg">
+            <div className="bg-white/30 backdrop-blur-sm p-6 rounded-lg">
               <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
                 Better Outcomes
               </h3>
-              <p className="text-white/90 font-radley">
+              <p className="text-white font-lexend-deca">
                 When IT aligns with your business, things just work. Less noise, fewer 
                 tickets. More time for what matters.
               </p>
