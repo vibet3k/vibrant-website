@@ -15,15 +15,6 @@ export default function BlogPage() {
       {/* Header with Logo and Nav */}
       <header className="w-full py-6 px-6">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/images/vibrant-tech-logo-noTL.png"
-              alt="Vibrant Technology"
-              width={180}
-              height={54}
-              className="h-12 w-auto"
-            />
-          </Link>
           
           <nav className="hidden md:flex space-x-8">
             <Link href="/" className="text-white hover:text-white/80 transition-colors font-lexend-deca">
@@ -55,27 +46,42 @@ export default function BlogPage() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-white/20 py-8 mt-24">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
-              <Link href="/">
-                <Image
-                  src="/images/vibrant-tech-logo-noTL.png"
-                  alt="Vibrant Technology"
-                  width={150}
-                  height={45}
-                  className="h-10 w-auto"
-                />
-              </Link>
-            </div>
-            <div className="text-sm text-white/70">
-              © {new Date().getFullYear()} Vibrant Technology. All rights reserved.
-            </div>
-          </div>
-        </div>
-      </footer>
+{/* Footer */}
+<footer className="border-t border-white/20 py-8 mt-24">
+  <div className="max-w-7xl mx-auto px-4">
+    <div className="flex flex-col md:flex-row justify-between items-center">
+      <div className="text-sm text-white/70">
+        © {new Date().getFullYear()} Vibrant Technology. All rights reserved.
+      </div>
+      <nav className="text-[#808080] flex space-x-8 font-lexend-deca mt-4 md:mt-0">
+        <Link href="/services" className="hover:text-vt-blue transition-colors">
+          Services
+        </Link>
+        <Link href="/about" className="hover:text-vt-blue transition-colors">
+          About
+        </Link>
+        <Link href="/blog" className="hover:text-vt-blue transition-colors">
+          Blog
+        </Link>
+      </nav>
+    </div>
+  </div>
+
+  {/* Logo in bottom right */}
+  <div className="absolute bottom-4 right-12">
+    <Link href="/">
+      <Image
+        src="/images/vibrant-tech-logo-noTL.png"
+        alt="Vibrant Technology"
+        width={300}
+        height={90}
+        className="w-auto h-20 sm:h-24 md:h-28 lg:h-36"
+        style={{ objectFit: 'contain' }}
+        priority
+      />
+    </Link>
+  </div>
+</footer>
     </BackgroundLayout>
   );
 }
