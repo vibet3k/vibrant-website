@@ -25,13 +25,13 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="md:col-span-1">
                 <div className="bg-vt-blue/10 p-6 rounded-lg h-full flex items-center justify-center">
-                  <h2 className="text-2xl font-bold text-vt-blue font-lexend-deca">Virtual CIO Services</h2>
+                  <h2 className="text-2xl font-bold text-vt-blue font-lexend-deca">Virtual CIO</h2>
                 </div>
               </div>
               <div className="md:col-span-2">
                 <p className="text-gray-700 mb-4 font-lexend-deca">
-                  Our Virtual CIO services provide strategic IT leadership without the cost of a full-time executive.
-                  We align your technology initiatives with business objectives, manage risk, develop technology roadmaps,
+                  Our vtCIO service delivers enterprise-level strategic IT leadership without the enterprise-level cost.
+                  We work closely with your executive team to align technology initiatives with business objectives, manage risk, develop technology roadmaps,
                   and ensure your IT investments drive growth and efficiency.
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -46,14 +46,13 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="md:col-span-1">
                 <div className="bg-vt-green/10 p-6 rounded-lg h-full flex items-center justify-center">
-                  <h2 className="text-2xl font-bold text-vt-green font-lexend-deca">Managed IT Services</h2>
+                  <h2 className="text-2xl font-bold text-vt-green font-lexend-deca">Managed IT</h2>
                 </div>
               </div>
               <div className="md:col-span-2">
                 <p className="text-gray-700 mb-4 font-lexend-deca">
-                  Our proactive Managed IT Services keep your technology running smoothly. We monitor, manage, and 
-                  maintain your IT infrastructure, provide helpdesk support, and ensure your systems are secure 
-                  and optimized for maximum uptime and performance.
+                We don&apos;t just keep your systems online—we make sure they work for you. When you need help, we&apos;re here. When something&apos;s off, we get you back on track. 
+                And when you&apos;re unsure how to get the most out of your tech, we&apos;ll walk you through it. Vibrant&apos;s support team blends technical chops with the human touch—calm in a crisis, clear in the confusion, and right there when you need us.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-vt-blue/10 text-vt-blue rounded-full text-sm">24/7 Monitoring</span>
@@ -67,7 +66,7 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="md:col-span-1">
                 <div className="bg-vt-pink/10 p-6 rounded-lg h-full flex items-center justify-center">
-                  <h2 className="text-2xl font-bold text-vt-pink font-lexend-deca">IT Project Services</h2>
+                  <h2 className="text-2xl font-bold text-vt-pink font-lexend-deca">Project Management</h2>
                 </div>
               </div>
               <div className="md:col-span-2">
