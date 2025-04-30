@@ -35,10 +35,10 @@ const Hero = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Column 1 */}
             <div className="bg-white/30 backdrop-blur-sm p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
+              <h3 className="text-xl font-bold #808080 font-lexend-deca mb-3">
                 Tailored to Your Needs
               </h3>
-              <p className="text-white font-lexend-deca">
+              <p className="#808080 font-lexend-deca">
                 Our experienced team helps you choose technologies that support your goals — 
                 not what&apos;s hot, what&apos;s right.
               </p>
