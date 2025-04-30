@@ -85,17 +85,18 @@ const Hero = () => {
         
         {/* Logo - positioned in bottom right corner */}
         <div className="absolute bottom-4 right-12">
-          <Image
-            src="/images/vibrant-tech-logo-noTL.png"
-            alt="Vibrant Technology"
-            width={300}
-            height={90}
-            className="w-auto h-20 sm:h-24 md:h-28 lg:h-36"
-            style={{ objectFit: 'contain' }}
-            priority
-          />
+          <Link href="/">
+            <Image
+              src="/images/vibrant-tech-logo-noTL.png"
+              alt="Vibrant Technology"
+              width={300}
+              height={90}
+              className="w-auto h-20 sm:h-24 md:h-28 lg:h-36"
+              style={{ objectFit: 'contain' }}
+              priority
+            />
+          </Link>
         </div>
-      </div>
     </BackgroundLayout>
   );
 };
