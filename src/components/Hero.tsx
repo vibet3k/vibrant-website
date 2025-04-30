@@ -35,10 +35,10 @@ const Hero = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Column 1 */}
             <div className="bg-white/30 backdrop-blur-sm p-6 rounded-lg">
-              <h3 className="text-xl font-bold #808080 font-lexend-deca mb-3">
+              <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
                 Tailored to Your Needs
               </h3>
-              <p className="#808080 font-lexend-deca">
+              <p className="text-vt-blue font-lexend-deca">
                 Our experienced team helps you choose technologies that support your goals — 
                 not what&apos;s hot, what&apos;s right.
               </p>
@@ -46,10 +46,10 @@ const Hero = () => {
             
             {/* Column 2 */}
             <div className="bg-white/30 backdrop-blur-sm p-6 rounded-lg">
-              <h3 className="text-xl font-bold bg-vt-blue font-lexend-deca mb-3">
+              <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
                 The Right Roadmap
               </h3>
-              <p className="bg-vt-blue font-lexend-deca">
+              <p className="text-vt-blue font-lexend-deca">
                 We don&apos;t lead with products. We lead with strategy — built for your 
                 business, not someone else&apos;s.
               </p>
@@ -57,15 +57,30 @@ const Hero = () => {
             
             {/* Column 3 */}
             <div className="bg-white/30 backdrop-blur-sm p-6 rounded-lg">
-              <h3 className="text-xl font-bold bg-vt-green font-lexend-deca mb-3">
+              <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
                 Better Outcomes
               </h3>
-              <p className="bg-vt-green font-lexend-deca">
+              <p className="text-vt-blue font-lexend-deca">
                 When IT aligns with your business, things just work. Less noise, fewer 
                 tickets. More time for what matters.
               </p>
             </div>
           </div>
+        </div>
+        
+        {/* Footer navigation */}
+        <div className="w-full flex justify-center mt-auto mb-8">
+          <nav className="text-[#808080] flex space-x-8 font-lexend-deca">
+            <Link href="/services" className="hover:text-vt-blue transition-colors">
+              Services
+            </Link>
+            <Link href="/about" className="hover:text-vt-blue transition-colors">
+              About
+            </Link>
+            <Link href="/blog" className="hover:text-vt-blue transition-colors">
+              Blog
+            </Link>
+          </nav>
         </div>
         
         {/* Logo - positioned in bottom right corner */}
