@@ -38,7 +38,7 @@ const Hero = () => {
               <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
                 Tailored to Your Needs
               </h3>
-              <p className="text-vt-blue font-lexend-deca">
+              <p className="text-white font-lexend-deca">
                 Our experienced team helps you choose technologies that support your goals — 
                 not what&apos;s hot, what&apos;s right.
               </p>
@@ -49,7 +49,7 @@ const Hero = () => {
               <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
                 The Right Roadmap
               </h3>
-              <p className="text-vt-blue font-lexend-deca">
+              <p className="text-white font-lexend-deca">
                 We don&apos;t lead with products. We lead with strategy — built for your 
                 business, not someone else&apos;s.
               </p>
@@ -60,7 +60,7 @@ const Hero = () => {
               <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
                 Better Outcomes
               </h3>
-              <p className="text-vt-blue font-lexend-deca">
+              <p className="text-white font-lexend-deca">
                 When IT aligns with your business, things just work. Less noise, fewer 
                 tickets. More time for what matters.
               </p>
