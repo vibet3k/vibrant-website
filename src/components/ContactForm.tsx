@@ -63,7 +63,7 @@ export default function ContactForm() {
       {formStatus === 'success' ? (
         <div className="bg-vt-green/10 p-6 rounded-lg border border-vt-green">
           <h3 className="text-xl font-semibold text-vt-green mb-2 font-lexend-deca">Message Sent Successfully!</h3>
-          <p className="text-gray-700 font-radley">Thank you for reaching out. We&apos;ll be in touch with you shortly.</p>
+          <p className="text-gray-700 font-lexend-deca">Thank you for reaching out. We&apos;ll be in touch with you shortly.</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -79,7 +79,7 @@ export default function ContactForm() {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-md focus:ring-2 focus:ring-vt-blue focus:border-transparent transition-all duration-200 font-radley"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-md focus:ring-2 focus:ring-vt-blue focus:border-transparent transition-all duration-200 font-lexend-deca"
                 placeholder="Your name"
               />
             </div>
@@ -95,7 +95,7 @@ export default function ContactForm() {
                 required
                 value={formData.company}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-md focus:ring-2 focus:ring-vt-blue focus:border-transparent transition-all duration-200 font-radley"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-md focus:ring-2 focus:ring-vt-blue focus:border-transparent transition-all duration-200 font-lexend-deca"
                 placeholder="Your company"
               />
             </div>
@@ -113,7 +113,7 @@ export default function ContactForm() {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-md focus:ring-2 focus:ring-vt-blue focus:border-transparent transition-all duration-200 font-radley"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-md focus:ring-2 focus:ring-vt-blue focus:border-transparent transition-all duration-200 font-lexend-deca"
                 placeholder="your.email@example.com"
               />
             </div>
@@ -128,7 +128,7 @@ export default function ContactForm() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-md focus:ring-2 focus:ring-vt-blue focus:border-transparent transition-all duration-200 font-radley"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-md focus:ring-2 focus:ring-vt-blue focus:border-transparent transition-all duration-200 font-lexend-deca"
                 placeholder="(000) 000-0000"
               />
             </div>
@@ -145,7 +145,7 @@ export default function ContactForm() {
               required
               value={formData.message}
               onChange={handleChange}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-md focus:ring-2 focus:ring-vt-blue focus:border-transparent transition-all duration-200 font-radley"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-md focus:ring-2 focus:ring-vt-blue focus:border-transparent transition-all duration-200 font-lexend-deca"
               placeholder="Tell us about your IT challenges and goals..."
             />
           </div>
@@ -167,7 +167,7 @@ export default function ContactForm() {
           </div>
           
           {formStatus === 'error' && (
-            <div className="bg-red-50 p-4 rounded-md border border-red-200 text-red-600 font-radley">
+            <div className="bg-red-50 p-4 rounded-md border border-red-200 text-red-600 font-lexend-deca">
               Something went wrong. Please try again or contact us directly at info@vibet3k.com.
             </div>
           )}
