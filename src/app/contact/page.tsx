@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import ContactForm from '@/components/ContactForm';
-import Image from 'next/image';
+// import Image from 'next/image';
 import Link from 'next/link';
 import BackgroundLayout from '@/components/BackgroundLayout';
 
