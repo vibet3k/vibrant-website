@@ -61,7 +61,7 @@ export default function ContactPage() {
             </div>
           
           {/* Contact form (3 columns) - Added pt-8 to push it down */}
-            <div className="lg:col-span-3 px-0 sm:px-8 pt-8">
+            <div className="lg:col-span-3 px-0 sm:px-8 pt-10">
                 <div className="bg-white/95 backdrop-blur-md p-8 rounded-lg shadow-xl">
                     <h2 className="text-3xl font-bold mb-6 text-vt-blue font-lexend-deca">Reach Out</h2>
                     <ContactForm />
