@@ -29,7 +29,7 @@ export default function ServicesPage() {
                 </div>
               </div>
               <div className="md:col-span-2">
-                <p className="text-gray-700 mb-4 font-radley">
+                <p className="text-gray-700 mb-4 font-lexend-deca">
                   Our Virtual CIO services provide strategic IT leadership without the cost of a full-time executive.
                   We align your technology initiatives with business objectives, manage risk, develop technology roadmaps,
                   and ensure your IT investments drive growth and efficiency.
@@ -50,7 +50,7 @@ export default function ServicesPage() {
                 </div>
               </div>
               <div className="md:col-span-2">
-                <p className="text-gray-700 mb-4 font-radley">
+                <p className="text-gray-700 mb-4 font-lexend-deca">
                   Our proactive Managed IT Services keep your technology running smoothly. We monitor, manage, and 
                   maintain your IT infrastructure, provide helpdesk support, and ensure your systems are secure 
                   and optimized for maximum uptime and performance.
@@ -71,7 +71,7 @@ export default function ServicesPage() {
                 </div>
               </div>
               <div className="md:col-span-2">
-                <p className="text-gray-700 mb-4 font-radley">
+                <p className="text-gray-700 mb-4 font-lexend-deca">
                   From cloud migrations to infrastructure upgrades, our IT Project Services deliver successful technology 
                   implementations. We manage the entire project lifecycle, ensuring your projects are completed on time, 
                   within budget, and deliver the expected results.
