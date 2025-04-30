@@ -1,6 +1,6 @@
 // src/app/services/page.tsx
 import { Metadata } from 'next';
-import Image from 'next/image';
+//import Image from 'next/image';
 import Link from 'next/link';
 import BackgroundLayout from '@/components/BackgroundLayout';
 
