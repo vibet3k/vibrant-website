@@ -20,7 +20,7 @@ export default function ContactPage() {
             <div className="lg:col-span-2 flex flex-col justify-center space-y-10 lg:pr-8">
             <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-lexend-deca">
-                Chart Your Strategic Journey
+                Start Your Journey
                 </h1>
                 
                 {/* Add background to paragraph for better readability */}
