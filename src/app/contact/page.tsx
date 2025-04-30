@@ -1,8 +1,8 @@
 // In src/app/contact/page.tsx
 import { Metadata } from 'next';
 import ContactForm from '@/components/ContactForm';
-import Image from 'next/image';
-import Link from 'next/link';
+//import Image from 'next/image';
+//import Link from 'next/link';
 import BackgroundLayout from '@/components/BackgroundLayout';
 
 export const metadata: Metadata = {
