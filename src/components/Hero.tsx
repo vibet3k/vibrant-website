@@ -97,6 +97,7 @@ const Hero = () => {
             />
           </Link>
         </div>
+      </div>
     </BackgroundLayout>
   );
 };
