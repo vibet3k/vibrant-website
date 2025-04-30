@@ -31,7 +31,7 @@ const Hero = () => {
         </div>
         
         {/* Three column features */}
-        <div className="mt-16 md:mt-24 px-6 sm:px-12">
+        <div className="mt-20 md:mt-32 px-6 sm:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Column 1 */}
             <div className="bg-white/20 backdrop-blur-sm p-6 rounded-lg">
