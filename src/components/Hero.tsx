@@ -1,28 +1,81 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import BackgroundLayout from './BackgroundLayout';
 
 const Hero = () => {
   return (
     <BackgroundLayout>
       <div className="w-full h-full flex flex-col">
-        {/* Top headline */}
-        {/* <div className="px-12 pt-12">
-          <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white font-lexend-deca">
-            <h1>Anyone can fix a broken laptop</h1>
-            <h1 className="pl-3 sm:pl-8 md:pl-12 mt-2 md:mt-3">We fix broken plans</h1>
-          </div>
-        </div> */}
+        {/* Main content container */}
+        <div className="flex flex-col items-center text-center px-6 pt-16 md:pt-24">
+          {/* Headline */}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-lexend-deca">
+            Vision. Strategy. Execution<span className="text-vt-pink">.</span>
+          </h1>
+          
+          {/* Subheadline */}
+          <p className="text-xl md:text-2xl text-white font-lexend-deca mt-4 max-w-3xl">
+            Strategic Virtual CIO and Managed IT Services for ambitious small 
+            and mid-sized businesses
+          </p>
+          
+          {/* CTA Button */}
+          <Link 
+            href="/contact" 
+            className="mt-8 inline-block px-8 py-3 bg-vt-blue text-white rounded-md text-lg font-semibold hover:bg-vt-blue/90 transition-colors"
+          >
+            Chart Your Course
+          </Link>
+        </div>
         
-        {/* Logo - positioned in corner */}
+        {/* Three column features */}
+        <div className="flex-grow flex flex-col justify-center px-6 sm:px-12 mt-8 md:mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Column 1 */}
+            <div className="bg-white/20 backdrop-blur-sm p-6 rounded-lg">
+              <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
+                Tailored to Your Needs
+              </h3>
+              <p className="text-white/90 font-radley">
+                Our experienced team helps you choose technologies that support your goals — 
+                not what's hot, what's right.
+              </p>
+            </div>
+            
+            {/* Column 2 */}
+            <div className="bg-white/20 backdrop-blur-sm p-6 rounded-lg">
+              <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
+                The Right Roadmap
+              </h3>
+              <p className="text-white/90 font-radley">
+                We don't lead with products. We lead with strategy — built for your 
+                business, not someone else's.
+              </p>
+            </div>
+            
+            {/* Column 3 */}
+            <div className="bg-white/20 backdrop-blur-sm p-6 rounded-lg">
+              <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
+                Better Outcomes
+              </h3>
+              <p className="text-white/90 font-radley">
+                When IT aligns with your business, things just work. Less noise, fewer 
+                tickets. More time for what matters.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        {/* Logo - positioned in bottom right corner */}
         <div className="absolute bottom-4 right-12">
           <Image
             src="/images/vibrant-tech-logo-noTL.png"
             alt="Vibrant Technology"
             width={300}
             height={90}
-            className="w-auto h-20 sm:h-28 md:h-32 lg:h-48"
+            className="w-auto h-20 sm:h-24 md:h-28 lg:h-36"
             style={{ objectFit: 'contain' }}
             priority
           />
