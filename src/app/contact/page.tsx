@@ -34,7 +34,7 @@ export default function ContactPage() {
             
             <div className="grid grid-cols-1 gap-8 mt-8">
                 {/* Add semi-transparent backgrounds to contact details */}
-                <div className="bg-vt-blue/30 backdrop-blur-sm p-4 rounded-lg flex items-start gap-6">
+                <div className="bg-vt-green/30 backdrop-blur-sm p-4 rounded-lg flex items-start gap-6">
                 <div className="w-12 h-12 rounded-full bg-vt-green flex items-center justify-center text-white shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
