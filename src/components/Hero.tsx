@@ -40,7 +40,7 @@ const Hero = () => {
               </h3>
               <p className="text-white/90 font-radley">
                 Our experienced team helps you choose technologies that support your goals — 
-                not what's hot, what's right.
+                not what&apos;s hot, what&apos;s right.
               </p>
             </div>
             
@@ -50,8 +50,8 @@ const Hero = () => {
                 The Right Roadmap
               </h3>
               <p className="text-white/90 font-radley">
-                We don't lead with products. We lead with strategy — built for your 
-                business, not someone else's.
+                We don&apos;t lead with products. We lead with strategy — built for your 
+                business, not someone else&apos;s.
               </p>
             </div>
             
