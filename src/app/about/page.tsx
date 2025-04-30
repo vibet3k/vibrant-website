@@ -49,7 +49,7 @@ export default function AboutPage() {
           </h1>
           
           <p className="text-lg text-gray-700 font-radley leading-relaxed">
-            Coming soon! We're working on our About page.
+            Coming soon! {"We're"} working on our About page.
           </p>
         </div>
       </main>
