@@ -1,50 +1,54 @@
-// src/app/blog/page.tsx
-import { Metadata } from 'next';
-//import Image from 'next/image';
-//import Link from 'next/link';
+import fs from 'fs/promises';
+import path from 'path';
+import matter from 'gray-matter';
+import Link from 'next/link';
 import BackgroundLayout from '@/components/BackgroundLayout';
 
-export const metadata: Metadata = {
-  title: 'Blog | Vibrant Technology',
-  description: 'Latest insights on strategic IT management and technology trends.',
-};
+interface PostMeta {
+  title: string;
+  slug: string;
+  date: string;
+  description: string;
+}
 
-export default function BlogPage() {
+export default async function BlogIndexPage() {
+  const posts = await getPosts();
+
   return (
     <BackgroundLayout>
-      {/* Header with Logo and Nav */}
-      {/* <header className="w-full py-6 px-6">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          
-          <nav className="hidden md:flex space-x-8">
-            <Link href="/" className="text-white hover:text-white/80 transition-colors font-lexend-deca">
-              Home
-            </Link>
-            <Link href="/services" className="text-white hover:text-white/80 transition-colors font-lexend-deca">
-              Services
-            </Link>
-            <Link href="/about" className="text-white hover:text-white/80 transition-colors font-lexend-deca">
-              About
-            </Link>
-            <Link href="/blog" className="text-white hover:text-white/80 transition-colors font-bold font-lexend-deca">
-              Blog
-            </Link>
-          </nav>
-        </div>
-      </header> */}
+      <main className="max-w-4xl mx-auto px-6 py-16">
+        <div className="bg-white/95 backdrop-blur-md rounded-lg shadow-xl p-10">
+          <h1 className="text-4xl font-bold mb-10 text-vt-blue font-lexend-deca">Blog</h1>
 
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 py-16">
-        <div className="bg-white/80 rounded-lg p-8 backdrop-blur-sm">
-          <h1 className="text-4xl md:text-5xl font-bold text-vt-blue mb-6 font-lexend-deca">
-            Blog
-          </h1>
-          
-          <p className="text-lg text-gray-700 font-radley leading-relaxed">
-            Coming soon! We&apos;re working on our blog content.
-          </p>
+          <div className="space-y-12">
+            {posts.map((post) => (
+              <div key={post.slug}>
+                <h2 className="text-2xl font-bold text-vt-blue font-lexend-deca mb-1">
+                  <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                </h2>
+                <p className="text-sm text-vt-pink mb-2">{post.date}</p>
+                <p className="text-vt-silver">{post.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </main>
     </BackgroundLayout>
   );
+}
+
+async function getPosts(): Promise<PostMeta[]> {
+  const postsDir = path.join(process.cwd(), 'src/content/blog');
+  const filenames = await fs.readdir(postsDir);
+
+  const posts = await Promise.all(
+    filenames.map(async (filename) => {
+      const filePath = path.join(postsDir, filename);
+      const fileContent = await fs.readFile(filePath, 'utf-8');
+      const { data } = matter(fileContent);
+      return data as PostMeta;
+    })
+  );
+
+  return posts;
 }
