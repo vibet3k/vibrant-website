@@ -1,15 +1,12 @@
 import type { NextConfig } from 'next';
-import createMDX from '@next/mdx';
-
-const withMDX = createMDX({
-  extension: /\.mdx?$/,
-});
 
 const nextConfig: NextConfig = {
+  // Remove the 'mdxRs' experimental flag if it exists
   experimental: {
-    mdxRs: true,
+    // Any other experimental features can stay
   },
-  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+  // Remove '.md' and '.mdx' from pageExtensions if they're there
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx'],
 };
 
-export default withMDX(nextConfig);
+export default nextConfig;
