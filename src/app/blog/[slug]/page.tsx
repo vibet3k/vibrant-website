@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+//import { Metadata } from 'next';
 import BackgroundLayout from '@/components/BackgroundLayout';
 
 // Define params type directly
