@@ -1,3 +1,5 @@
+import { PortableTextBlock } from '@portabletext/react';
+
 export interface Author {
   _id: string;
   name: string;
@@ -6,7 +8,7 @@ export interface Author {
       url: string;
     };
   };
-  bio: Record<string, unknown>[];
+  bio: PortableTextBlock[];
 }
 
 export interface Post {
@@ -20,6 +22,6 @@ export interface Post {
     };
   };
   publishedAt: string;
-  body: Record<string, unknown>[];
+  body: PortableTextBlock[];
   author: Author;
 }
