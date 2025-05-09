@@ -13,10 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${lexendDeca.variable} ${radley.variable} antialiased`}
-      >
+    <html lang="en" className={`${lexendDeca.variable} ${radley.variable}`}>
+      <body className="antialiased">
         {children}
       </body>
     </html>
