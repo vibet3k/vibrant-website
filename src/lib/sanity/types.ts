@@ -6,7 +6,7 @@ export interface Author {
       url: string;
     };
   };
-  bio: any[];
+  bio: Record<string, unknown>[];
 }
 
 export interface Post {
@@ -20,6 +20,6 @@ export interface Post {
     };
   };
   publishedAt: string;
-  body: any[];
+  body: Record<string, unknown>[];
   author: Author;
 }

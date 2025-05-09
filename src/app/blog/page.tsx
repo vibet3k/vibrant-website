@@ -35,7 +35,7 @@ export default async function BlogIndexPage() {
           ) : (
             <div className="my-8 p-6 bg-vt-blue/10 rounded-lg">
               <h2 className="text-xl font-bold text-vt-blue font-lexend-deca mb-2">Coming Soon!</h2>
-              <p className="text-vt-silver">We're currently working on our blog content. Check back soon for updates!</p>
+              <p className="text-vt-silver">We&apos;re currently working on our blog content. Check back soon for updates!</p>
             </div>
           )}
         </div>
