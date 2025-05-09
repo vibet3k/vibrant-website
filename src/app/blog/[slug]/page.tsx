@@ -1,10 +1,19 @@
 // src/app/blog/[slug]/page.tsx
 import BackgroundLayout from '@/components/BackgroundLayout';
+import type { Metadata } from 'next';
 
-// Completely disable types for now
-export default function BlogPostPage(props: any) {
-  const { params } = props;
-  
+// Define properly typed params
+interface BlogParams {
+  slug: string;
+}
+
+// Define props type according to Next.js requirements
+interface PageProps {
+  params: BlogParams;
+  searchParams: Record<string, string | string[] | undefined>;
+}
+
+export default function BlogPostPage({ params }: PageProps): JSX.Element {
   return (
     <BackgroundLayout>
       <main className="max-w-4xl mx-auto px-6 py-16">
@@ -13,7 +22,7 @@ export default function BlogPostPage(props: any) {
           <p className="text-sm text-vt-pink mb-8">We&apos;re working on our blog</p>
           <article className="prose prose-lg prose-vt max-w-none">
             <p>We&apos;re currently migrating our blog to a new content management system.</p>
-            <p>Check back soon to see our post: {params?.slug}</p>
+            <p>Check back soon to see our post: {params.slug}</p>
           </article>
         </div>
       </main>
@@ -21,11 +30,10 @@ export default function BlogPostPage(props: any) {
   );
 }
 
-// Metadata
-export function generateMetadata(props: any) {
-  const { params } = props;
+// Properly typed metadata function
+export function generateMetadata({ params }: PageProps): Metadata {
   return {
-    title: `${params?.slug || 'Post'} | Vibrant Technology Blog`,
+    title: `${params.slug} | Vibrant Technology Blog`,
     description: 'Our blog content is coming soon.'
   };
 }
