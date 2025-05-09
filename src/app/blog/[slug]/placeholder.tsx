@@ -1,6 +1,5 @@
-// src/app/blog/[slug]/page.tsx
+// src/app/blog/[slug]/placeholder.tsx
 import BackgroundLayout from '@/components/BackgroundLayout';
-import { Metadata } from 'next';
 
 type Props = {
   params: {
@@ -8,14 +7,7 @@ type Props = {
   };
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  return {
-    title: `${params.slug} | Vibrant Technology Blog`,
-    description: 'Our blog content is coming soon.'
-  };
-}
-
-export default function BlogPostPage(props: Props) {
+export default function BlogPostPlaceholder(props: Props) {
   const { params } = props;
   return (
     <BackgroundLayout>
