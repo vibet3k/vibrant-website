@@ -75,7 +75,7 @@ export const CircleBackground = () => {
       color: color,
       filled: filled
     };
-  }, [GRID_SIZE]);
+  }, [GRID_SIZE, BRAND_COLORS.white, BRAND_COLORS.pink, BRAND_COLORS.green, BRAND_COLORS.blue]);
 
   // Add circles with varying timing for organic effect
   const addRandomCircle = useCallback(() => {
