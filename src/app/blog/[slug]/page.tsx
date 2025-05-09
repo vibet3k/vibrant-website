@@ -1,6 +1,6 @@
 // src/app/blog/[slug]/page.tsx
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
 import { format } from 'date-fns';
 import BackgroundLayout from '@/components/BackgroundLayout';
@@ -8,13 +8,13 @@ import { client } from '@/lib/sanity';
 import { postQuery } from '@/lib/sanity/queries';
 import { Post } from '@/lib/sanity/types';
 
-// Use the correct typing for Next.js 15 App Router
-export default async function BlogPostPage({
-  params
-}: {
-  params: { slug: string }
-}) {
-  const post = await getPost(params.slug);
+// Remove all custom interfaces and let Next.js handle the typing
+export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+  // Get the slug from params
+  const { slug } = params;
+  
+  // Fetch the post data
+  const post = await getPost(slug);
   
   if (!post) {
     notFound();
