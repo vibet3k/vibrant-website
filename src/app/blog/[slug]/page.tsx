@@ -1,7 +1,7 @@
    // src/app/blog/[slug]/page.tsx
    import { Metadata } from 'next';
    import BackgroundLayout from '@/components/BackgroundLayout';
-   import { client } from '@/lib/sanity';
+   import { client, projectId } from '@/lib/sanity';
    import { postQuery } from '@/lib/sanity/queries';
    import { Post } from '@/lib/sanity/types';
 
@@ -19,9 +19,12 @@
    export default async function Page(props: BlogPostPageProps) {
      const { slug } = props.params;
      
+     // Try to fetch the post data
      let post: Post | null = null;
      try {
-       post = await client.fetch(postQuery, { slug });
+       if (client && projectId) {
+         post = await client.fetch(postQuery, { slug });
+       }
      } catch (error) {
        console.error('Error fetching post:', error);
      }
@@ -38,6 +41,7 @@
                  )}
                  <div className="prose prose-lg prose-vt max-w-none">
                    <p>{post.description}</p>
+                   {/* We'll add the PortableText component in a future step */}
                  </div>
                </>
              ) : (

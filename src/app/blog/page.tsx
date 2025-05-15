@@ -1,7 +1,7 @@
 // src/app/blog/page.tsx
 import Link from 'next/link';
 import BackgroundLayout from '@/components/BackgroundLayout';
-import { client } from '@/lib/sanity';
+import { client, projectId } from '@/lib/sanity';
 import { postsQuery } from '@/lib/sanity/queries';
 import { Post } from '@/lib/sanity/types';
 
@@ -9,7 +9,10 @@ export default async function BlogIndexPage() {
   // Try to fetch posts, but handle failures gracefully
   let posts: Post[] = [];
   try {
-    posts = await client.fetch(postsQuery);
+    // Only fetch if projectId exists
+    if (client && projectId) {
+      posts = await client.fetch(postsQuery);
+    }
   } catch (error) {
     console.error('Error fetching blog posts:', error);
   }
