@@ -37,7 +37,7 @@
      return (
        <BackgroundLayout>
          <main className="mx-auto px-6 py-16">
-           <div className="bg-white/95 backdrop-blur-md rounded-lg shadow-xl w-[900px] max-w-full mx-auto overflow-hidden max-h-[80vh] flex flex-col">
+           <div className="bg-white/95 backdrop-blur-md rounded-lg shadow-xl w-[1000px] max-w-full mx-auto overflow-hidden max-h-[80vh] flex flex-col">
              {post ? (
                <>
                  <div className="sticky top-0 bg-white z-10 p-10 pb-6 border-b border-gray-200">
@@ -58,7 +58,7 @@
                  
                  <div className="overflow-y-auto p-10 pt-6">
                    {post.mainImage?.asset?.url && (
-                     <div className="relative w-full h-72 md:h-96 mb-8 rounded-lg overflow-hidden">
+                     <div className="relative w-full h-72 md:h-96 mb-6 rounded-lg overflow-hidden">
                        <Image
                          src={post.mainImage.asset.url}
                          alt={post.title || 'Blog post image'}
@@ -70,14 +70,14 @@
                      </div>
                    )}
                    
-                   <article className="prose prose-lg prose-vt max-w-none [&>p]:leading-relaxed [&>p]:my-3">
+                   <article className="prose prose-lg prose-vt max-w-none [&>p]:leading-relaxed [&>p]:my-2 [&>ul]:mt-1 [&>ul]:mb-2 [&>ul>li]:my-1 [&_p+ul]:mt-0">
                      <PortableText 
                        value={post.body}
                        components={{
                          types: {
                            image: ({value}) => {
                              return (
-                               <div className="my-8">
+                               <div className="my-6">
                                  <Image
                                    src={value.asset.url}
                                    alt={value.alt || 'Blog image'}
@@ -104,7 +104,7 @@
                              const style = typeStyles[calloutType in typeStyles ? calloutType : 'info'];
                              
                              return (
-                               <div className={`p-4 my-6 rounded-r-lg ${style}`}>
+                               <div className={`p-3 my-4 rounded-r-lg ${style}`}>
                                  <PortableText value={value.content} />
                                </div>
                              );
