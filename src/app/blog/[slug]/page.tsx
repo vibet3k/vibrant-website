@@ -35,14 +35,26 @@
      
      return (
        <BackgroundLayout>
-         <main className="max-w-4xl mx-auto px-6 py-16">
-           <div className="bg-white/95 backdrop-blur-md rounded-lg shadow-xl p-10">
+         <main className="mx-auto px-6 py-16">
+           <div className="bg-white/95 backdrop-blur-md rounded-lg shadow-xl p-10 min-h-[600px] w-[900px] max-w-full mx-auto">
              {post ? (
                <>
-                 <h1 className="font-lexend-deca text-vt-blue text-4xl mb-2">{post.title}</h1>
-                 {post.publishedAt && (
-                  <p className="text-sm text-vt-pink mb-8">{format(new Date(post.publishedAt), 'MMMM d, yyyy')}</p>
-                )}
+                 <div className="mb-10 pb-6 border-b border-gray-200">
+                   <h1 className="font-lexend-deca text-vt-blue text-4xl mb-2">
+                     {post.title}
+                   </h1>
+                   {post.description && (
+                     <p className="text-lg text-gray-600 mt-3 font-lexend-deca">
+                       {post.description}
+                     </p>
+                   )}
+                   {post.publishedAt && (
+                     <p className="text-sm text-vt-pink mt-4">
+                       {format(new Date(post.publishedAt), 'MMMM d, yyyy')}
+                     </p>
+                   )}
+                 </div>
+                 
                  {post.mainImage?.asset?.url && (
                    <div className="relative w-full h-72 md:h-96 mb-8 rounded-lg overflow-hidden">
                      <Image
@@ -55,14 +67,10 @@
                      />
                    </div>
                  )}
-                 <div className="prose prose-lg prose-vt max-w-none">
-                   <p>{post.description}</p>
-                   {post.body && (
-                     <article className="prose prose-lg prose-vt max-w-none mt-6">
-                       <PortableText value={post.body} />
-                     </article>
-                   )}
-                 </div>
+                 
+                 <article className="prose prose-lg prose-vt max-w-none">
+                   <PortableText value={post.body} />
+                 </article>
                </>
              ) : (
                <>

@@ -20,21 +20,33 @@ export default async function BlogIndexPage() {
 
   return (
     <BackgroundLayout>
-      <main className="max-w-4xl mx-auto px-6 py-16">
-        <div className="bg-white/95 backdrop-blur-md rounded-lg shadow-xl p-10">
-          <h1 className="text-4xl font-bold mb-10 text-vt-blue font-lexend-deca">Blog</h1>
+      <main className="mx-auto px-6 py-16">
+        <div className="bg-white/95 backdrop-blur-md rounded-lg shadow-xl p-10 min-h-[600px] w-[900px] max-w-full mx-auto">
+          <div className="mb-12 pb-4 border-b-2 border-gradient-to-r from-vt-blue to-vt-pink">
+            <h1 className="text-4xl font-bold text-vt-blue font-lexend-deca">Blog</h1>
+            <p className="text-vt-silver mt-2 text-lg">Insights on technology strategy for ambitious businesses</p>
+          </div>
 
           {posts.length > 0 ? (
             <div className="space-y-12">
               {posts.map((post: Post) => (
-                <div key={post._id || (typeof post.slug === 'string' ? post.slug : post.slug?.current)}>
+                <div key={post._id || (typeof post.slug === 'string' ? post.slug : post.slug?.current)} 
+                     className="group hover:bg-blue-50/30 p-4 rounded-lg transition-colors">
                   <h2 className="text-2xl font-bold text-vt-blue font-lexend-deca mb-1">
-                    <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                    <Link href={`/blog/${post.slug}`} className="hover:text-vt-pink transition-colors">
+                      {post.title}
+                    </Link>
                   </h2>
                   {post.publishedAt && (
-                   <p className="text-sm text-vt-pink mb-2">{format(new Date(post.publishedAt), 'MMMM d, yyyy')}</p>
+                    <p className="text-sm text-vt-pink mb-2">{format(new Date(post.publishedAt), 'MMMM d, yyyy')}</p>
                   )}
                   <p className="text-vt-silver">{post.description}</p>
+                  <Link 
+                    href={`/blog/${post.slug}`} 
+                    className="inline-block mt-4 text-vt-blue hover:text-vt-pink transition-colors"
+                  >
+                    Read more →
+                  </Link>
                 </div>
               ))}
             </div>
