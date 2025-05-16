@@ -36,7 +36,7 @@
      return (
        <BackgroundLayout>
          <main className="mx-auto px-6 py-16">
-           <div className="bg-white/95 backdrop-blur-md rounded-lg shadow-xl p-10 min-h-[600px] w-[900px] max-w-full mx-auto">
+           <div className="bg-white/95 backdrop-blur-md rounded-lg shadow-xl p-10 min-h-[600px] w-[900px] max-w-full mx-auto overflow-y-auto max-h-[80vh]">
              {post ? (
                <>
                  <div className="mb-10 pb-6 border-b border-gray-200">
