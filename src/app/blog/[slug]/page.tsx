@@ -5,8 +5,8 @@
    import { postQuery } from '@/lib/sanity/queries';
    import { Post } from '@/lib/sanity/types';
    import { PortableText } from '@portabletext/react';
-   import Image from 'next/image';
    import { format } from 'date-fns';
+   import Image from 'next/image';
    
 
    export const metadata: Metadata = {
@@ -43,6 +43,18 @@
                  {post.publishedAt && (
                   <p className="text-sm text-vt-pink mb-8">{format(new Date(post.publishedAt), 'MMMM d, yyyy')}</p>
                 )}
+                 {post.mainImage?.asset?.url && (
+                   <div className="relative w-full h-72 md:h-96 mb-8 rounded-lg overflow-hidden">
+                     <Image
+                       src={post.mainImage.asset.url}
+                       alt={post.title || 'Blog post image'}
+                       fill
+                       priority
+                       className="object-cover"
+                       sizes="(max-width: 768px) 100vw, 800px"
+                     />
+                   </div>
+                 )}
                  <div className="prose prose-lg prose-vt max-w-none">
                    <p>{post.description}</p>
                    {post.body && (
