@@ -87,6 +87,27 @@
                                </div>
                              );
                            },
+                           callout: ({value}) => {
+                             // Define valid callout types
+                             type CalloutType = 'info' | 'warning' | 'tip';
+                             
+                             // Add styling based on callout type
+                             const typeStyles: Record<CalloutType, string> = {
+                               info: "bg-blue-50 border-l-4 border-blue-500",
+                               warning: "bg-amber-50 border-l-4 border-amber-500",
+                               tip: "bg-green-50 border-l-4 border-green-500"
+                             };
+                             
+                             // Ensure type is a valid key, default to 'info' if not
+                             const calloutType = (value.type as CalloutType) || 'info';
+                             const style = typeStyles[calloutType in typeStyles ? calloutType : 'info'];
+                             
+                             return (
+                               <div className={`p-6 my-8 rounded-r-lg ${style}`}>
+                                 <PortableText value={value.content} />
+                               </div>
+                             );
+                           }
                          }
                        }}
                      />
