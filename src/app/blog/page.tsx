@@ -6,6 +6,8 @@ import { postsQuery } from '@/lib/sanity/queries';
 import { Post } from '@/lib/sanity/types';
 import { format } from 'date-fns';
 
+export const revalidate = 0;
+
 export default async function BlogIndexPage() {
   // Try to fetch posts, but handle failures gracefully
   let posts: Post[] = [];
@@ -33,7 +35,7 @@ export default async function BlogIndexPage() {
                 <div key={post._id || (typeof post.slug === 'string' ? post.slug : post.slug?.current)} 
                      className="group hover:bg-blue-50/30 p-4 rounded-lg transition-colors">
                   <h2 className="text-2xl font-bold text-vt-blue font-lexend-deca mb-1">
-                    <Link href={`/blog/${post.slug}`} className="hover:text-vt-pink transition-colors">
+                    <Link href={`/blog/${typeof post.slug === 'string' ? post.slug : post.slug?.current}`} className="hover:text-vt-pink transition-colors">
                       {post.title}
                     </Link>
                   </h2>
@@ -42,7 +44,7 @@ export default async function BlogIndexPage() {
                   )}
                   <p className="text-vt-silver">{post.description}</p>
                   <Link 
-                    href={`/blog/${post.slug}`} 
+                    href={`/blog/${typeof post.slug === 'string' ? post.slug : post.slug?.current}`} 
                     className="inline-block mt-4 text-vt-blue hover:text-vt-pink transition-colors"
                   >
                     Read more →

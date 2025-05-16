@@ -8,6 +8,7 @@
    import { format } from 'date-fns';
    import Image from 'next/image';
    
+   export const revalidate = 0;
 
    export const metadata: Metadata = {
      title: 'Blog Post',
