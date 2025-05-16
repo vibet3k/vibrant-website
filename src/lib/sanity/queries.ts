@@ -5,7 +5,7 @@ export const postQuery = groq`
     _id,
     title,
     description,
-    slug,
+    "slug": slug.current,
     mainImage {
       asset-> {
         url
@@ -16,12 +16,18 @@ export const postQuery = groq`
     author-> {
       _id,
       name,
+      "slug": slug.current,
       image {
         asset-> {
           url
         }
       },
       bio
+    },
+    categories[]->{
+      _id,
+      title,
+      description
     }
   }
 `;
@@ -31,7 +37,7 @@ export const postsQuery = groq`
     _id,
     title,
     description,
-    slug,
+    "slug": slug.current,
     mainImage {
       asset-> {
         url
@@ -40,6 +46,10 @@ export const postsQuery = groq`
     publishedAt,
     author-> {
       name
+    },
+    categories[]->{
+      _id,
+      title
     }
   }
 `;

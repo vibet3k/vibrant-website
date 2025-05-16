@@ -4,6 +4,7 @@ import BackgroundLayout from '@/components/BackgroundLayout';
 import { client, projectId } from '@/lib/sanity';
 import { postsQuery } from '@/lib/sanity/queries';
 import { Post } from '@/lib/sanity/types';
+import { format } from 'date-fns';
 
 export default async function BlogIndexPage() {
   // Try to fetch posts, but handle failures gracefully
@@ -26,12 +27,12 @@ export default async function BlogIndexPage() {
           {posts.length > 0 ? (
             <div className="space-y-12">
               {posts.map((post: Post) => (
-                <div key={post._id || post.slug}>
+                <div key={post._id || (typeof post.slug === 'string' ? post.slug : post.slug?.current)}>
                   <h2 className="text-2xl font-bold text-vt-blue font-lexend-deca mb-1">
                     <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                   </h2>
                   {post.publishedAt && (
-                    <p className="text-sm text-vt-pink mb-2">{post.publishedAt}</p>
+                   <p className="text-sm text-vt-pink mb-2">{format(new Date(post.publishedAt), 'MMMM d, yyyy')}</p>
                   )}
                   <p className="text-vt-silver">{post.description}</p>
                 </div>

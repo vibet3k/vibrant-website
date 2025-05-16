@@ -3,6 +3,7 @@ import { PortableTextBlock } from '@portabletext/react';
 export interface Author {
   _id: string;
   name: string;
+  slug: { current: string };
   image: {
     asset: {
       url: string;
@@ -11,11 +12,17 @@ export interface Author {
   bio: PortableTextBlock[];
 }
 
-export interface Post {
+export interface Category {
   _id: string;
-  slug: string;
   title: string;
   description: string;
+}
+
+export interface Post {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  description?: string;
   mainImage: {
     asset: {
       url: string;
@@ -24,4 +31,5 @@ export interface Post {
   publishedAt: string;
   body: PortableTextBlock[];
   author: Author;
+  categories: Category[];
 }

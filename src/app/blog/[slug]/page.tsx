@@ -4,6 +4,10 @@
    import { client, projectId } from '@/lib/sanity';
    import { postQuery } from '@/lib/sanity/queries';
    import { Post } from '@/lib/sanity/types';
+   import { PortableText } from '@portabletext/react';
+   import Image from 'next/image';
+   import { format } from 'date-fns';
+   
 
    export const metadata: Metadata = {
      title: 'Blog Post',
@@ -37,11 +41,15 @@
                <>
                  <h1 className="font-lexend-deca text-vt-blue text-4xl mb-2">{post.title}</h1>
                  {post.publishedAt && (
-                   <p className="text-sm text-vt-pink mb-8">{post.publishedAt}</p>
-                 )}
+                  <p className="text-sm text-vt-pink mb-8">{format(new Date(post.publishedAt), 'MMMM d, yyyy')}</p>
+                )}
                  <div className="prose prose-lg prose-vt max-w-none">
                    <p>{post.description}</p>
-                   {/* We'll add the PortableText component in a future step */}
+                   {post.body && (
+                     <article className="prose prose-lg prose-vt max-w-none mt-6">
+                       <PortableText value={post.body} />
+                     </article>
+                   )}
                  </div>
                </>
              ) : (
