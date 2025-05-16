@@ -44,3 +44,24 @@ body {
   35% { opacity: 1; }
   65% { opacity: 1; }
 }
+
+.prose-vt ul > li {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+.prose-vt ul {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose-vt > p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose-vt h2 + p,
+.prose-vt h3 + p,
+.prose-vt h4 + p {
+  margin-top: 0.25em;
+}

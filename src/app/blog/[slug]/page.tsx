@@ -70,14 +70,30 @@
                      </div>
                    )}
                    
-                   <article className="prose prose-lg prose-vt max-w-none [&>p]:leading-relaxed [&>p]:my-2 [&>ul]:mt-1 [&>ul]:mb-2 [&>ul>li]:my-1 [&_p+ul]:mt-0">
+                   <article className="prose prose-vt max-w-none !space-y-3">
                      <PortableText 
                        value={post.body}
                        components={{
+                         list: {
+                           // Customize bullet lists
+                           bullet: ({children}) => <ul className="mt-1 mb-2 space-y-1">{children}</ul>,
+                         },
+                         listItem: {
+                           // Customize list items
+                           bullet: ({children}) => <li className="my-0">{children}</li>,
+                         },
+                         block: {
+                           // Customize paragraphs and other blocks
+                           normal: ({children}) => <p className="my-2 leading-relaxed">{children}</p>,
+                           h1: ({children}) => <h1 className="mt-4 mb-2">{children}</h1>,
+                           h2: ({children}) => <h2 className="mt-4 mb-2">{children}</h2>,
+                           h3: ({children}) => <h3 className="mt-3 mb-2">{children}</h3>,
+                           h4: ({children}) => <h4 className="mt-3 mb-1">{children}</h4>,
+                         },
                          types: {
                            image: ({value}) => {
                              return (
-                               <div className="my-6">
+                               <div className="my-4">
                                  <Image
                                    src={value.asset.url}
                                    alt={value.alt || 'Blog image'}
@@ -104,8 +120,10 @@
                              const style = typeStyles[calloutType in typeStyles ? calloutType : 'info'];
                              
                              return (
-                               <div className={`p-3 my-4 rounded-r-lg ${style}`}>
-                                 <PortableText value={value.content} />
+                               <div className={`p-2 my-3 rounded-r-lg ${style}`}>
+                                 <div className="space-y-1">
+                                   <PortableText value={value.content} />
+                                 </div>
                                </div>
                              );
                            }
