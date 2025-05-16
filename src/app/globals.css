@@ -65,3 +65,25 @@ body {
 .prose-vt h4 + p {
   margin-top: 0.25em;
 }
+
+/* Add these stronger overrides */
+.prose * {
+  margin-top: 0.5em !important;
+  margin-bottom: 0.5em !important;
+}
+
+.prose li {
+  margin-top: 0.25em !important;
+  margin-bottom: 0.25em !important;
+}
+
+.prose ul {
+  margin-top: 0.5em !important;
+  margin-bottom: 0.5em !important;
+  padding-left: 1em !important;
+}
+
+.prose > div.callout {
+  padding: 0.5em !important;
+  margin: 0.75em 0 !important;
+}
