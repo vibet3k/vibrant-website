@@ -36,10 +36,10 @@
      return (
        <BackgroundLayout>
          <main className="mx-auto px-6 py-16">
-           <div className="bg-white/95 backdrop-blur-md rounded-lg shadow-xl p-10 min-h-[600px] w-[900px] max-w-full mx-auto overflow-y-auto max-h-[80vh]">
+           <div className="bg-white/95 backdrop-blur-md rounded-lg shadow-xl w-[900px] max-w-full mx-auto overflow-hidden max-h-[80vh] flex flex-col">
              {post ? (
                <>
-                 <div className="mb-10 pb-6 border-b border-gray-200">
+                 <div className="sticky top-0 bg-white z-10 p-10 pb-6 border-b border-gray-200">
                    <h1 className="font-lexend-deca text-vt-blue text-4xl mb-2">
                      {post.title}
                    </h1>
@@ -55,22 +55,43 @@
                    )}
                  </div>
                  
-                 {post.mainImage?.asset?.url && (
-                   <div className="relative w-full h-72 md:h-96 mb-8 rounded-lg overflow-hidden">
-                     <Image
-                       src={post.mainImage.asset.url}
-                       alt={post.title || 'Blog post image'}
-                       fill
-                       priority
-                       className="object-cover"
-                       sizes="(max-width: 768px) 100vw, 800px"
+                 <div className="overflow-y-auto p-10 pt-6">
+                   {post.mainImage?.asset?.url && (
+                     <div className="relative w-full h-72 md:h-96 mb-8 rounded-lg overflow-hidden">
+                       <Image
+                         src={post.mainImage.asset.url}
+                         alt={post.title || 'Blog post image'}
+                         width={800}
+                         height={500}
+                         className="object-cover w-full"
+                         priority
+                       />
+                     </div>
+                   )}
+                   
+                   <article className="prose prose-lg prose-vt max-w-none">
+                     <PortableText 
+                       value={post.body}
+                       components={{
+                         types: {
+                           image: ({value}) => {
+                             return (
+                               <div className="my-8">
+                                 <Image
+                                   src={value.asset.url}
+                                   alt={value.alt || 'Blog image'}
+                                   width={800}
+                                   height={500}
+                                   className="rounded-lg"
+                                 />
+                               </div>
+                             );
+                           },
+                         }
+                       }}
                      />
-                   </div>
-                 )}
-                 
-                 <article className="prose prose-lg prose-vt max-w-none">
-                   <PortableText value={post.body} />
-                 </article>
+                   </article>
+                 </div>
                </>
              ) : (
                <>
