@@ -87,7 +87,7 @@ const Hero = () => {
                 Security & Compliance, Baked-In
               </h3>
               <p className="text-white font-lexend-deca mb-4">
-                Enterprise-grade security and compliance aren't add-ons—they're foundational to everything we build and manage.
+                Enterprise-grade security and compliance aren&apos;t add-ons—they&apos;re foundational to everything we build and manage.
               </p>
               <a href="#" className="text-white underline hover:text-vt-green hover:no-underline transition-colors font-lexend-deca">
                 Learn more →
@@ -111,7 +111,7 @@ const Hero = () => {
                 Seamless Hybrid Workforce
               </h3>
               <p className="text-white font-lexend-deca mb-4">
-                Your team works everywhere. Our solutions ensure they're productive, secure, and connected wherever they are.
+                Your team works everywhere. Our solutions ensure they&apos;re productive, secure, and connected wherever they are.
               </p>
               <a href="#" className="text-white underline hover:text-vt-pink hover:no-underline transition-colors font-lexend-deca">
                 Learn more →
