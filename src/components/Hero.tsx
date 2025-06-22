@@ -7,8 +7,8 @@ const Hero = () => {
   return (
     <BackgroundLayout>
       <div className="w-full h-full flex flex-col">
-        {/* Main content container */}
-        <div className="flex flex-col items-center text-center px-6 pt-16 md:pt-24">
+        {/* Main content container - reduced top padding */}
+        <div className="flex flex-col items-center text-center px-6 pt-6 md:pt-8">
           {/* Primary Headline - Three-part tagline with stepwise indentation */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-lexend-deca leading-tight">
             <div className="text-left">
@@ -22,9 +22,9 @@ const Hero = () => {
             </div>
           </h1>
           
-          {/* Supporting Copy - Roof message */}
-          <p className="text-xl md:text-2xl text-white font-lexend-deca mt-6 max-w-4xl leading-relaxed">
-            Solutions tailored to your business so you can focus on the work that moves the needle.
+          {/* Supporting Copy - Roof message - prevent wrapping */}
+          <p className="text-xl md:text-2xl text-white font-lexend-deca mt-6 leading-relaxed whitespace-nowrap">
+            Working together, we tailor tech solutions to your business so your people can focus on the work that moves the needle.
           </p>
           
           {/* CTA Button */}
