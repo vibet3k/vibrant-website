@@ -41,12 +41,13 @@ const Hero = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Pillar 1: Strategic Partnership & Clarity */}
             <div className="bg-vt-blue/65 backdrop-blur-sm p-6 rounded-lg">
-              {/* Outline icon style */}
+              {/* Handshake icon - thin line style */}
               <div className="w-12 h-12 mb-4 text-white">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="m22 21-3-3m0 0a5.5 5.5 0 1 1-7.8-7.8 5.5 5.5 0 0 1 7.8 7.8Z"></path>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M11 17a4 4 0 0 1-8 0V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2Z"/>
+                  <path d="M16.7 13H19a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H5"/>
+                  <path d="M 7 17 v 5"/>
+                  <path d="M 17 13 v 9"/>
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
@@ -62,11 +63,11 @@ const Hero = () => {
             
             {/* Pillar 2: Security & Compliance, Baked-In */}
             <div className="bg-vt-green/65 backdrop-blur-sm p-6 rounded-lg">
-              {/* Filled icon style */}
+              {/* Shield icon - thin line style */}
               <div className="w-12 h-12 mb-4 text-white">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
-                  <path d="M9 12l2 2 4-4" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 13c0 5-3.5 7.5-8 7.5s-8-2.5-8-7.5c0-1.3.3-2.5.8-3.5L12 3l7.2 6.5c.5 1 .8 2.2.8 3.5Z"/>
+                  <path d="m9 12 2 2 4-4"/>
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
@@ -82,15 +83,15 @@ const Hero = () => {
             
             {/* Pillar 3: Seamless Hybrid Workforce */}
             <div className="bg-vt-pink/65 backdrop-blur-sm p-6 rounded-lg">
-              {/* Custom icon style */}
+              {/* Laptop icon - thin line style */}
               <div className="w-12 h-12 mb-4 text-white">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <rect x="2" y="3" width="6" height="6" rx="1"/>
-                  <rect x="16" y="3" width="6" height="6" rx="1"/>
-                  <rect x="9" y="15" width="6" height="6" rx="1"/>
-                  <path d="M5 9v3a3 3 0 0 0 3 3h1"/>
-                  <path d="M19 9v3a3 3 0 0 1-3 3h-1"/>
-                  <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <rect width="16" height="10" x="4" y="3" rx="2"/>
+                  <path d="M2 14h20"/>
+                  <path d="M12 20a2 2 0 0 0 2-2H10a2 2 0 0 0 2 2Z"/>
+                  <circle cx="8" cy="8" r="1" fill="currentColor"/>
+                  <path d="M10.5 8.5 13 6"/>
+                  <circle cx="16" cy="8" r="1" fill="currentColor"/>
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
