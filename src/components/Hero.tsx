@@ -9,11 +9,17 @@ const Hero = () => {
       <div className="w-full h-full flex flex-col">
         {/* Main content container */}
         <div className="flex flex-col items-center text-center px-6 pt-16 md:pt-24">
-          {/* Primary Headline - Three-part tagline */}
+          {/* Primary Headline - Three-part tagline with stepwise indentation */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-lexend-deca leading-tight">
-            Remove tech obstacles<span className="text-vt-blue">.</span><br />
-            Reveal business opportunities<span className="text-vt-green">.</span><br />
-            Let your people shine<span className="text-vt-pink">.</span>
+            <div className="text-left">
+              Remove tech obstacles<span className="text-vt-blue">.</span><br />
+              <div className="ml-8 md:ml-12">
+                Reveal business opportunities<span className="text-vt-green">.</span><br />
+              </div>
+              <div className="ml-16 md:ml-24">
+                Let your people shine<span className="text-vt-pink">.</span>
+              </div>
+            </div>
           </h1>
           
           {/* Supporting Copy - Roof message */}
@@ -29,29 +35,9 @@ const Hero = () => {
             Time to Shine!
           </Link>
         </div>
-
-        {/* Proof Metrics Bar */}
-        <div className="mt-16 md:mt-20 px-6 sm:px-12">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-vt-green font-lexend-deca">37%</div>
-                <div className="text-white font-lexend-deca mt-1">Ticket Reduction</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-vt-blue font-lexend-deca">99.6%</div>
-                <div className="text-white font-lexend-deca mt-1">Client Satisfaction</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-vt-pink font-lexend-deca">100%</div>
-                <div className="text-white font-lexend-deca mt-1">Remote-Ready</div>
-              </div>
-            </div>
-          </div>
-        </div>
         
-        {/* Three Pillar Cards */}
-        <div className="mt-16 md:mt-20 px-6 sm:px-12">
+        {/* Three Pillar Cards - MOVED ABOVE metrics */}
+        <div className="mt-12 md:mt-16 px-6 sm:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Pillar 1: Strategic Partnership & Clarity */}
             <div className="bg-vt-blue/65 backdrop-blur-sm p-6 rounded-lg">
@@ -116,6 +102,26 @@ const Hero = () => {
               <a href="#" className="text-white underline hover:text-vt-pink hover:no-underline transition-colors font-lexend-deca">
                 Learn more →
               </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Proof Metrics Bar - MOVED BELOW pillar cards with reduced spacing */}
+        <div className="mt-12 md:mt-16 px-6 sm:px-12 pb-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-vt-green font-lexend-deca">37%</div>
+                <div className="text-white font-lexend-deca mt-1">Ticket Reduction</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-vt-blue font-lexend-deca">99.6%</div>
+                <div className="text-white font-lexend-deca mt-1">Client Satisfaction</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-vt-pink font-lexend-deca">100%</div>
+                <div className="text-white font-lexend-deca mt-1">Remote-Ready</div>
+              </div>
             </div>
           </div>
         </div>
