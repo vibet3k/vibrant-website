@@ -24,7 +24,7 @@ const Hero = () => {
           
           {/* Supporting Copy - Roof message */}
           <p className="text-xl md:text-2xl text-white font-lexend-deca mt-6 max-w-4xl leading-relaxed">
-            Working together, we tailor tech solutions to your business so your people can focus on the work that moves the needle.
+            Solutions tailored to your business so you can focus on the work that moves the needle.
           </p>
           
           {/* CTA Button */}
