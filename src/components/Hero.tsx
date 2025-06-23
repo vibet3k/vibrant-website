@@ -70,7 +70,7 @@ const Hero = () => {
                 Strategic IT Leadership
               </h3>
               <p className="text-white font-lexend-deca mb-4">
-                We work alongside you as trusted advisors, bringing transparency and strategic thinking to every technology decision.
+                Clear, strategic guidance for every tech decision—so you&apos;re never flying blind.
               </p>
               <a href="#" className="text-white underline hover:text-vt-blue hover:no-underline transition-colors font-lexend-deca">
                 Learn more →
@@ -79,7 +79,7 @@ const Hero = () => {
             
             {/* Pillar 2: Security & Compliance */}
             <div className="bg-vt-green/65 backdrop-blur-sm p-6 rounded-lg">
-              {/* Shield with lock icon from your image */}
+              {/* Shield with lock icon */}
               <div className="w-12 h-12 mb-4 text-white">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   {/* Shield outline */}
@@ -96,7 +96,7 @@ const Hero = () => {
                 Security & Compliance
               </h3>
               <p className="text-white font-lexend-deca mb-4">
-                Enterprise-grade security and compliance aren&apos;t add-ons—they&apos;re foundational to everything we build and manage.
+                Security and compliance, built-in from day one—not bolted on after the fact.
               </p>
               <a href="#" className="text-white underline hover:text-vt-green hover:no-underline transition-colors font-lexend-deca">
                 Learn more →
@@ -105,25 +105,18 @@ const Hero = () => {
             
             {/* Pillar 3: Seamless Hybrid Workforce */}
             <div className="bg-vt-pink/65 backdrop-blur-sm p-6 rounded-lg">
-              {/* Person with laptop/briefcase icon from your image */}
+              {/* Laptop-minimal icon from Lucide */}
               <div className="w-12 h-12 mb-4 text-white">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  {/* Head */}
-                  <circle cx="12" cy="6" r="3"/>
-                  {/* Body/torso */}
-                  <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
-                  {/* Laptop/briefcase */}
-                  <rect x="8" y="12" width="8" height="5" rx="1"/>
-                  <path d="M8 14h8"/>
-                  {/* Handle */}
-                  <path d="M11 12v-1a1 1 0 0 1 2 0v1"/>
+                  <rect width="18" height="12" x="3" y="4" rx="2" ry="2"/>
+                  <line x1="2" x2="22" y1="20" y2="20"/>
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
                 Seamless Hybrid Workforce
               </h3>
               <p className="text-white font-lexend-deca mb-4">
-                Your team works everywhere. Our solutions ensure they&apos;re productive, secure, and connected wherever they are.
+                Your team works anywhere. We make sure their tools do, too.
               </p>
               <a href="#" className="text-white underline hover:text-vt-pink hover:no-underline transition-colors font-lexend-deca">
                 Learn more →
@@ -132,21 +125,21 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Proof Metrics Bar - MOVED BELOW pillar cards with reduced spacing */}
+        {/* Proof Metrics Bar - Silver text for readability */}
         <div className="mt-12 md:mt-16 px-6 sm:px-12 pb-8">
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 bg-white/10 backdrop-blur-sm rounded-lg p-6">
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-vt-green font-lexend-deca">37%</div>
-                <div className="text-white font-lexend-deca mt-1">Ticket Reduction</div>
+                <div className="text-vt-silver font-lexend-deca mt-1">Ticket Reduction</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-vt-blue font-lexend-deca">99.6%</div>
-                <div className="text-white font-lexend-deca mt-1">Client Satisfaction</div>
+                <div className="text-vt-silver font-lexend-deca mt-1">Client Satisfaction</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-vt-pink font-lexend-deca">100%</div>
-                <div className="text-white font-lexend-deca mt-1">Remote-Ready</div>
+                <div className="text-vt-silver font-lexend-deca mt-1">Remote-Ready</div>
               </div>
             </div>
           </div>
