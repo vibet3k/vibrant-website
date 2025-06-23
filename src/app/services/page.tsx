@@ -53,11 +53,11 @@ export default function ServicesPage() {
                 
                 <div className="text-white/95 space-y-6 text-lg leading-relaxed">
                   <p>
-                    <strong>Clear, strategic guidance for every tech decision—so you're never flying blind.</strong>
+                    <strong>Clear, strategic guidance for every tech decision—so you&apos;re never flying blind.</strong>
                   </p>
                   
                   <p>
-                    Your vtCIO doesn't just fix problems—they prevent them. Through regular strategic sessions, 
+                    Your vtCIO doesn&apos;t just fix problems—they prevent them. Through regular strategic sessions, 
                     we align every technology decision with your business goals, translate complex tech into 
                     plain language, and create roadmaps that make sense for your budget and timeline.
                   </p>
@@ -99,7 +99,7 @@ export default function ServicesPage() {
                   </p>
                   
                   <p>
-                    Enterprise-grade security shouldn't be an expensive add-on. Our comprehensive security stack 
+                    Enterprise-grade security shouldn&apos;t be an expensive add-on. Our comprehensive security stack 
                     protects your data, ensures regulatory compliance, and gives you peace of mind—all included 
                     in your managed services, not sold as costly extras.
                   </p>
@@ -197,7 +197,7 @@ export default function ServicesPage() {
                     href="/contact" 
                     className="inline-block bg-vt-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-vt-blue/90 transition-colors"
                   >
-                    Let's Talk About Your Needs
+                    Let&apos;s Talk About Your Needs
                   </Link>
                 </div>
               </div>
