@@ -72,9 +72,9 @@ const Hero = () => {
               <p className="text-white font-lexend-deca mb-4">
                 Clear, strategic guidance for every tech decision—so you&apos;re never flying blind.
               </p>
-              <a href="#" className="text-white underline hover:text-vt-blue hover:no-underline transition-colors font-lexend-deca">
+              <Link href="/services#strategic-partnership" className="text-white underline hover:text-vt-blue hover:no-underline transition-colors font-lexend-deca">
                 Learn more →
-              </a>
+              </Link>
             </div>
             
             {/* Pillar 2: Security & Compliance */}
@@ -98,9 +98,9 @@ const Hero = () => {
               <p className="text-white font-lexend-deca mb-4">
                 Security and compliance, built-in from day one—not bolted on after the fact.
               </p>
-              <a href="#" className="text-white underline hover:text-vt-green hover:no-underline transition-colors font-lexend-deca">
+              <Link href="/services#security-compliance" className="text-white underline hover:text-vt-green hover:no-underline transition-colors font-lexend-deca">
                 Learn more →
-              </a>
+              </Link>
             </div>
             
             {/* Pillar 3: Seamless Hybrid Workforce */}
@@ -118,9 +118,9 @@ const Hero = () => {
               <p className="text-white font-lexend-deca mb-4">
                 Your team works anywhere. We make sure their tools do, too.
               </p>
-              <a href="#" className="text-white underline hover:text-vt-pink hover:no-underline transition-colors font-lexend-deca">
+              <Link href="/services#hybrid-workforce" className="text-white underline hover:text-vt-pink hover:no-underline transition-colors font-lexend-deca">
                 Learn more →
-              </a>
+              </Link>
             </div>
           </div>
         </div>
