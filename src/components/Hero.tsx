@@ -12,9 +12,9 @@ const Hero = () => {
           {/* Primary Headline - Three-part tagline with stepwise indentation */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-lexend-deca leading-tight">
             <div className="text-left">
-              Remove tech obstacles<span className="text-vt-blue">.</span><br />
+              Remove tech obstacles<span className="text-white">.</span><br />
               <div className="ml-8 md:ml-12">
-                Reveal business opportunities<span className="text-vt-green">.</span><br />
+                Reveal business opportunities<span className="text-white">.</span><br />
               </div>
               <div className="ml-16 md:ml-24">
                 Let your people shine<span className="text-vt-pink">.</span>
@@ -22,9 +22,9 @@ const Hero = () => {
             </div>
           </h1>
           
-          {/* Supporting Copy - Roof message - prevent wrapping */}
+          {/* Supporting Copy - Updated roof message - prevent wrapping */}
           <p className="text-xl md:text-2xl text-white font-lexend-deca mt-6 leading-relaxed whitespace-nowrap">
-            Working together, we tailor tech solutions to your business so your people can focus on the work that moves the needle.
+            Solutions tailored to your business so you can focus on the work that moves the needle.
           </p>
           
           {/* CTA Button */}
@@ -39,9 +39,9 @@ const Hero = () => {
         {/* Three Pillar Cards - MOVED ABOVE metrics */}
         <div className="mt-12 md:mt-16 px-6 sm:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Pillar 1: Strategic Partnership & Clarity */}
+            {/* Pillar 1: Strategic IT Leadership */}
             <div className="bg-vt-blue/65 backdrop-blur-sm p-6 rounded-lg">
-              {/* Perfect compass star recreation */}
+              {/* Compass star icon */}
               <div className="w-12 h-12 mb-4 text-white">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                   {/* North point */}
@@ -67,7 +67,7 @@ const Hero = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
-                Strategic Partnership & Clarity
+                Strategic IT Leadership
               </h3>
               <p className="text-white font-lexend-deca mb-4">
                 We work alongside you as trusted advisors, bringing transparency and strategic thinking to every technology decision.
@@ -77,17 +77,23 @@ const Hero = () => {
               </a>
             </div>
             
-            {/* Pillar 2: Security & Compliance, Baked-In */}
+            {/* Pillar 2: Security & Compliance */}
             <div className="bg-vt-green/65 backdrop-blur-sm p-6 rounded-lg">
-              {/* Shield icon - thin line style */}
+              {/* Shield with lock icon from your image */}
               <div className="w-12 h-12 mb-4 text-white">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M20 13c0 5-3.5 7.5-8 7.5s-8-2.5-8-7.5c0-1.3.3-2.5.8-3.5L12 3l7.2 6.5c.5 1 .8 2.2.8 3.5Z"/>
-                  <path d="m9 12 2 2 4-4"/>
+                  {/* Shield outline */}
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+                  {/* Lock body */}
+                  <rect x="9" y="11" width="6" height="5" rx="1"/>
+                  {/* Lock shackle */}
+                  <path d="M11 11V9a1 1 0 0 1 2 0v2"/>
+                  {/* Keyhole */}
+                  <circle cx="12" cy="13" r="0.5" fill="currentColor"/>
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
-                Security & Compliance, Baked-In
+                Security & Compliance
               </h3>
               <p className="text-white font-lexend-deca mb-4">
                 Enterprise-grade security and compliance aren&apos;t add-ons—they&apos;re foundational to everything we build and manage.
@@ -99,15 +105,18 @@ const Hero = () => {
             
             {/* Pillar 3: Seamless Hybrid Workforce */}
             <div className="bg-vt-pink/65 backdrop-blur-sm p-6 rounded-lg">
-              {/* Laptop icon - thin line style */}
+              {/* Person with laptop/briefcase icon from your image */}
               <div className="w-12 h-12 mb-4 text-white">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <rect width="16" height="10" x="4" y="3" rx="2"/>
-                  <path d="M2 14h20"/>
-                  <path d="M12 20a2 2 0 0 0 2-2H10a2 2 0 0 0 2 2Z"/>
-                  <circle cx="8" cy="8" r="1" fill="currentColor"/>
-                  <path d="M10.5 8.5 13 6"/>
-                  <circle cx="16" cy="8" r="1" fill="currentColor"/>
+                  {/* Head */}
+                  <circle cx="12" cy="6" r="3"/>
+                  {/* Body/torso */}
+                  <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+                  {/* Laptop/briefcase */}
+                  <rect x="8" y="12" width="8" height="5" rx="1"/>
+                  <path d="M8 14h8"/>
+                  {/* Handle */}
+                  <path d="M11 12v-1a1 1 0 0 1 2 0v1"/>
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
