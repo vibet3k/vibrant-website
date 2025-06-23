@@ -41,13 +41,19 @@ const Hero = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Pillar 1: Strategic Partnership & Clarity */}
             <div className="bg-vt-blue/65 backdrop-blur-sm p-6 rounded-lg">
-              {/* Handshake icon - thin line style */}
+              {/* Compass/Navigation star icon */}
               <div className="w-12 h-12 mb-4 text-white">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M11 17a4 4 0 0 1-8 0V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2Z"/>
-                  <path d="M16.7 13H19a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H5"/>
-                  <path d="M 7 17 v 5"/>
-                  <path d="M 17 13 v 9"/>
+                  <circle cx="12" cy="12" r="10"/>
+                  <polygon points="16.24,7.76 14.12,14.12 7.76,16.24 9.88,9.88"/>
+                  <line x1="12" y1="2" x2="12" y2="6"/>
+                  <line x1="12" y1="18" x2="12" y2="22"/>
+                  <line x1="22" y1="12" x2="18" y2="12"/>
+                  <line x1="6" y1="12" x2="2" y2="12"/>
+                  <line x1="19.07" y1="4.93" x2="16.24" y2="7.76"/>
+                  <line x1="7.76" y1="16.24" x2="4.93" y2="19.07"/>
+                  <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/>
+                  <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/>
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
