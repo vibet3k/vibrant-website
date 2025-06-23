@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <BackgroundLayout>
-      <div className="w-full h-full flex flex-col">
+      <div className="w-full min-h-screen flex flex-col">
         {/* Page Header/Intro */}
         <div className="flex flex-col items-center text-center px-6 pt-6 md:pt-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-lexend-deca mb-6">
@@ -23,13 +23,13 @@ export default function ServicesPage() {
           </p>
         </div>
 
-        {/* Main Content - Scrollable over background */}
-        <div className="flex-1 px-6 sm:px-12 mt-12 md:mt-16 pb-8">
-          <div className="max-w-6xl mx-auto space-y-24">
+        {/* Main Content - Scrollable sections */}
+        <div className="flex-1 px-6 sm:px-12 mt-12 md:mt-16">
+          <div className="max-w-6xl mx-auto space-y-16">
             
             {/* Pillar 1: Strategic Partnership & Clarity */}
             <section id="strategic-partnership" className="scroll-mt-8">
-              <div className="bg-vt-blue/20 backdrop-blur-sm rounded-lg p-8 md:p-12">
+              <div className="bg-vt-blue/50 backdrop-blur-sm rounded-lg p-8 md:p-12">
                 <div className="flex items-center mb-6">
                   {/* Compass star icon */}
                   <div className="w-16 h-16 mr-6 text-white">
@@ -72,7 +72,7 @@ export default function ServicesPage() {
                     
                     <div>
                       <h3 className="text-xl font-bold mb-3">What This Looks Like</h3>
-                      <div className="bg-white/10 p-4 rounded-lg mb-4">
+                      <div className="bg-white/20 p-4 rounded-lg mb-4">
                         <p className="text-sm italic">
                           &quot;Before our quarterly business review, we thought we needed new servers. 
                           After talking through our growth plans, we realized cloud migration would 
@@ -93,7 +93,7 @@ export default function ServicesPage() {
 
             {/* Pillar 2: Security & Compliance, Baked-In */}
             <section id="security-compliance" className="scroll-mt-8">
-              <div className="bg-vt-green/20 backdrop-blur-sm rounded-lg p-8 md:p-12">
+              <div className="bg-vt-green/50 backdrop-blur-sm rounded-lg p-8 md:p-12">
                 <div className="flex items-center mb-6">
                   {/* Shield with lock icon */}
                   <div className="w-16 h-16 mr-6 text-white">
@@ -131,7 +131,7 @@ export default function ServicesPage() {
                     
                     <div>
                       <h3 className="text-xl font-bold mb-3">Compliance Made Simple</h3>
-                      <div className="bg-white/10 p-4 rounded-lg mb-4">
+                      <div className="bg-white/20 p-4 rounded-lg mb-4">
                         <p className="text-sm italic">
                           &quot;We needed to meet specific compliance requirements for our largest client. 
                           Vibrant didn&apos;t just check boxes—they explained what each requirement meant 
@@ -151,7 +151,7 @@ export default function ServicesPage() {
 
             {/* Pillar 3: Seamless Hybrid Workforce */}
             <section id="hybrid-workforce" className="scroll-mt-8">
-              <div className="bg-vt-pink/20 backdrop-blur-sm rounded-lg p-8 md:p-12">
+              <div className="bg-vt-pink/50 backdrop-blur-sm rounded-lg p-8 md:p-12">
                 <div className="flex items-center mb-6">
                   {/* Laptop icon */}
                   <div className="w-16 h-16 mr-6 text-white">
@@ -187,7 +187,7 @@ export default function ServicesPage() {
                     
                     <div>
                       <h3 className="text-xl font-bold mb-3">Modern Workforce Flexibility</h3>
-                      <div className="bg-white/10 p-4 rounded-lg mb-4">
+                      <div className="bg-white/20 p-4 rounded-lg mb-4">
                         <p className="text-sm italic">
                           &quot;Our attorneys can access everything they need from anywhere—case files, 
                           research databases, billing systems. It&apos;s like having the office with them 
@@ -206,7 +206,7 @@ export default function ServicesPage() {
             </section>
 
             {/* Service Packages Component */}
-            <section className="bg-white/10 backdrop-blur-sm rounded-lg p-8 md:p-12">
+            <section className="bg-white/20 backdrop-blur-sm rounded-lg p-8 md:p-12">
               <h2 className="text-3xl md:text-4xl font-bold text-white font-lexend-deca mb-6 text-center">
                 How Our Service Packages Deliver
               </h2>
@@ -216,7 +216,7 @@ export default function ServicesPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* vtCore */}
-                <div className="bg-vt-blue/30 p-6 rounded-lg">
+                <div className="bg-vt-blue/60 backdrop-blur-sm p-6 rounded-lg">
                   <h3 className="text-2xl font-bold text-white font-lexend-deca mb-4">vtCore</h3>
                   <p className="text-white mb-4">Essential strategic IT leadership and security for growing businesses.</p>
                   <ul className="text-white space-y-2 text-sm">
@@ -228,7 +228,7 @@ export default function ServicesPage() {
                 </div>
                 
                 {/* vtPrime */}
-                <div className="bg-vt-green/30 p-6 rounded-lg">
+                <div className="bg-vt-green/60 backdrop-blur-sm p-6 rounded-lg">
                   <h3 className="text-2xl font-bold text-white font-lexend-deca mb-4">vtPrime</h3>
                   <p className="text-white mb-4">Comprehensive IT leadership with advanced security and full hybrid capabilities.</p>
                   <ul className="text-white space-y-2 text-sm">
@@ -240,7 +240,7 @@ export default function ServicesPage() {
                 </div>
                 
                 {/* vtPrime+ */}
-                <div className="bg-vt-pink/30 p-6 rounded-lg">
+                <div className="bg-vt-pink/60 backdrop-blur-sm p-6 rounded-lg">
                   <h3 className="text-2xl font-bold text-white font-lexend-deca mb-4">vtPrime+</h3>
                   <p className="text-white mb-4">Enterprise-level strategic partnership with white-glove service and custom solutions.</p>
                   <ul className="text-white space-y-2 text-sm">
@@ -254,7 +254,7 @@ export default function ServicesPage() {
             </section>
 
             {/* CTA Section */}
-            <section className="text-center">
+            <section className="text-center pb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-white font-lexend-deca mb-6">
                 Ready to Let Your People Shine?
               </h2>
