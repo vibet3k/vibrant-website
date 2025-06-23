@@ -41,19 +41,29 @@ const Hero = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Pillar 1: Strategic Partnership & Clarity */}
             <div className="bg-vt-blue/65 backdrop-blur-sm p-6 rounded-lg">
-              {/* Compass/Navigation star icon */}
+              {/* Perfect compass star recreation */}
               <div className="w-12 h-12 mb-4 text-white">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <polygon points="16.24,7.76 14.12,14.12 7.76,16.24 9.88,9.88"/>
-                  <line x1="12" y1="2" x2="12" y2="6"/>
-                  <line x1="12" y1="18" x2="12" y2="22"/>
-                  <line x1="22" y1="12" x2="18" y2="12"/>
-                  <line x1="6" y1="12" x2="2" y2="12"/>
-                  <line x1="19.07" y1="4.93" x2="16.24" y2="7.76"/>
-                  <line x1="7.76" y1="16.24" x2="4.93" y2="19.07"/>
-                  <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/>
-                  <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/>
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  {/* North point */}
+                  <path d="M12 1 L12.8 10.2 L12 12 L11.2 10.2 Z"/>
+                  {/* East point */}
+                  <path d="M23 12 L13.8 11.2 L12 12 L13.8 12.8 Z"/>
+                  {/* South point */}
+                  <path d="M12 23 L11.2 13.8 L12 12 L12.8 13.8 Z"/>
+                  {/* West point */}
+                  <path d="M1 12 L10.2 12.8 L12 12 L10.2 11.2 Z"/>
+                  
+                  {/* NE point */}
+                  <path d="M19.5 4.5 L13.4 10.6 L12 12 L13.4 10.6 Z"/>
+                  {/* SE point */}
+                  <path d="M19.5 19.5 L13.4 13.4 L12 12 L13.4 13.4 Z"/>
+                  {/* SW point */}
+                  <path d="M4.5 19.5 L10.6 13.4 L12 12 L10.6 13.4 Z"/>
+                  {/* NW point */}
+                  <path d="M4.5 4.5 L10.6 10.6 L12 12 L10.6 10.6 Z"/>
+                  
+                  {/* Center circle */}
+                  <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" strokeWidth="0.8"/>
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
