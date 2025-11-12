@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <>
       {/* Footer navigation */}
-      <div className="w-full flex justify-center mt-auto mb-12 relative z-10">
+      <div className="w-full flex justify-center mt-auto mb-2 relative z-10">
         <nav className="text-[#808080] flex space-x-8 font-lexend-deca">
           <Link href="/" className="hover:text-vt-blue transition-colors">
             Home
@@ -25,7 +25,7 @@ export default function Footer() {
       </div>
       
       {/* Logo - positioned in bottom right corner */}
-      <div className="absolute bottom-4 right-12">
+      <div className="absolute bottom-0 right-0">
         <Link href="/">
           <Image
             src="/images/vibrant-tech-logo-noTL.png"

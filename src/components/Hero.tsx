@@ -6,7 +6,7 @@ import BackgroundLayout from './BackgroundLayout';
 const Hero = () => {
   return (
     <BackgroundLayout>
-      <div className="w-full h-full flex flex-col -mt-16">
+      <div className="w-full h-full flex flex-col mt-20">
         {/* Main content container - minimal top padding */}
         <div className="flex flex-col items-center text-center px-6 pt-0 md:pt-2">
           {/* Primary Headline - Three-part tagline with stepwise indentation */}
@@ -30,7 +30,7 @@ const Hero = () => {
         {/* CTA Button */}
         <Link 
           href="/contact" 
-          className="relative overflow-hidden mt-8 inline-block bg-vt-blue/85 text-white rounded-md text-lg font-semibold hover:bg-vt-pink/90 transition-all duration-300 shadow-2xl hover:shadow-[0_20px_50px_rgba(0,116,188,0.5)] hover:-translate-y-1 hover:scale-105"
+          className="relative overflow-hidden mt-8 inline-block bg-vt-blue/85 text-white rounded-md text-lg font-semibold hover:bg-vt-blue/90 transition-all duration-300 shadow-2xl hover:shadow-[0_20px_50px_rgba(0,116,188,0.5)] hover:-translate-y-1 hover:scale-105"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-90 pointer-events-none"></div>
           <span className="relative shadow-[inset_0_3px_6px_rgba(255,255,255,0.6),inset_0_-2px_4px_rgba(0,0,0,0.1)] z-10 block px-8 py-3">
@@ -135,7 +135,7 @@ const Hero = () => {
         </div>
 
         {/* A Different Approach Section - Gray Band */}
-        <div className="w-screen bg-vt-silver/60 py-16 mt-24 relative left-[50%] right-[50%] -ml-[50vw] -mr-[50vw]">
+        <div className="w-screen bg-vt-silver/60 py-16 mt-32 relative left-[50%] right-[50%] -ml-[50vw] -mr-[50vw]">
           <div className="max-w-6xl mx-auto px-6 sm:px-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white font-lexend-deca mb-6 drop-shadow-lg">
               A Different Approach to IT Leadership
@@ -172,7 +172,7 @@ const Hero = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Blog Post 1 */}
               <Link href="/blog/the-silent-signal-of-it-success" className="group">
-                <div className="bg-white/90 backdrop-blur-sm rounded-lg p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 border border-gray-200">
+                <div className="bg-gradient-to-br from-white/100 via-white/95 to-vt-green/3 backdrop-blur-sm rounded-lg p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 border border-vt-silver border-t-2 border-r-2 border-r-vt-blue border-t-vt-blue">
                   <h3 className="text-xl font-bold text-vt-pink font-lexend-deca mb-3 group-hover:text-vt-blue transition-colors">
                     The Silent Signal of IT Success
                   </h3>
@@ -187,7 +187,7 @@ const Hero = () => {
 
               {/* Blog Post 2 */}
               <Link href="/blog/what-to-look-for-in-a-vcio" className="group">
-                <div className="bg-white/90 backdrop-blur-sm rounded-lg p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 border border-gray-200">
+                <div className="bg-gradient-to-br from-white/100 via-white/90 to-vt-green/3 backdrop-blur-sm rounded-lg p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 border border-vt-silver border-t-2 border-r-2 border-r-vt-blue border-t-vt-blue">
                   <h3 className="text-xl font-bold text-vt-pink font-lexend-deca mb-3 group-hover:text-vt-blue transition-colors">
                     What to Look for in a vCIO
                   </h3>
@@ -202,7 +202,7 @@ const Hero = () => {
 
               {/* Blog Post 3 */}
               <Link href="/blog/running-dark" className="group">
-                <div className="bg-white/90 backdrop-blur-sm rounded-lg p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 border border-gray-200">
+                <div className="bg-gradient-to-br from-white/100 via-white/90 to-vt-green/3 backdrop-blur-sm rounded-lg p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 border border-vt-silver border-t-2 border-r-2 border-r-vt-blue border-t-vt-blue">
                   <h3 className="text-xl font-bold text-vt-pink font-lexend-deca mb-3 group-hover:text-vt-blue transition-colors">
                     Running Dark
                   </h3>
@@ -219,12 +219,12 @@ const Hero = () => {
         </div>
 
         {/* Final CTA */}
-        <div className="mt-32 mb-20 px-6 sm:px-12">
+        <div className="mt-32 mb-32 px-6 sm:px-12">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white font-lexend-deca mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-vt-blue font-lexend-deca mb-6">
               Ready to Rethink Your IT Strategy?
             </h2>
-            <p className="text-xl text-white font-lexend-deca mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-vt-silver font-lexend-deca mb-8 max-w-2xl mx-auto">
               Let&apos;s talk about how strategic technology leadership can transform 
               your business from reactive to proactive.
             </p>
