@@ -30,7 +30,7 @@ const Hero = () => {
         {/* CTA Button */}
         <Link 
           href="/contact" 
-          className="relative overflow-hidden mt-8 inline-block bg-vt-blue/85 text-white rounded-md text-lg font-semibold hover:bg-vt-blue/90 transition-all duration-300 shadow-2xl hover:shadow-[0_20px_50px_rgba(0,116,188,0.5)] hover:-translate-y-1 hover:scale-105"
+          className="relative overflow-hidden mt-8 inline-block bg-vt-blue/85 text-white rounded-md text-lg font-semibold hover:bg-vt-pink/90 transition-all duration-300 shadow-2xl hover:shadow-[0_20px_50px_rgba(0,116,188,0.5)] hover:-translate-y-1 hover:scale-105"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-90 pointer-events-none"></div>
           <span className="relative shadow-[inset_0_3px_6px_rgba(255,255,255,0.6),inset_0_-2px_4px_rgba(0,0,0,0.1)] z-10 block px-8 py-3">
