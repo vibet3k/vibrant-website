@@ -6,11 +6,11 @@ import BackgroundLayout from './BackgroundLayout';
 const Hero = () => {
   return (
     <BackgroundLayout>
-      <div className="w-full h-full flex flex-col">
-        {/* Main content container - reduced top padding */}
-        <div className="flex flex-col items-center text-center px-6 pt-6 md:pt-8">
+      <div className="w-full h-full flex flex-col -mt-16">
+        {/* Main content container - minimal top padding */}
+        <div className="flex flex-col items-center text-center px-6 pt-0 md:pt-2">
           {/* Primary Headline - Three-part tagline with stepwise indentation */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-lexend-deca leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-lexend-deca leading-tight drop-shadow-lg">
             <div className="text-left">
               Remove tech obstacles<span className="text-white">.</span><br />
               <div className="ml-8 md:ml-12">
@@ -23,24 +23,30 @@ const Hero = () => {
           </h1>
           
           {/* Supporting Copy - Updated roof message - prevent wrapping */}
-          <p className="text-xl md:text-2xl text-white font-lexend-deca mt-6 leading-relaxed whitespace-nowrap">
+          <p className="text-xl md:text-2xl text-white font-lexend-deca mt-6 leading-relaxed whitespace-nowrap drop-shadow-md">
             Solutions tailored to your business so you can focus on the work that moves the needle.
           </p>
           
-          {/* CTA Button */}
-          <Link 
-            href="/contact" 
-            className="mt-8 inline-block px-8 py-3 bg-vt-blue text-white rounded-md text-lg font-semibold hover:bg-vt-blue/90 transition-colors"
-          >
+        {/* CTA Button */}
+        <Link 
+          href="/contact" 
+          className="relative overflow-hidden mt-8 inline-block bg-vt-blue/85 text-white rounded-md text-lg font-semibold hover:bg-vt-blue/90 transition-all duration-300 shadow-2xl hover:shadow-[0_20px_50px_rgba(0,116,188,0.5)] hover:-translate-y-1 hover:scale-105"
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-90 pointer-events-none"></div>
+          <span className="relative shadow-[inset_0_3px_6px_rgba(255,255,255,0.6),inset_0_-2px_4px_rgba(0,0,0,0.1)] z-10 block px-8 py-3">
             Time to Shine!
-          </Link>
+          </span>
+        </Link>
         </div>
         
         {/* Three Pillar Cards - MOVED ABOVE metrics */}
         <div className="mt-12 md:mt-16 px-6 sm:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Pillar 1: Strategic IT Leadership */}
-            <div className="bg-vt-blue/65 backdrop-blur-sm p-6 rounded-lg">
+            <Link href="/services#strategic-partnership" className="block">
+              <div className="relative bg-vt-blue/90 backdrop-blur-sm rounded-lg shadow-2xl hover:shadow-[0_25px_60px_rgba(0,116,188,0.4)] hover:-translate-y-2 hover:scale-105 transition-all duration-300 group cursor-pointer border border-white/40 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-90 pointer-events-none"></div>
+              <div className="relative shadow-[inset_0_3px_6px_rgba(255,255,255,0.9),inset_0_-2px_4px_rgba(0,0,0,0.1)] p-6 z-10">
               {/* Compass star icon */}
               <div className="w-12 h-12 mb-4 text-white">
                 <svg viewBox="0 0 24 24" fill="currentColor">
@@ -72,13 +78,15 @@ const Hero = () => {
               <p className="text-white font-lexend-deca mb-4">
                 Clear, strategic guidance for every tech decision—so you&apos;re never flying blind.
               </p>
-              <Link href="/services#strategic-partnership" className="text-white underline hover:text-vt-blue hover:no-underline transition-colors font-lexend-deca">
-                Learn more →
-              </Link>
             </div>
+            </div>
+            </Link>
             
             {/* Pillar 2: Security & Compliance */}
-            <div className="bg-vt-green/65 backdrop-blur-sm p-6 rounded-lg">
+            <Link href="/services#security-compliance" className="block">
+              <div className="relative bg-vt-green/90 backdrop-blur-sm rounded-lg shadow-2xl hover:shadow-[0_25px_60px_rgba(57,181,74,0.4)] hover:-translate-y-2 hover:scale-105 transition-all duration-300 group cursor-pointer border border-white/40 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-90 pointer-events-none"></div>
+              <div className="relative shadow-[inset_0_3px_6px_rgba(255,255,255,0.9),inset_0_-2px_4px_rgba(0,0,0,0.1)] p-6 z-10">
               {/* Shield with lock icon */}
               <div className="w-12 h-12 mb-4 text-white">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -98,13 +106,15 @@ const Hero = () => {
               <p className="text-white font-lexend-deca mb-4">
                 Security and compliance, built-in from day one—not bolted on after the fact.
               </p>
-              <Link href="/services#security-compliance" className="text-white underline hover:text-vt-green hover:no-underline transition-colors font-lexend-deca">
-                Learn more →
-              </Link>
             </div>
+            </div>
+            </Link>
             
             {/* Pillar 3: Seamless Hybrid Workforce */}
-            <div className="bg-vt-pink/65 backdrop-blur-sm p-6 rounded-lg">
+            <Link href="/services#hybrid-workforce" className="block">
+              <div className="relative bg-vt-pink/90 backdrop-blur-sm rounded-lg shadow-2xl hover:shadow-[0_25px_60px_rgba(239,91,161,0.4)] hover:-translate-y-2 hover:scale-105 transition-all duration-300 group cursor-pointer border border-white/40 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-90 pointer-events-none"></div>
+              <div className="relative shadow-[inset_0_3px_6px_rgba(255,255,255,0.9),inset_0_-2px_4px_rgba(0,0,0,0.1)] p-6 z-10">
               {/* Laptop-minimal icon from Lucide */}
               <div className="w-12 h-12 mb-4 text-white">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -118,30 +128,115 @@ const Hero = () => {
               <p className="text-white font-lexend-deca mb-4">
                 Your team works anywhere. We make sure their tools do, too.
               </p>
-              <Link href="/services#hybrid-workforce" className="text-white underline hover:text-vt-pink hover:no-underline transition-colors font-lexend-deca">
-                Learn more →
+            </div>
+            </div>
+            </Link>
+          </div>
+        </div>
+
+        {/* A Different Approach Section - Gray Band */}
+        <div className="w-screen bg-vt-silver/60 py-16 mt-24 relative left-[50%] right-[50%] -ml-[50vw] -mr-[50vw]">
+          <div className="max-w-6xl mx-auto px-6 sm:px-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white font-lexend-deca mb-6 drop-shadow-lg">
+              A Different Approach to IT Leadership
+            </h2>
+            <div className="space-y-4 font-lexend-deca text-lg leading-relaxed text-white drop-shadow-md">
+              <p>
+                Most IT firms define success by how fast they close tickets. We think that&apos;s backwards. 
+                Disciplined IT prevents the call in the first place.
+              </p>
+              <p>
+                We believe the best IT barely makes a sound. When systems are aligned with your business, 
+                they disappear into the background — secure, stable, and quietly making everyone&apos;s workday easier. 
+                That&apos;s what we mean when we say we run dark.
+              </p>
+              <p>
+                We started Vibrant after years inside MSPs and in-house IT teams that kept chasing fires 
+                instead of preventing them. We built this company to prove there&apos;s a better way — one 
+                grounded in discipline, design, and real partnership.
+              </p>
+              <p className="font-semibold text-white">
+                For you, that means fewer headaches, more clarity, and technology that supports your goals 
+                instead of competing with them.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Our Thinking - Blog Posts */}
+        <div className="mt-32 px-6 sm:px-12">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-white font-lexend-deca mb-12 text-center">
+              Our Thinking
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Blog Post 1 */}
+              <Link href="/blog/the-silent-signal-of-it-success" className="group">
+                <div className="bg-white/90 backdrop-blur-sm rounded-lg p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 border border-gray-200">
+                  <h3 className="text-xl font-bold text-vt-pink font-lexend-deca mb-3 group-hover:text-vt-blue transition-colors">
+                    The Silent Signal of IT Success
+                  </h3>
+                  <p className="text-gray-600 font-lexend-deca mb-4">
+                    Good IT is invisible. Here&apos;s why that&apos;s a feature, not a bug.
+                  </p>
+                  <span className="text-vt-blue font-lexend-deca text-sm font-semibold group-hover:underline">
+                    Read more →
+                  </span>
+                </div>
+              </Link>
+
+              {/* Blog Post 2 */}
+              <Link href="/blog/what-to-look-for-in-a-vcio" className="group">
+                <div className="bg-white/90 backdrop-blur-sm rounded-lg p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 border border-gray-200">
+                  <h3 className="text-xl font-bold text-vt-pink font-lexend-deca mb-3 group-hover:text-vt-blue transition-colors">
+                    What to Look for in a vCIO
+                  </h3>
+                  <p className="text-gray-600 font-lexend-deca mb-4">
+                    A virtual CIO isn&apos;t just a glorified account manager. Here&apos;s what really matters.
+                  </p>
+                  <span className="text-vt-blue font-lexend-deca text-sm font-semibold group-hover:underline">
+                    Read more →
+                  </span>
+                </div>
+              </Link>
+
+              {/* Blog Post 3 */}
+              <Link href="/blog/running-dark" className="group">
+                <div className="bg-white/90 backdrop-blur-sm rounded-lg p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 border border-gray-200">
+                  <h3 className="text-xl font-bold text-vt-pink font-lexend-deca mb-3 group-hover:text-vt-blue transition-colors">
+                    Running Dark
+                  </h3>
+                  <p className="text-gray-600 font-lexend-deca mb-4">
+                    How to build IT systems that run quietly and efficiently.
+                  </p>
+                  <span className="text-vt-blue font-lexend-deca text-sm font-semibold group-hover:underline">
+                    Read more →
+                  </span>
+                </div>
               </Link>
             </div>
           </div>
         </div>
 
-        {/* Proof Metrics Bar - Silver text for readability */}
-        <div className="mt-12 md:mt-16 px-6 sm:px-12 pb-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-vt-green font-lexend-deca">37%</div>
-                <div className="text-vt-silver font-lexend-deca mt-1">Ticket Reduction</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-vt-blue font-lexend-deca">99.6%</div>
-                <div className="text-vt-silver font-lexend-deca mt-1">Client Satisfaction</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-vt-pink font-lexend-deca">100%</div>
-                <div className="text-vt-silver font-lexend-deca mt-1">Remote-Ready</div>
-              </div>
-            </div>
+        {/* Final CTA */}
+        <div className="mt-32 mb-20 px-6 sm:px-12">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white font-lexend-deca mb-6">
+              Ready to Rethink Your IT Strategy?
+            </h2>
+            <p className="text-xl text-white font-lexend-deca mb-8 max-w-2xl mx-auto">
+              Let&apos;s talk about how strategic technology leadership can transform 
+              your business from reactive to proactive.
+            </p>
+            <Link 
+              href="/contact" 
+              className="relative overflow-hidden inline-block bg-vt-pink/85 text-white rounded-md text-lg font-semibold hover:bg-vt-pink/90 transition-all duration-300 shadow-2xl hover:shadow-[0_20px_50px_rgba(239,91,161,0.5)] hover:-translate-y-1 hover:scale-105"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-90 pointer-events-none"></div>
+              <span className="relative shadow-[inset_0_3px_6px_rgba(255,255,255,0.9),inset_0_-2px_4px_rgba(0,0,0,0.1)] z-10 block px-10 py-4">
+                Start the Conversation
+              </span>
+            </Link>
           </div>
         </div>
       </div>

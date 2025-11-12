@@ -30,7 +30,7 @@ export default function ServicesPage() {
             
             {/* Pillar 1: Strategic IT Leadership */}
             <section id="strategic-partnership" className="max-w-6xl mx-auto">
-              <div className="bg-vt-blue/80 backdrop-blur-sm rounded-lg p-8 md:p-12">
+              <div className="bg-vt-blue/80 backdrop-blur-sm rounded-lg p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div className="flex items-center mb-6">
                   {/* Compass star icon */}
                   <div className="w-16 h-16 mr-6 text-white">
@@ -77,7 +77,7 @@ export default function ServicesPage() {
 
             {/* Pillar 2: Security & Compliance */}
             <section id="security-compliance" className="max-w-6xl mx-auto">
-              <div className="bg-vt-green/80 backdrop-blur-sm rounded-lg p-8 md:p-12">
+              <div className="bg-vt-green/80 backdrop-blur-sm rounded-lg p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div className="flex items-center mb-6">
                   {/* Shield with lock icon */}
                   <div className="w-16 h-16 mr-6 text-white">
@@ -119,7 +119,7 @@ export default function ServicesPage() {
 
             {/* Pillar 3: Seamless Hybrid Workforce */}
             <section id="hybrid-workforce" className="max-w-6xl mx-auto">
-              <div className="bg-vt-pink/80 backdrop-blur-sm rounded-lg p-8 md:p-12">
+              <div className="bg-vt-pink/80 backdrop-blur-sm rounded-lg p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div className="flex items-center mb-6">
                   {/* Laptop-minimal icon */}
                   <div className="w-16 h-16 mr-6 text-white">

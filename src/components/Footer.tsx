@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <>
       {/* Footer navigation */}
-      <div className="w-full flex justify-center mt-auto mb-12">
+      <div className="w-full flex justify-center mt-auto mb-12 relative z-10">
         <nav className="text-[#808080] flex space-x-8 font-lexend-deca">
           <Link href="/" className="hover:text-vt-blue transition-colors">
             Home

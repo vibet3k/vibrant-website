@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState, useRef, useCallback } from 'react';
+import Header from './Header';
 import Footer from './Footer';
 
 interface GleamingCircle {
@@ -123,63 +124,87 @@ export default function BackgroundLayout({ children }: { children: React.ReactNo
   }, [createGleamingCircle, addRandomCircle]);
 
   return (
-    <div className="fixed inset-0 overflow-hidden">
-      {/* Background with gradient */}
-      <div 
-        className="absolute inset-0"
-        style={{
-          background: `linear-gradient(180deg, hsla(203, 100%, 37%, 1) 0%, hsla(0, 0%, 100%, 1) 80%)`
-        }}
-      />
-
-      {/* Base circle pattern */}
-      <div 
-        className="absolute inset-0"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,${svgCircle}")`,
-          backgroundSize: '33px 33px',
-          backgroundPosition: '0 0',
-          WebkitMaskImage: 'linear-gradient(to bottom, transparent 20%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0.7) 80%, transparent 90%)',
-          maskImage: 'linear-gradient(to bottom, transparent 20%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0.7) 80%, transparent 90%)',
-          opacity: 0.35
-        }}
-      />
-
-      {/* Gleaming circles overlay */}
-      {gleamingCircles.map(circle => (
-        <div
-          key={circle.id}
-          className="absolute w-8 h-8"
+    <>
+      {/* Fixed Background Layer - NEVER scrolls */}
+      <div className="fixed inset-0 pointer-events-none">
+        {/* Background with gradient */}
+        <div 
+          className="absolute inset-0"
           style={{
-            top: `${circle.top}px`,
-            left: `${circle.left}px`,
-            animation: `gleam ${circle.animationDuration}s ease-in-out ${circle.delay}s 1`
+            background: `linear-gradient(180deg, hsla(203, 100%, 37%, 1) 0%, hsla(0, 0%, 100%, 1) 80%)`
           }}
-        >
-          <svg width="33" height="33" viewBox="0 0 33 33">
-            <circle
-              cx="16.5"
-              cy="16.5"
-              r="14"
-              fill={circle.filled ? circle.color : "none"}
-              stroke={circle.color}
-              strokeWidth={circle.filled ? "1" : "2.5"}
-              className="opacity-0"
-              style={{
-                animation: circle.filled 
-                  ? `gleamFilledOpacity ${circle.animationDuration}s ease-in-out ${circle.delay}s 1`
-                  : `gleamOpacity ${circle.animationDuration}s ease-in-out ${circle.delay}s 1`
-              }}
-            />
-          </svg>
-        </div>
-      ))}
+        />
 
-      {/* Content passed as children - wrapped in a flex column */}
-      <div className="relative z-10 w-full h-full flex flex-col min-h-screen">
-        {children}
+        {/* Base circle pattern */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,${svgCircle}")`,
+            backgroundSize: '33px 33px',
+            backgroundPosition: '0 0',
+            WebkitMaskImage: 'linear-gradient(to bottom, transparent 20%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0.7) 80%, transparent 90%)',
+            maskImage: 'linear-gradient(to bottom, transparent 20%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0.7) 80%, transparent 90%)',
+            opacity: 0.35
+          }}
+        />
+
+        {/* Gleaming circles overlay */}
+        {gleamingCircles.map(circle => (
+          <div
+            key={circle.id}
+            className="absolute w-8 h-8 overflow-hidden rounded-full"
+            style={{
+              top: `${circle.top}px`,
+              left: `${circle.left}px`,
+              animation: `gleam ${circle.animationDuration}s ease-in-out ${circle.delay}s 1`
+            }}
+          >
+            <svg width="33" height="33" viewBox="0 0 33 33" className="relative">
+              <defs>
+              <linearGradient id={`gloss-${circle.id}`} x1="0%" y1="0%" x2="50%" y2="50%">
+                <stop offset="0%" stopColor="white" stopOpacity="0.9" />
+                <stop offset="100%" stopColor="white" stopOpacity="0" />
+              </linearGradient>
+              </defs>
+              <circle
+                cx="16.5"
+                cy="16.5"
+                r="14"
+                fill={circle.filled ? circle.color : "none"}
+                stroke={circle.color}
+                strokeWidth={circle.filled ? "1" : "2.5"}
+                className="opacity-0"
+                style={{
+                  animation: circle.filled 
+                    ? `gleamFilledOpacity ${circle.animationDuration}s ease-in-out ${circle.delay}s 1`
+                    : `gleamOpacity ${circle.animationDuration}s ease-in-out ${circle.delay}s 1`
+                }}
+              />
+              {circle.filled && (
+                <circle
+                  cx="16.5"
+                  cy="16.5"
+                  r="14"
+                  fill={`url(#gloss-${circle.id})`}
+                  className="opacity-0 pointer-events-none"
+                  style={{
+                    animation: `gleamFilledOpacity ${circle.animationDuration}s ease-in-out ${circle.delay}s 1`
+                  }}
+                />
+              )}
+            </svg>
+          </div>
+        ))}
+      </div>
+
+      {/* Scrollable Content Layer - scrolls independently */}
+      <div className="relative min-h-screen flex flex-col">
+        <Header />
+        <div className="flex-1">
+          {children}
+        </div>
         <Footer />
       </div>
-    </div>
+    </>
   );
 }
