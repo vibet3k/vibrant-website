@@ -113,7 +113,7 @@ export default async function BlogIndexPage() {
                   Fresh Content Coming Soon
                 </h2>
                 <p className="text-lg text-gray-600 font-lexend-deca mb-6">
-                  We're crafting insightful articles on IT strategy, leadership, and building 
+                  We&apos;re crafting insightful articles on IT strategy, leadership, and building
                   technology that runs dark. Check back soon for our latest thinking.
                 </p>
                 <Link 
