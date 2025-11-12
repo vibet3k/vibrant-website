@@ -7,6 +7,14 @@ const nextConfig: NextConfig = {
   },
   // Keep existing config
   pageExtensions: ['ts', 'tsx', 'js', 'jsx'],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+      },
+    ],
+  },
 };
 
 export default nextConfig;
