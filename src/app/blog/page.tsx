@@ -23,7 +23,7 @@ export default async function BlogIndexPage() {
 
   return (
     <BackgroundLayout>
-      <main className="max-w-7xl mx-auto px-6 py-16 mt-20">
+      <main className="max-w-7xl mx-auto px-6 py-16 mt-12">
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold text-white font-lexend-deca drop-shadow-lg mb-4">
