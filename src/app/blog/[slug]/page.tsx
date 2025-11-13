@@ -45,7 +45,7 @@ export default async function Page(props: BlogPostPageProps) {
   
   return (
     <BackgroundLayout>
-      <main className="mx-auto px-6 py-16 mt-16 max-w-[1400px]">
+      <main className="mx-auto px-6 py-16 mt-12 max-w-[1400px]">
         {/* Back to Blog Link */}
         <Link 
           href="/blog"
@@ -80,7 +80,7 @@ export default async function Page(props: BlogPostPageProps) {
               
               {/* Title and Date Overlay */}
               <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-                <div className="max-w-4xl mx-auto">
+                <div className="max-w-6xl mx-auto">
                   {post.publishedAt && (
                     <p className="text-vt-pink font-lexend-deca mb-4 text-lg">
                       {format(new Date(post.publishedAt), 'MMMM d, yyyy')}
