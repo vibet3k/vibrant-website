@@ -49,7 +49,7 @@ export default async function BlogIndexPage() {
                   <div className="relative bg-white/95 backdrop-blur-sm rounded-lg overflow-hidden shadow-2xl hover:shadow-[0_25px_60px_rgba(0,116,188,0.4)] hover:-translate-y-2 transition-all duration-300 h-full flex flex-col">
                     {/* Featured Image */}
                     {post.mainImage?.asset?.url ? (
-                      <div className="relative h-64 w-full overflow-hidden">
+                      <div className="relative h-80 w-full overflow-hidden">
                         <Image
                           src={post.mainImage.asset.url}
                           alt={post.title || 'Blog post'}
@@ -61,7 +61,7 @@ export default async function BlogIndexPage() {
                       </div>
                     ) : (
                       // Placeholder with brand color gradient
-                      <div className="relative h-64 w-full bg-gradient-to-br from-vt-blue to-vt-pink flex items-center justify-center">
+                      <div className="relative h-80 w-full bg-gradient-to-br from-vt-blue to-vt-pink flex items-center justify-center">
                         <svg className="w-16 h-16 text-white/30" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
                         </svg>
@@ -86,16 +86,6 @@ export default async function BlogIndexPage() {
                       <p className="text-gray-600 font-lexend-deca leading-relaxed mb-4 flex-1">
                         {post.description}
                       </p>
-                      
-                      {/* Read more link */}
-                      <div className="flex items-center text-vt-blue font-lexend-deca font-semibold group-hover:text-vt-pink transition-colors">
-                        <span>Read article</span>
-                        <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                      </div>
-                    </div>
-                    
                     {/* Glossy overlay on hover */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                   </div>
