@@ -45,7 +45,7 @@ export default async function Page(props: BlogPostPageProps) {
   
   return (
     <BackgroundLayout>
-      <main className="mx-auto px-6 py-16 mt-20 max-w-[1400px]">
+      <main className="mx-auto px-6 py-16 mt-16 max-w-[1400px]">
         {/* Back to Blog Link */}
         <Link 
           href="/blog"
