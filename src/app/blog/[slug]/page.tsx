@@ -101,7 +101,7 @@ export default async function Page(props: BlogPostPageProps) {
             {/* Content Area */}
             <div className="relative">
               {/* White content card */}
-              <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-2xl p-8 md:p-12 max-w-4xl mx-auto border border-white/40">
+              <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-2xl p-8 md:p-12 max-w-5xl mx-auto border border-white/40">
                 {/* Glossy overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-50 pointer-events-none rounded-xl"></div>
                 
