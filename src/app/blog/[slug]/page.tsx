@@ -86,7 +86,7 @@ export default async function Page(props: BlogPostPageProps) {
                       {format(new Date(post.publishedAt), 'MMMM d, yyyy')}
                     </p>
                   )}
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-lexend-deca leading-tight drop-shadow-2xl">
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-lexend-deca leading-tight" style={{textShadow: '0 0 20px rgba(239, 91, 161, 0.8), 0 0 40px rgba(239, 91, 161, 0.6)'}}>
                     {post.title}
                   </h1>
                   {post.description && (
