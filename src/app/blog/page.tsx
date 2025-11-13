@@ -86,6 +86,7 @@ export default async function BlogIndexPage() {
                       <p className="text-gray-600 font-lexend-deca leading-relaxed mb-4 flex-1">
                         {post.description}
                       </p>
+                    </div>
                     {/* Glossy overlay on hover */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                   </div>
