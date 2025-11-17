@@ -51,7 +51,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-white font-lexend-deca">Phone</h3>
-                  <a href="tel:4405551234" className="text-white hover:text-white/80 transition-colors font-lexend-deca">(440) 555-1234</a>
+                  <a href="tel:4405551234" className="text-white hover:text-white/80 transition-colors font-lexend-deca">(216)353-3124</a>
                 </div>
               </div>
             </div>
