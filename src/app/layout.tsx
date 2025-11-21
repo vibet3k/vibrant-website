@@ -94,6 +94,8 @@ export default function RootLayout({
       <body className="antialiased">
         {children}
         <Analytics />
+        {/* HubSpot Tracking Code */}
+        <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/242963234.js"></script>
       </body>
     </html>
   );
