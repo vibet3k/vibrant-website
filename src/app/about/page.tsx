@@ -64,7 +64,7 @@ export default function AboutPage() {
           </p>
 
           <p className="text-lg text-gray-700 font-radley leading-relaxed mb-6">
-            Technology is woven into every part of your business. When {"it's"} working, it {"doesn't"} demand your attention. You do your work, your team does theirs, and the systems stay out of the way. We call that "running dark" – when your tech stack hums in the background like a quiet, reassuring presence you barely notice.
+            Technology is woven into every part of your business. When {"it's"} working, it {"doesn't"} demand your attention. You do your work, your team does theirs, and the systems stay out of the way. We call that {"\""}running dark{"\""} – when your tech stack hums in the background like a quiet, reassuring presence you barely notice.
           </p>
 
           <p className="text-lg text-gray-700 font-radley leading-relaxed mb-6">
