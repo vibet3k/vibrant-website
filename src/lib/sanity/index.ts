@@ -4,20 +4,19 @@ export const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
 export const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || 'production';
 export const apiVersion = '2023-05-03'; // Use the latest API version
 
-// Add this check to handle missing projectId
 if (!projectId) {
   console.warn('No Sanity project ID found. Check your environment variables.');
 }
 
-// Add token support (even if we're not using it yet)
 export const token = process.env.SANITY_API_TOKEN;
 
-export const client = createClient({
-  projectId: projectId || '', // Provide a fallback empty string
-  dataset,
-  apiVersion,
-  useCdn: process.env.NODE_ENV === 'production', // Use CDN in production
-  perspective: 'published',
-  // Use token if available
-  ...(token ? { token } : {}),
-});
+export const client = projectId
+  ? createClient({
+      projectId,
+      dataset,
+      apiVersion,
+      useCdn: process.env.NODE_ENV === 'production',
+      perspective: 'published',
+      ...(token ? { token } : {}),
+    })
+  : null;

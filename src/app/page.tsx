@@ -14,13 +14,7 @@ export default function Home() {
         >
           Our Services
         </a>
-        <a 
-          href="/pricing" 
-          className="hover:underline hover:text-[#39b54a] transition-colors"
-        >
-          Pricing
-        </a>
-        <a 
+        <a
           href="/contact" 
           className="hover:underline hover:text-[#ef5ba1] transition-colors"
         >
