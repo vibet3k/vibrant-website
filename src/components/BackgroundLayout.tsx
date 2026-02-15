@@ -198,7 +198,7 @@ export default function BackgroundLayout({ children }: { children: React.ReactNo
       </div>
 
       {/* Scrollable Content Layer - scrolls independently */}
-      <div className="relative flex flex-col">
+      <div className="relative flex flex-col min-h-screen">
         <Header />
         <div className="flex-1">
           {children}
