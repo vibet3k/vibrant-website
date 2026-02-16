@@ -45,7 +45,7 @@ export default async function Page(props: BlogPostPageProps) {
   
   return (
     <BackgroundLayout>
-      <main className="mx-auto px-6 py-16 mt-12 max-w-[1400px]">
+      <main className="mx-auto px-4 sm:px-6 py-12 sm:py-16 mt-16 sm:mt-12 max-w-[1400px]">
         {/* Back to Blog Link */}
         <Link 
           href="/blog"
@@ -60,7 +60,7 @@ export default async function Page(props: BlogPostPageProps) {
         {post ? (
           <>
             {/* Hero Image with Title Overlay */}
-            <div className="relative w-full h-[500px] rounded-xl overflow-hidden shadow-2xl mb-12">
+            <div className="relative w-full h-[280px] sm:h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-2xl mb-8 sm:mb-12">
               {post.mainImage?.asset?.url ? (
                 <>
                   <Image
@@ -79,18 +79,18 @@ export default async function Page(props: BlogPostPageProps) {
               )}
               
               {/* Title and Date Overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
+              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-8 md:p-12">
                 <div className="max-w-6xl mx-auto">
                   {post.publishedAt && (
-                    <p className="text-vt-pink font-lexend-deca mb-4 text-lg">
+                    <p className="text-vt-pink font-lexend-deca mb-2 sm:mb-4 text-sm sm:text-lg">
                       {format(new Date(post.publishedAt), 'MMMM d, yyyy')}
                     </p>
                   )}
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-lexend-deca leading-tight" style={{textShadow: '0 0 20px rgba(239, 91, 161, 0.8), 0 0 40px rgba(239, 91, 161, 0.6)'}}>
+                  <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white font-lexend-deca leading-tight" style={{textShadow: '0 0 20px rgba(239, 91, 161, 0.8), 0 0 40px rgba(239, 91, 161, 0.6)'}}>
                     {post.title}
                   </h1>
                   {post.description && (
-                    <p className="text-xl text-white/90 mt-4 font-lexend-deca drop-shadow-lg">
+                    <p className="text-base sm:text-xl text-white/90 mt-2 sm:mt-4 font-lexend-deca drop-shadow-lg">
                       {post.description}
                     </p>
                   )}
@@ -101,7 +101,7 @@ export default async function Page(props: BlogPostPageProps) {
             {/* Content Area */}
             <div className="relative">
               {/* White content card */}
-              <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-2xl p-8 md:p-12 max-w-7xl mx-auto border border-white/40">
+              <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-2xl p-4 sm:p-8 md:p-12 max-w-7xl mx-auto border border-white/40">
                 {/* Glossy overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-50 pointer-events-none rounded-xl"></div>
                 
@@ -180,7 +180,7 @@ export default async function Page(props: BlogPostPageProps) {
                       <div className="relative bg-white/95 backdrop-blur-sm rounded-lg overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 h-full flex flex-col">
                         {/* Thumbnail Image */}
                         {relatedPost.mainImage?.asset?.url ? (
-                          <div className="relative h-48 w-full overflow-hidden">
+                          <div className="relative h-32 sm:h-48 w-full overflow-hidden">
                             <Image
                               src={relatedPost.mainImage.asset.url}
                               alt={relatedPost.title || 'Blog post'}
@@ -189,7 +189,7 @@ export default async function Page(props: BlogPostPageProps) {
                             />
                           </div>
                         ) : (
-                          <div className="relative h-48 w-full bg-gradient-to-br from-vt-blue to-vt-pink"></div>
+                          <div className="relative h-32 sm:h-48 w-full bg-gradient-to-br from-vt-blue to-vt-pink"></div>
                         )}
                         
                         {/* Card Content */}

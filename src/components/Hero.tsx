@@ -10,20 +10,20 @@ const Hero = () => {
         {/* Main content container - minimal top padding */}
         <div className="flex flex-col items-center text-center px-6 pt-0 md:pt-2">
           {/* Primary Headline - Three-part tagline with stepwise indentation */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-lexend-deca leading-tight drop-shadow-lg">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white font-lexend-deca leading-tight drop-shadow-lg">
             <div className="text-left">
               Remove tech obstacles<span className="text-white">.</span><br />
-              <div className="ml-8 md:ml-12">
+              <div className="ml-4 sm:ml-8 md:ml-12">
                 Reveal business opportunities<span className="text-white">.</span><br />
               </div>
-              <div className="ml-16 md:ml-24">
+              <div className="ml-8 sm:ml-16 md:ml-24">
                 Let your people shine<span className="text-vt-pink">.</span>
               </div>
             </div>
           </h1>
           
           {/* Supporting Copy - Updated roof message - prevent wrapping */}
-          <p className="text-xl md:text-2xl text-white font-lexend-deca mt-6 leading-relaxed whitespace-nowrap drop-shadow-md">
+          <p className="text-base sm:text-xl md:text-2xl text-white font-lexend-deca mt-6 leading-relaxed drop-shadow-md max-w-3xl">
             Solutions tailored to your business so you can focus on the work that moves the needle.
           </p>
           
@@ -135,7 +135,7 @@ const Hero = () => {
         </div>
 
         {/* A Different Approach Section - Gray Band */}
-        <div className="w-screen bg-vt-silver/60 py-16 mt-32 relative left-[50%] right-[50%] -ml-[50vw] -mr-[50vw]">
+        <div className="w-screen bg-vt-silver/60 py-12 md:py-16 mt-16 md:mt-32 relative left-[50%] right-[50%] -ml-[50vw] -mr-[50vw]">
           <div className="max-w-6xl mx-auto px-6 sm:px-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white font-lexend-deca mb-6 drop-shadow-lg">
               A Different Approach to IT Leadership
@@ -164,9 +164,9 @@ const Hero = () => {
         </div>
 
         {/* Our Thinking - Blog Posts */}
-        <div className="mt-32 px-6 sm:px-12">
+        <div className="mt-16 md:mt-32 px-6 sm:px-12">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white font-lexend-deca mb-12 text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white font-lexend-deca mb-8 md:mb-12 text-center">
               Our Thinking
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -219,7 +219,7 @@ const Hero = () => {
         </div>
 
         {/* Final CTA */}
-        <div className="mt-32 mb-32 px-6 sm:px-12">
+        <div className="mt-16 mb-16 md:mt-32 md:mb-32 px-6 sm:px-12">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-vt-blue font-lexend-deca mb-6">
               Ready to Rethink Your IT Strategy?

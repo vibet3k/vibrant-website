@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/20">
-      <div className="w-full px-8 sm:px-12 lg:px-16 xl:px-24">
+      <div className="w-full px-4 sm:px-8 lg:px-16 xl:px-24">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
@@ -27,7 +27,7 @@ export default function Header() {
               alt="Vibrant Technology"
               width={250}
               height={75}
-              className="h-20 w-auto"
+              className="h-14 sm:h-20 w-auto"
               priority
             />
           </Link>

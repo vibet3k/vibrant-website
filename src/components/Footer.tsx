@@ -8,7 +8,7 @@ export default function Footer() {
     <>
       {/* Footer navigation */}
       <div className="w-full flex justify-center mt-auto mb-2 relative z-10">
-        <nav className="text-[#808080] flex space-x-8 font-lexend-deca">
+        <nav className="text-[#808080] flex space-x-4 sm:space-x-8 font-lexend-deca text-sm sm:text-base">
           <Link href="/" className="hover:text-vt-blue transition-colors">
             Home
           </Link>
@@ -32,7 +32,7 @@ export default function Footer() {
             alt="Vibrant Technology"
             width={300}
             height={90}
-            className="w-auto h-20 sm:h-24 md:h-28 lg:h-36"
+            className="w-auto h-14 sm:h-20 md:h-28 lg:h-36"
             style={{ objectFit: 'contain' }}
             priority
           />

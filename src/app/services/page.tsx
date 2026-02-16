@@ -15,7 +15,7 @@ export default function ServicesPage() {
       <div className="flex-1 overflow-y-auto">
         <div className="w-full">
           {/* Page Header/Intro */}
-          <div className="text-center px-6 pt-16 md:pt-24 pb-12">
+          <div className="text-center px-4 sm:px-6 pt-20 md:pt-24 pb-8 sm:pb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-white font-lexend-deca mb-6">
               Solutions Tailored to Your Business
             </h1>
@@ -26,11 +26,11 @@ export default function ServicesPage() {
           </div>
 
           {/* Three Pillar Sections */}
-          <div className="px-6 sm:px-12 space-y-16 pb-16">
+          <div className="px-4 sm:px-12 space-y-10 sm:space-y-16 pb-16">
             
             {/* Pillar 1: Strategic IT Leadership */}
             <section id="strategic-partnership" className="max-w-6xl mx-auto">
-              <div className="bg-vt-blue/80 backdrop-blur-sm rounded-lg p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-300">
+              <div className="bg-vt-blue/80 backdrop-blur-sm rounded-lg p-5 sm:p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div className="flex items-center mb-6">
                   {/* Compass star icon */}
                   <div className="w-16 h-16 mr-6 text-white">
@@ -62,7 +62,7 @@ export default function ServicesPage() {
                     plain language, and create roadmaps that make sense for your budget and timeline.
                   </p>
 
-                  <div className="bg-white/10 rounded-lg p-6 mt-8">
+                  <div className="bg-white/10 rounded-lg p-4 sm:p-6 mt-6 sm:mt-8">
                     <h3 className="text-xl font-semibold mb-4 text-white">How We Deliver Strategic Partnership:</h3>
                     <ul className="space-y-3 text-white/90">
                       <li>• <strong>Quarterly Business Reviews:</strong> We review your tech stack against your business goals</li>
@@ -77,7 +77,7 @@ export default function ServicesPage() {
 
             {/* Pillar 2: Security & Compliance */}
             <section id="security-compliance" className="max-w-6xl mx-auto">
-              <div className="bg-vt-green/80 backdrop-blur-sm rounded-lg p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-300">
+              <div className="bg-vt-green/80 backdrop-blur-sm rounded-lg p-5 sm:p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div className="flex items-center mb-6">
                   {/* Shield with lock icon */}
                   <div className="w-16 h-16 mr-6 text-white">
@@ -104,7 +104,7 @@ export default function ServicesPage() {
                     in your managed services, not sold as costly extras.
                   </p>
 
-                  <div className="bg-white/10 rounded-lg p-6 mt-8">
+                  <div className="bg-white/10 rounded-lg p-4 sm:p-6 mt-6 sm:mt-8">
                     <h3 className="text-xl font-semibold mb-4 text-white">Our Built-In Security Stack:</h3>
                     <ul className="space-y-3 text-white/90">
                       <li>• <strong>Advanced Email Security:</strong> Proofpoint protection against phishing and malware</li>
@@ -119,7 +119,7 @@ export default function ServicesPage() {
 
             {/* Pillar 3: Seamless Hybrid Workforce */}
             <section id="hybrid-workforce" className="max-w-6xl mx-auto">
-              <div className="bg-vt-pink/80 backdrop-blur-sm rounded-lg p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-300">
+              <div className="bg-vt-pink/80 backdrop-blur-sm rounded-lg p-5 sm:p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div className="flex items-center mb-6">
                   {/* Laptop-minimal icon */}
                   <div className="w-16 h-16 mr-6 text-white">
@@ -144,7 +144,7 @@ export default function ServicesPage() {
                     no compromises on security or access to confidential files.
                   </p>
 
-                  <div className="bg-white/10 rounded-lg p-6 mt-8">
+                  <div className="bg-white/10 rounded-lg p-4 sm:p-6 mt-6 sm:mt-8">
                     <h3 className="text-xl font-semibold mb-4 text-white">How We Enable Hybrid Work:</h3>
                     <ul className="space-y-3 text-white/90">
                       <li>• <strong>Azure Virtual Desktop:</strong> Full desktop experience from any device, anywhere</li>
@@ -159,7 +159,7 @@ export default function ServicesPage() {
           </div>
 
           {/* Service Packages Section */}
-          <div className="px-6 sm:px-12 pb-24">
+          <div className="px-4 sm:px-12 pb-24">
             <div className="max-w-6xl mx-auto">
               <div className="bg-white/90 backdrop-blur-sm rounded-lg p-8 md:p-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-vt-blue font-lexend-deca mb-8 text-center">

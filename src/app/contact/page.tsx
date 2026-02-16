@@ -12,12 +12,12 @@ export default function ContactPage() {
   return (
     <BackgroundLayout>
       {/* Main Content - Moved up with reduced padding */}
-      <main className="max-w-7xl mx-auto px-4 pt-6 md:pt-16">
+      <main className="max-w-7xl mx-auto px-4 pt-20 md:pt-16">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16">
           {/* Contact information (2 columns) */}
           <div className="lg:col-span-2 flex flex-col justify-center space-y-10 lg:pr-8">
             {/* Title on one line */}
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-lexend-deca whitespace-nowrap">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 font-lexend-deca">
               Start Your Journey
             </h1>
             

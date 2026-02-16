@@ -23,10 +23,10 @@ export default async function BlogIndexPage() {
 
   return (
     <BackgroundLayout>
-      <main className="max-w-7xl mx-auto px-6 py-16 mt-12">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 mt-16 sm:mt-12">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-white font-lexend-deca drop-shadow-lg mb-4">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white font-lexend-deca drop-shadow-lg mb-4">
             Our Thinking
           </h1>
           <p className="text-xl text-white/90 font-lexend-deca drop-shadow-md max-w-3xl mx-auto">
@@ -49,7 +49,7 @@ export default async function BlogIndexPage() {
                   <div className="relative bg-white/95 backdrop-blur-sm rounded-lg overflow-hidden shadow-2xl hover:shadow-[0_25px_60px_rgba(0,116,188,0.4)] hover:-translate-y-2 transition-all duration-300 h-full flex flex-col">
                     {/* Featured Image */}
                     {post.mainImage?.asset?.url ? (
-                      <div className="relative h-96 w-full overflow-hidden">
+                      <div className="relative h-48 sm:h-96 w-full overflow-hidden">
                         <Image
                           src={post.mainImage.asset.url}
                           alt={post.title || 'Blog post'}
@@ -61,7 +61,7 @@ export default async function BlogIndexPage() {
                       </div>
                     ) : (
                       // Placeholder with brand color gradient
-                      <div className="relative h-96 w-full bg-gradient-to-br from-vt-blue to-vt-pink flex items-center justify-center">
+                      <div className="relative h-48 sm:h-96 w-full bg-gradient-to-br from-vt-blue to-vt-pink flex items-center justify-center">
                         <svg className="w-16 h-16 text-white/30" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
                         </svg>
