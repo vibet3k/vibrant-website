@@ -17,13 +17,13 @@ export const metadata: Metadata = {
 };
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export default async function Page(props: BlogPostPageProps) {
-  const { slug } = props.params;
+  const { slug } = await props.params;
   
   // Try to fetch the post data
   let post: Post | null = null;
