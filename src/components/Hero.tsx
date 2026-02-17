@@ -3,7 +3,18 @@
 import Link from 'next/link';
 import BackgroundLayout from './BackgroundLayout';
 
-const Hero = () => {
+interface HeroPost {
+  _id: string;
+  title: string;
+  slug: string | { current: string };
+  description?: string;
+}
+
+interface HeroProps {
+  recentPosts?: HeroPost[];
+}
+
+const Hero = ({ recentPosts = [] }: HeroProps) => {
   return (
     <BackgroundLayout>
       <div className="w-full h-full flex flex-col mt-20">
@@ -164,59 +175,37 @@ const Hero = () => {
         </div>
 
         {/* Our Thinking - Blog Posts */}
+        {recentPosts.length > 0 && (
         <div className="mt-16 md:mt-32 px-6 sm:px-12">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white font-lexend-deca mb-8 md:mb-12 text-center">
               Our Thinking
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Blog Post 1 */}
-              <Link href="/blog/the-silent-signal-of-it-success" className="group">
-                <div className="bg-gradient-to-br from-white/100 via-white/95 to-vt-green/3 backdrop-blur-sm rounded-lg p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 border border-vt-silver border-t-2 border-r-2 border-r-vt-blue border-t-vt-blue">
-                  <h3 className="text-xl font-bold text-vt-pink font-lexend-deca mb-3 group-hover:text-vt-blue transition-colors">
-                    The Silent Signal of IT Success
-                  </h3>
-                  <p className="text-gray-600 font-lexend-deca mb-4">
-                    Good IT is invisible. Here&apos;s why that&apos;s a feature, not a bug.
-                  </p>
-                  <span className="text-vt-blue font-lexend-deca text-sm font-semibold group-hover:underline">
-                    Read more →
-                  </span>
-                </div>
-              </Link>
-
-              {/* Blog Post 2 */}
-              <Link href="/blog/what-to-look-for-in-a-vcio" className="group">
-                <div className="bg-gradient-to-br from-white/100 via-white/90 to-vt-green/3 backdrop-blur-sm rounded-lg p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 border border-vt-silver border-t-2 border-r-2 border-r-vt-blue border-t-vt-blue">
-                  <h3 className="text-xl font-bold text-vt-pink font-lexend-deca mb-3 group-hover:text-vt-blue transition-colors">
-                    What to Look for in a vCIO
-                  </h3>
-                  <p className="text-gray-600 font-lexend-deca mb-4">
-                    A virtual CIO isn&apos;t just a glorified account manager. Here&apos;s what really matters.
-                  </p>
-                  <span className="text-vt-blue font-lexend-deca text-sm font-semibold group-hover:underline">
-                    Read more →
-                  </span>
-                </div>
-              </Link>
-
-              {/* Blog Post 3 */}
-              <Link href="/blog/running-dark" className="group">
-                <div className="bg-gradient-to-br from-white/100 via-white/90 to-vt-green/3 backdrop-blur-sm rounded-lg p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 border border-vt-silver border-t-2 border-r-2 border-r-vt-blue border-t-vt-blue">
-                  <h3 className="text-xl font-bold text-vt-pink font-lexend-deca mb-3 group-hover:text-vt-blue transition-colors">
-                    Running Dark
-                  </h3>
-                  <p className="text-gray-600 font-lexend-deca mb-4">
-                    How to build IT systems that run quietly and efficiently.
-                  </p>
-                  <span className="text-vt-blue font-lexend-deca text-sm font-semibold group-hover:underline">
-                    Read more →
-                  </span>
-                </div>
-              </Link>
+              {recentPosts.map((post) => {
+                const slug = typeof post.slug === 'string' ? post.slug : post.slug?.current;
+                return (
+                  <Link key={post._id} href={`/blog/${slug}`} className="group">
+                    <div className="bg-gradient-to-br from-white/100 via-white/95 to-vt-green/3 backdrop-blur-sm rounded-lg p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 border border-vt-silver border-t-2 border-r-2 border-r-vt-blue border-t-vt-blue">
+                      <h3 className="text-xl font-bold text-vt-pink font-lexend-deca mb-3 group-hover:text-vt-blue transition-colors">
+                        {post.title}
+                      </h3>
+                      {post.description && (
+                        <p className="text-gray-600 font-lexend-deca mb-4">
+                          {post.description}
+                        </p>
+                      )}
+                      <span className="text-vt-blue font-lexend-deca text-sm font-semibold group-hover:underline">
+                        Read more →
+                      </span>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>
+        )}
 
         {/* Final CTA */}
         <div className="mt-16 mb-16 md:mt-32 md:mb-32 px-6 sm:px-12">

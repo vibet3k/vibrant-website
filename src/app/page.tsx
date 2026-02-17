@@ -1,26 +1,26 @@
 import Hero from '@/components/Hero';
+import { client, projectId } from '@/lib/sanity';
+import { postsQuery } from '@/lib/sanity/queries';
+import { Post } from '@/lib/sanity/types';
 
-export default function Home() {
+export const revalidate = 0;
+
+export default async function Home() {
+  let recentPosts: Post[] = [];
+  try {
+    if (client && projectId) {
+      const allPosts = await client.fetch(postsQuery);
+      recentPosts = allPosts.slice(0, 3);
+    }
+  } catch (error) {
+    console.error('Error fetching recent posts:', error);
+  }
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen font-lexend-deca">
-      <main className="flex flex-col row-start-2 items-center w-full">
-        <Hero />
+    <div className="w-full min-h-screen font-lexend-deca">
+      <main className="flex flex-col items-center w-full">
+        <Hero recentPosts={recentPosts} />
       </main>
-      {/* Optional: Keep a modified footer if desired */}
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center text-[#808080]">
-        <a 
-          href="/services" 
-          className="hover:underline hover:text-[#0074bc] transition-colors"
-        >
-          Our Services
-        </a>
-        <a
-          href="/contact" 
-          className="hover:underline hover:text-[#ef5ba1] transition-colors"
-        >
-          Contact Us
-        </a>
-      </footer>
     </div>
   );
 }
