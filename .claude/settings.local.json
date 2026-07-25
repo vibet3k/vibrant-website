@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /c/Users/WilliamBryson/dev/vibrant-website status --short)",
+      "Bash(git -C /c/Users/WilliamBryson/dev/vibrant-website diff HEAD package.json)",
+      "Bash(npm install:*)",
+      "Bash(del \"C:\\\\Users\\\\WilliamBryson\\\\dev\\\\vibrant-website\\\\src\\\\lib\\\\sanity\\\\sanity.ts\")",
+      "Bash(npx next build:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nClean up codebase: remove unused files, fix build errors, add env example\n\n- Delete unused CircleBackground.tsx \\(superseded by BackgroundLayout\\)\n- Delete duplicate sanity.ts client file \\(index.ts is used everywhere\\)\n- Delete faviconOLD.ico\n- Remove broken /pricing link from homepage footer\n- Remove ignoreBuildErrors from next.config.ts\n- Exclude temp_sanitySchemas from tsconfig to fix build\n- Make Sanity client handle missing projectId gracefully\n- Clean up commented-out code in about page\n- Add date-fns dependency \\(used by blog pages\\)\n- Add .env.example documenting required env vars\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit:*)",
+      "Bash(vercel env:*)",
+      "Bash(curl:*)"
+    ]
+  }
+}
