@@ -194,10 +194,10 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
         {/* Final CTA */}
         <div className="mt-16 mb-16 md:mt-32 md:mb-32 px-6 sm:px-12">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-vt-blue font-lexend-deca mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white font-lexend-deca mb-6 drop-shadow-lg">
               Ready to Rethink Your IT Strategy?
             </h2>
-            <p className="text-xl text-vt-silver font-lexend-deca mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-white font-lexend-deca mb-8 max-w-2xl mx-auto drop-shadow-md">
               Let&apos;s talk about how strategic technology leadership can transform 
               your business from reactive to proactive.
             </p>
