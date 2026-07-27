@@ -21,21 +21,21 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
         {/* Main content container - minimal top padding */}
         <div className="flex flex-col items-center text-center px-6 pt-0 md:pt-2">
           {/* Primary Headline - Three-part tagline with stepwise indentation */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white font-lexend-deca leading-tight drop-shadow-lg">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white font-lexend-deca leading-tight drop-shadow-lg">
             <div className="text-left">
-              Remove tech obstacles<span className="text-white">.</span><br />
+              Great IT runs dark<span className="text-vt-pink">.</span><br />
               <div className="ml-4 sm:ml-8 md:ml-12">
-                Reveal business opportunities<span className="text-white">.</span><br />
+                You don&apos;t see it working<span className="text-white">.</span><br />
               </div>
               <div className="ml-8 sm:ml-16 md:ml-24">
-                Let your people shine<span className="text-vt-pink">.</span>
+                You just see that it works<span className="text-white">.</span>
               </div>
             </div>
           </h1>
           
           {/* Supporting Copy - Updated roof message - prevent wrapping */}
-          <p className="text-base sm:text-xl md:text-2xl text-white font-lexend-deca mt-6 leading-relaxed drop-shadow-md max-w-3xl">
-            Solutions tailored to your business so you can focus on the work that moves the needle.
+          <p className="text-lg sm:text-2xl md:text-3xl text-white font-lexend-deca mt-6 leading-relaxed drop-shadow-md max-w-3xl">
+            Quiet, disciplined IT that prevents fire drills, so your people can do their best work.
           </p>
           
         {/* CTA Button */}
@@ -45,7 +45,7 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
         >
           <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-90 pointer-events-none"></div>
           <span className="relative shadow-[inset_0_3px_6px_rgba(255,255,255,0.6),inset_0_-2px_4px_rgba(0,0,0,0.1)] z-10 block px-8 py-3">
-            Time to Shine!
+            Let&apos;s Talk
           </span>
         </Link>
         </div>

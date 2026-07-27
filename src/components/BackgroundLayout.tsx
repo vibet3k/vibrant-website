@@ -42,9 +42,26 @@ export default function BackgroundLayout({ children }: { children: React.ReactNo
     // Keep circles in the middle section
     const minRow = Math.floor(rows * 0.2);
     const maxRow = Math.floor(rows * 0.7);
-    
-    const randomRow = minRow + Math.floor(Math.random() * (maxRow - minRow));
-    const randomCol = Math.floor(Math.random() * cols);
+
+    // Text-safe zone: keep circles out of the central column where the
+    // headline / subhead / CTA live, so they animate in the margins only.
+    const exCol1 = cols * 0.18;
+    const exCol2 = cols * 0.82;
+    const exRow1 = rows * 0.18;
+    const exRow2 = rows * 0.64;
+
+    let randomRow = minRow + Math.floor(Math.random() * (maxRow - minRow));
+    let randomCol = Math.floor(Math.random() * cols);
+    let tries = 0;
+    while (
+      tries < 20 &&
+      randomCol > exCol1 && randomCol < exCol2 &&
+      randomRow > exRow1 && randomRow < exRow2
+    ) {
+      randomRow = minRow + Math.floor(Math.random() * (maxRow - minRow));
+      randomCol = Math.floor(Math.random() * cols);
+      tries++;
+    }
     
     // Increment counter
     circleCountRef.current += 1;
