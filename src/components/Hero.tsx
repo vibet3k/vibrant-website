@@ -108,7 +108,7 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
               </h3>
               <p className="text-white font-lexend-deca mb-4">
                 A vCIO who plans for what&apos;s next.
-                <span className="block mt-1">So nothing lands as an emergency.</span>
+                <span className="block mt-0">So nothing lands as an emergency.</span>
               </p>
             </div>
             </div>
@@ -137,7 +137,7 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
               </h3>
               <p className="text-white font-lexend-deca mb-4">
                 Protected at every layer.
-                <span className="block mt-1">With the documentation to prove it.</span>
+                <span className="block mt-0">With the documentation to prove it.</span>
               </p>
             </div>
             </div>
@@ -162,7 +162,7 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
               </h3>
               <p className="text-white font-lexend-deca mb-4">
                 Report it once. We own it from there.
-                <span className="block mt-1">IT you don&apos;t have to manage.</span>
+                <span className="block mt-0">IT you don&apos;t have to manage.</span>
               </p>
             </div>
             </div>
