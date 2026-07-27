@@ -166,7 +166,7 @@ export default function BackgroundLayout({ children }: { children: React.ReactNo
             backgroundPosition: '0 0',
             WebkitMaskImage: 'linear-gradient(to bottom, transparent 8%, rgba(255,255,255,0.18) 20%, rgba(255,255,255,0.35) 45%, rgba(255,255,255,0.5) 70%, rgba(255,255,255,0.55) 80%, transparent 92%)',
             maskImage: 'linear-gradient(to bottom, transparent 8%, rgba(255,255,255,0.18) 20%, rgba(255,255,255,0.35) 45%, rgba(255,255,255,0.5) 70%, rgba(255,255,255,0.55) 80%, transparent 92%)',
-            opacity: 0.28
+            opacity: 0.2
           }}
         />
 
