@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import BackgroundLayout from './BackgroundLayout';
+import { ChevronDown } from 'lucide-react';
 
 interface HeroPost {
   _id: string;
@@ -17,9 +18,9 @@ interface HeroProps {
 const Hero = ({ recentPosts = [] }: HeroProps) => {
   return (
     <BackgroundLayout>
-      <div className="w-full h-full flex flex-col mt-20">
-        {/* Main content container - minimal top padding */}
-        <div className="flex flex-col items-center text-center px-6 pt-0 md:pt-2">
+      <div className="w-full flex flex-col">
+        {/* Hero statement — fills the first screen on desktop; text anchored high (on the blue), cards below the fold */}
+        <div className="relative flex flex-col items-center text-center px-6 pt-24 md:pt-28 pb-16 md:pb-0 md:min-h-[calc(100dvh-4rem)]">
           {/* Primary Headline - Three-part tagline with stepwise indentation */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white font-lexend-deca leading-tight drop-shadow-lg">
             <div className="text-left">
@@ -48,13 +49,22 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
             Let&apos;s Talk
           </span>
         </Link>
+
+        {/* Scroll cue — desktop only, VT-blue so it reads on the lighter lower gradient */}
+        <a
+          href="#pillars"
+          aria-label="Scroll to services"
+          className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 text-vt-blue/70 hover:text-vt-blue transition-colors animate-hero-bob"
+        >
+          <ChevronDown size={36} strokeWidth={2} />
+        </a>
         </div>
-        
+
         {/* Section heading for screen readers — fixes h1 -> h3 heading-order skip */}
         <h2 className="sr-only">What we do</h2>
 
         {/* Three Pillar Cards - MOVED ABOVE metrics */}
-        <div className="mt-12 md:mt-16 px-6 sm:px-12">
+        <div id="pillars" className="mt-12 md:mt-16 px-6 sm:px-12 scroll-mt-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Pillar 1: Strategic IT Leadership */}
             <Link href="/services#strategic-partnership" className="block">

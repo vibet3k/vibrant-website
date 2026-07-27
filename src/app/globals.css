@@ -104,6 +104,23 @@ p {
   }
 }
 
+@keyframes hero-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+.animate-hero-bob {
+  animation: hero-bob 2.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-bob { animation: none; }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 .prose-vt ul > li {
   margin-top: 0.25em;
   margin-bottom: 0.25em;
