@@ -9,11 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'vt-pink': '#ef5ba1',
+        'vt-pink': '#e21677',
         'vt-blue': '#0074bc',
-        'vt-red-orange': '#f04e37',
-        'vt-green': '#39b54a',
-        'vt-silver': '#808080',
+        'vt-red-orange': '#e32b11',
+        'vt-green': '#2a8637',
+        'vt-silver': '#767676',
       },
       typography: (theme: (path: string) => string) => ({
         vt: {
