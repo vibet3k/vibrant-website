@@ -153,7 +153,7 @@ export default function BackgroundLayout({ children }: { children: React.ReactNo
         <div 
           className="absolute inset-0"
           style={{
-            background: `linear-gradient(180deg, hsla(203, 100%, 37%, 1) 0%, hsla(0, 0%, 100%, 1) 80%)`
+            background: `linear-gradient(180deg, hsla(203, 100%, 33%, 1) 0%, hsla(203, 100%, 37%, 1) 45%, hsla(0, 0%, 100%, 1) 100%)`
           }}
         />
 
