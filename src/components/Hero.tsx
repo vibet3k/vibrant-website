@@ -50,6 +50,9 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
         </Link>
         </div>
         
+        {/* Section heading for screen readers — fixes h1 -> h3 heading-order skip */}
+        <h2 className="sr-only">What we do</h2>
+
         {/* Three Pillar Cards - MOVED ABOVE metrics */}
         <div className="mt-12 md:mt-16 px-6 sm:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">

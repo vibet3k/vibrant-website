@@ -118,6 +118,11 @@ export default function BackgroundLayout({ children }: { children: React.ReactNo
 
   // Initialize and manage gleaming circles
   useEffect(() => {
+    // Respect users who prefer reduced motion — skip the animated background circles.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
     // Initial circles
     const initialCircles = Array(3).fill(null).map(() => createGleamingCircle());
     setGleamingCircles(initialCircles);
@@ -216,8 +221,15 @@ export default function BackgroundLayout({ children }: { children: React.ReactNo
 
       {/* Scrollable Content Layer - scrolls independently */}
       <div className="relative flex flex-col min-h-screen">
+        {/* Skip link — first focusable element, visible only on keyboard focus */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[100] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-vt-blue focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-vt-blue"
+        >
+          Skip to content
+        </a>
         <Header />
-        <div className="flex-1">
+        <div className="flex-1" id="main-content" tabIndex={-1}>
           {children}
         </div>
         <Footer />

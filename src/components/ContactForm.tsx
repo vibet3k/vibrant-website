@@ -175,7 +175,7 @@ export default function ContactForm() {
                 placeholder="Your name"
               />
               {errors.name && touched.name && (
-                <p className="mt-1 text-sm text-red-600 font-lexend-deca">{errors.name}</p>
+                <p role="alert" className="mt-1 text-sm text-red-600 font-lexend-deca">{errors.name}</p>
               )}
             </div>
             
@@ -197,7 +197,7 @@ export default function ContactForm() {
                 placeholder="Your company"
               />
               {errors.company && touched.company && (
-                <p className="mt-1 text-sm text-red-600 font-lexend-deca">{errors.company}</p>
+                <p role="alert" className="mt-1 text-sm text-red-600 font-lexend-deca">{errors.company}</p>
               )}
             </div>
           </div>
@@ -221,7 +221,7 @@ export default function ContactForm() {
                 placeholder="your.email@example.com"
               />
               {errors.email && touched.email && (
-                <p className="mt-1 text-sm text-red-600 font-lexend-deca">{errors.email}</p>
+                <p role="alert" className="mt-1 text-sm text-red-600 font-lexend-deca">{errors.email}</p>
               )}
             </div>
             
@@ -242,7 +242,7 @@ export default function ContactForm() {
                 placeholder="(000) 000-0000"
               />
               {errors.phone && touched.phone && (
-                <p className="mt-1 text-sm text-red-600 font-lexend-deca">{errors.phone}</p>
+                <p role="alert" className="mt-1 text-sm text-red-600 font-lexend-deca">{errors.phone}</p>
               )}
             </div>
           </div>
@@ -265,7 +265,7 @@ export default function ContactForm() {
               placeholder="Tell us about your IT challenges and goals..."
             />
             {errors.message && touched.message && (
-              <p className="mt-1 text-sm text-red-600 font-lexend-deca">{errors.message}</p>
+              <p role="alert" className="mt-1 text-sm text-red-600 font-lexend-deca">{errors.message}</p>
             )}
           </div>
           
