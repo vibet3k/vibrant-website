@@ -42,7 +42,7 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
         {/* CTA Button */}
         <Link 
           href="/contact" 
-          className="relative overflow-hidden mt-8 inline-block bg-vt-blue/85 text-white rounded-md text-lg font-semibold hover:bg-vt-blue/90 transition-all duration-300 shadow-2xl hover:shadow-[0_20px_50px_rgba(0,116,188,0.5)] hover:-translate-y-1 hover:scale-105"
+          className="relative overflow-hidden mt-8 inline-block bg-vt-pink/85 text-white rounded-md text-lg font-semibold hover:bg-vt-pink/90 transition-all duration-300 shadow-2xl hover:shadow-[0_20px_50px_rgba(239,91,161,0.5)] hover:-translate-y-1 hover:scale-105"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-90 pointer-events-none"></div>
           <span className="relative shadow-[inset_0_3px_6px_rgba(255,255,255,0.6),inset_0_-2px_4px_rgba(0,0,0,0.1)] z-10 block px-8 py-3">
@@ -54,7 +54,7 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
         <a
           href="#pillars"
           aria-label="Scroll to services"
-          className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 text-vt-blue/70 hover:text-vt-blue transition-colors animate-hero-bob"
+          className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 text-vt-pink/80 hover:text-vt-pink transition-colors animate-hero-bob"
         >
           <ChevronDown size={36} strokeWidth={2} />
         </a>
