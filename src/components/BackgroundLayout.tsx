@@ -164,9 +164,9 @@ export default function BackgroundLayout({ children }: { children: React.ReactNo
             backgroundImage: `url("data:image/svg+xml,${svgCircle}")`,
             backgroundSize: '33px 33px',
             backgroundPosition: '0 0',
-            WebkitMaskImage: 'linear-gradient(to bottom, transparent 20%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0.7) 80%, transparent 90%)',
-            maskImage: 'linear-gradient(to bottom, transparent 20%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0.7) 80%, transparent 90%)',
-            opacity: 0.35
+            WebkitMaskImage: 'linear-gradient(to bottom, transparent 8%, rgba(255,255,255,0.18) 20%, rgba(255,255,255,0.35) 45%, rgba(255,255,255,0.5) 70%, rgba(255,255,255,0.55) 80%, transparent 92%)',
+            maskImage: 'linear-gradient(to bottom, transparent 8%, rgba(255,255,255,0.18) 20%, rgba(255,255,255,0.35) 45%, rgba(255,255,255,0.5) 70%, rgba(255,255,255,0.55) 80%, transparent 92%)',
+            opacity: 0.28
           }}
         />
 
