@@ -4,7 +4,7 @@ import ContactForm from '@/components/ContactForm';
 import BackgroundLayout from '@/components/BackgroundLayout';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Vibrant Technology',
+  title: 'Contact Us',
   description: 'Reach out to our team to chart your course with strategic technology guidance.',
 };
 
@@ -51,7 +51,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-white font-lexend-deca">Phone</h3>
-                  <a href="tel:4405551234" className="text-white hover:text-white/80 transition-colors font-lexend-deca">(216)353-3124</a>
+                  <a href="tel:+12163533124" className="text-white hover:text-white/80 transition-colors font-lexend-deca">(216) 353-3124</a>
                 </div>
               </div>
             </div>

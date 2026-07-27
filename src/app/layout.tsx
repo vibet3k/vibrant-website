@@ -74,7 +74,7 @@ export default function RootLayout({
     },
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+1-440-555-1234',
+      telephone: '+1-216-353-3124',
       contactType: 'Customer Service',
       email: 'info@vibet3k.com'
     },

@@ -23,10 +23,10 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/vibrant-tech-logo-white.png"
+              src="/images/vibrant-tech-logo-white-notagline.png"
               alt="Vibrant Technology"
-              width={250}
-              height={75}
+              width={300}
+              height={126}
               className="h-14 sm:h-20 w-auto"
               priority
             />

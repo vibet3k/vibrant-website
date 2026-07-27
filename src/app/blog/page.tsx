@@ -127,7 +127,7 @@ export default async function BlogIndexPage() {
 
 export function generateMetadata() {
   return {
-    title: 'Blog | Vibrant Technology',
+    title: 'Blog',
     description: 'Insights and updates on technology strategy, IT leadership, and building systems that run quietly and effectively.'
   };
 }

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import BackgroundLayout from '@/components/BackgroundLayout';
 
 export const metadata: Metadata = {
-  title: 'Services | Vibrant Technology',
+  title: 'Services',
   description: 'Strategic IT Leadership, Security & Compliance, and Seamless Hybrid Workforce solutions tailored to your business.',
 };
 

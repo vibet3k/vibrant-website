@@ -11,15 +11,51 @@ import Link from 'next/link';
 
 export const revalidate = 0;
 
-export const metadata: Metadata = {
-  title: 'Blog Post',
-  description: 'Blog post details',
-};
-
 interface BlogPostPageProps {
   params: Promise<{
     slug: string;
   }>;
+}
+
+export async function generateMetadata(props: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await props.params;
+
+  let post: Post | null = null;
+  try {
+    if (client && projectId) {
+      post = await client.fetch(postQuery, { slug });
+    }
+  } catch (error) {
+    console.error('Error fetching post for metadata:', error);
+  }
+
+  if (!post) {
+    return {
+      title: 'Blog',
+      description:
+        'Insights on technology strategy, IT leadership, and building systems that run quietly and effectively.',
+    };
+  }
+
+  const imageUrl = post.mainImage?.asset?.url;
+
+  return {
+    title: post.title,
+    description: post.description,
+    openGraph: {
+      type: 'article',
+      title: `${post.title} | Vibrant Technology`,
+      description: post.description,
+      publishedTime: post.publishedAt,
+      images: imageUrl ? [{ url: imageUrl, alt: post.title }] : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${post.title} | Vibrant Technology`,
+      description: post.description,
+      images: imageUrl ? [imageUrl] : undefined,
+    },
+  };
 }
 
 export default async function Page(props: BlogPostPageProps) {

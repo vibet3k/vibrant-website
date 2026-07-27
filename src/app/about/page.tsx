@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import BackgroundLayout from '@/components/BackgroundLayout';
 
 export const metadata: Metadata = {
-  title: 'About Us | Vibrant Technology',
+  title: 'About Us',
   description: 'Learn about our team and our approach to strategic IT services.',
 };
 
