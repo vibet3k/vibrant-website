@@ -48,6 +48,14 @@ export default function AboutPage() {
             None of this happens by accident. It depends on real-world expertise, strategic thinking, and disciplined implementation. It requires a technology partner who listens to how your business runs and what your team needs. Done well, your systems are secure, resilient, and quickly recoverable. Your people can work from anywhere, knowing {"they'll"} be safe and productive.
           </p>
 
+          <h2 className="text-2xl font-semibold text-gray-800 mb-4 font-lexend-deca">
+            Why we built Vibrant
+          </h2>
+
+          <p className="text-lg text-gray-700 font-lexend-deca leading-relaxed mb-6">
+            We spent years inside MSPs and in-house IT teams that kept chasing fires instead of preventing them – rewarded for how fast we responded, never for making the problem disappear. We started Vibrant to prove {"there's"} a better way: technology grounded in discipline, design, and real partnership, not the next emergency.
+          </p>
+
           <p className="text-lg text-gray-700 font-lexend-deca leading-relaxed font-semibold">
             So, {"let's"} run dark.
           </p>

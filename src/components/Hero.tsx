@@ -148,35 +148,6 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
           </div>
         </div>
 
-        {/* A Different Approach Section - Gray Band */}
-        <div className="w-screen bg-vt-silver/60 py-12 md:py-16 mt-16 md:mt-32 relative left-[50%] right-[50%] -ml-[50vw] -mr-[50vw]">
-          <div className="max-w-6xl mx-auto px-6 sm:px-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white font-lexend-deca mb-6 drop-shadow-lg">
-              A Different Approach to IT Leadership
-            </h2>
-            <div className="space-y-4 font-lexend-deca text-lg leading-relaxed text-white drop-shadow-md">
-              <p>
-                Most IT firms define success by how fast they close tickets. We think that&apos;s backwards. 
-                Disciplined IT prevents the call in the first place.
-              </p>
-              <p>
-                We believe the best IT barely makes a sound. When systems are aligned with your business, 
-                they disappear into the background — secure, stable, and quietly making everyone&apos;s workday easier. 
-                That&apos;s what we mean when we say we run dark.
-              </p>
-              <p>
-                We started Vibrant after years inside MSPs and in-house IT teams that kept chasing fires 
-                instead of preventing them. We built this company to prove there&apos;s a better way — one 
-                grounded in discipline, design, and real partnership.
-              </p>
-              <p className="font-semibold text-white">
-                For you, that means fewer headaches, more clarity, and technology that supports your goals 
-                instead of competing with them.
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* Our Thinking - Blog Posts */}
         {recentPosts.length > 0 && (
         <div className="mt-16 md:mt-32 px-6 sm:px-12">
