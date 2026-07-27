@@ -20,7 +20,7 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
     <BackgroundLayout>
       <div className="w-full flex flex-col">
         {/* Hero statement — fills the first screen on desktop; text anchored high (on the blue), cards below the fold */}
-        <div className="relative flex flex-col items-center text-center px-6 pt-24 md:pt-28 pb-16 md:pb-0 md:min-h-[calc(100dvh-4rem)]">
+        <div className="relative flex flex-col items-center text-center px-6 pt-24 md:pt-[24vh] pb-16 md:pb-0 md:min-h-[calc(100dvh-4rem)]">
           {/* Primary Headline - Three-part tagline with stepwise indentation */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white font-lexend-deca leading-tight drop-shadow-lg">
             <div className="text-left">
