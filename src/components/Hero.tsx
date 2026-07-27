@@ -135,7 +135,7 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
                 Security & Compliance
               </h3>
               <p className="text-white font-lexend-deca mb-4">
-                Protected at every layer — and ready to prove it when your insurer asks.
+                Protected at every layer — with the documentation to prove it.
               </p>
             </div>
             </div>
@@ -159,7 +159,7 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
                 Service Experience
               </h3>
               <p className="text-white font-lexend-deca mb-4">
-                Report it once. We own it from there — IT you stop having to manage.
+                Report it once. We own it from there. IT you don&apos;t have to manage.
               </p>
             </div>
             </div>
