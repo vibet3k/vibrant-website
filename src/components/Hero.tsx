@@ -107,7 +107,8 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
                 Strategic IT Leadership
               </h3>
               <p className="text-white font-lexend-deca mb-4">
-                A vCIO who plans for what&apos;s next — so nothing lands as an emergency.
+                A vCIO who plans for what&apos;s next.
+                <span className="block mt-2">So nothing lands as an emergency.</span>
               </p>
             </div>
             </div>
@@ -135,7 +136,8 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
                 Security & Compliance
               </h3>
               <p className="text-white font-lexend-deca mb-4">
-                Protected at every layer — with the documentation to prove it.
+                Protected at every layer.
+                <span className="block mt-2">With the documentation to prove it.</span>
               </p>
             </div>
             </div>
@@ -159,7 +161,8 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
                 Service Experience
               </h3>
               <p className="text-white font-lexend-deca mb-4">
-                Report it once. We own it from there. IT you don&apos;t have to manage.
+                Report it once. We own it from there.
+                <span className="block mt-2">IT you don&apos;t have to manage.</span>
               </p>
             </div>
             </div>
