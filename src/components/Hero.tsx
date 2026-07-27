@@ -60,11 +60,18 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
         </a>
         </div>
 
-        {/* Section heading for screen readers — fixes h1 -> h3 heading-order skip */}
-        <h2 className="sr-only">What we do</h2>
+        {/* Cards section heading */}
+        <div id="pillars" className="scroll-mt-20 px-6 pt-12 md:pt-16 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white font-lexend-deca drop-shadow-lg">
+            How we keep you running dark
+          </h2>
+          <p className="mt-3 text-lg text-white/90 font-lexend-deca max-w-2xl mx-auto drop-shadow-md">
+            Prevent the problem. Protect what matters. Then get out of the way.
+          </p>
+        </div>
 
-        {/* Three Pillar Cards - MOVED ABOVE metrics */}
-        <div id="pillars" className="mt-12 md:mt-16 px-6 sm:px-12 scroll-mt-20">
+        {/* Three Pillar Cards */}
+        <div className="mt-8 md:mt-10 px-6 sm:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Pillar 1: Strategic IT Leadership */}
             <Link href="/services#strategic-partnership" className="block">
@@ -100,7 +107,7 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
                 Strategic IT Leadership
               </h3>
               <p className="text-white font-lexend-deca mb-4">
-                Clear, strategic guidance for every tech decision—so you&apos;re never flying blind.
+                A vCIO who plans for what&apos;s next — so nothing lands as an emergency.
               </p>
             </div>
             </div>
@@ -128,29 +135,31 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
                 Security & Compliance
               </h3>
               <p className="text-white font-lexend-deca mb-4">
-                Security and compliance, built-in from day one—not bolted on after the fact.
+                Protected at every layer — and ready to prove it when your insurer asks.
               </p>
             </div>
             </div>
             </Link>
             
-            {/* Pillar 3: Seamless Hybrid Workforce */}
-            <Link href="/services#hybrid-workforce" className="block">
+            {/* Pillar 3: Service Experience */}
+            <Link href="/services#service-experience" className="block">
               <div className="relative bg-vt-pink/90 backdrop-blur-sm rounded-lg shadow-2xl hover:shadow-[0_25px_60px_rgba(239,91,161,0.4)] hover:-translate-y-2 hover:scale-105 transition-all duration-300 group cursor-pointer border border-white/40 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-90 pointer-events-none"></div>
               <div className="relative shadow-[inset_0_3px_6px_rgba(255,255,255,0.9),inset_0_-2px_4px_rgba(0,0,0,0.1)] p-6 z-10">
-              {/* Laptop-minimal icon from Lucide */}
+              {/* Headset / support icon */}
               <div className="w-12 h-12 mb-4 text-white">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <rect width="18" height="12" x="3" y="4" rx="2" ry="2"/>
-                  <line x1="2" x2="22" y1="20" y2="20"/>
+                  <path d="M4 14v-2a8 8 0 0 1 16 0v2"/>
+                  <rect x="2" y="13" width="4" height="7" rx="1.5"/>
+                  <rect x="18" y="13" width="4" height="7" rx="1.5"/>
+                  <path d="M20 20a3 3 0 0 1-3 3h-3"/>
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
-                Seamless Hybrid Workforce
+                Service Experience
               </h3>
               <p className="text-white font-lexend-deca mb-4">
-                Your team works anywhere. We make sure their tools do, too.
+                Report it once. We own it from there — IT you stop having to manage.
               </p>
             </div>
             </div>
