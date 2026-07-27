@@ -63,10 +63,10 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
         {/* Cards section heading */}
         <div id="pillars" className="scroll-mt-20 px-6 pt-12 md:pt-16 text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white font-lexend-deca drop-shadow-lg">
-            How we keep you running dark
+            How We Do IT
           </h2>
           <p className="mt-3 text-lg text-white/90 font-lexend-deca max-w-2xl mx-auto drop-shadow-md">
-            Prevent the problem. Protect what matters. Then get out of the way.
+            Plan. Protect. Run Dark.
           </p>
         </div>
 
