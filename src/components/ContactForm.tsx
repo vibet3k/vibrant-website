@@ -1,7 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { ArrowRight, Loader2 } from 'lucide-react';
+
+// Bots fill every field they can see, including ones hidden from humans, and
+// they submit near-instantly. Neither check is bulletproof on its own; together
+// they clear out the low-effort majority without adding a captcha.
+const MIN_FILL_SECONDS = 3;
 
 interface FormErrors {
   name?: string;
@@ -24,6 +29,17 @@ export default function ContactForm() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
 
+  // Honeypot: a field no sighted user can reach. Any value means a bot.
+  const [honeypot, setHoneypot] = useState('');
+
+  // Stamped in an effect, not during render — Date.now() is impure, and calling
+  // it in a useRef initialiser makes the value depend on when React happens to
+  // render (react-hooks/purity).
+  const mountedAt = useRef(0);
+  useEffect(() => {
+    mountedAt.current = Date.now();
+  }, []);
+
   // Validation functions
   const validateEmail = (email: string): string | undefined => {
     if (!email) return 'Email is required';
@@ -34,8 +50,10 @@ export default function ContactForm() {
 
   const validatePhone = (phone: string): string | undefined => {
     if (!phone) return undefined; // Phone is optional
-    const phoneRegex = /^[\d\s\-\(\)]+$/;
-    if (!phoneRegex.test(phone)) return 'Please enter a valid phone number';
+    // Accepts +1 country codes, dots, and extensions — the old pattern rejected
+    // "+1 216-353-3124" and "216.353.3124", both of which people actually type.
+    const phoneRegex = /^[\d\s\-().+]+(\s*(x|ext\.?)\s*\d+)?$/i;
+    if (!phoneRegex.test(phone.trim())) return 'Please enter a valid phone number';
     if (phone.replace(/\D/g, '').length < 10) return 'Phone number must be at least 10 digits';
     return undefined;
   };
@@ -87,7 +105,17 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
+    // Spam gates. Show the normal success state rather than an error — telling a
+    // bot why it failed just helps it retry.
+    const filledTooFast =
+      mountedAt.current > 0 &&
+      (Date.now() - mountedAt.current) / 1000 < MIN_FILL_SECONDS;
+    if (honeypot || filledTooFast) {
+      setFormStatus('success');
+      return;
+    }
+
     // Validate all fields
     const newErrors: FormErrors = {
       name: validateField('name', formData.name),
@@ -156,6 +184,24 @@ export default function ContactForm() {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">
+          {/*
+            Honeypot. Positioned off-screen rather than display:none — some bots
+            skip fields that are explicitly hidden. aria-hidden + tabIndex={-1}
+            keep it out of reach of screen readers and keyboard users.
+          */}
+          <div className="absolute left-[-9999px] top-auto w-px h-px overflow-hidden" aria-hidden="true">
+            <label htmlFor="website">Leave this field blank</label>
+            <input
+              type="text"
+              id="website"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              value={honeypot}
+              onChange={(e) => setHoneypot(e.target.value)}
+            />
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1 font-lexend-deca">

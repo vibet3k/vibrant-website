@@ -8,7 +8,14 @@ export default function Footer() {
     <>
       {/* Footer navigation */}
       <div className="w-full flex justify-center mt-auto mb-2 relative z-10">
-        <nav className="text-[#808080] flex space-x-4 sm:space-x-8 font-lexend-deca text-sm sm:text-base">
+        {/*
+          text-vt-silver (#767676), not the old #808080. The brand silver fails
+          WCAG AA on white (3.5:1); the darkened token clears it at 4.54:1.
+        */}
+        <nav
+          aria-label="Footer"
+          className="text-vt-silver flex space-x-4 sm:space-x-8 font-lexend-deca text-sm sm:text-base"
+        >
           <Link href="/" className="hover:text-vt-blue transition-colors">
             Home
           </Link>
@@ -20,6 +27,9 @@ export default function Footer() {
           </Link>
           <Link href="/blog" className="hover:text-vt-blue transition-colors">
             Blog
+          </Link>
+          <Link href="/contact" className="hover:text-vt-blue transition-colors">
+            Contact
           </Link>
         </nav>
       </div>

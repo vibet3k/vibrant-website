@@ -2,24 +2,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import BackgroundLayout from '@/components/BackgroundLayout';
-import { client, projectId } from '@/lib/sanity';
-import { postsQuery } from '@/lib/sanity/queries';
+import { getPostsSafe } from '@/lib/sanity/fetch';
 import { Post } from '@/lib/sanity/types';
 import { format } from 'date-fns';
 
-export const revalidate = 0;
+export const revalidate = 3600;
 
 export default async function BlogIndexPage() {
-  // Try to fetch posts, but handle failures gracefully
-  let posts: Post[] = [];
-  try {
-    // Only fetch if projectId exists
-    if (client && projectId) {
-      posts = await client.fetch(postsQuery);
-    }
-  } catch (error) {
-    console.error('Error fetching blog posts:', error);
-  }
+  // Degrades to the "Fresh Content Coming Soon" state if Sanity is unreachable.
+  const posts = await getPostsSafe();
 
   return (
     <BackgroundLayout>
@@ -128,6 +119,7 @@ export default async function BlogIndexPage() {
 export function generateMetadata() {
   return {
     title: 'Blog',
-    description: 'Insights and updates on technology strategy, IT leadership, and building systems that run quietly and effectively.'
+    description: 'Insights and updates on technology strategy, IT leadership, and building systems that run quietly and effectively.',
+    alternates: { canonical: '/blog' }
   };
 }

@@ -3,12 +3,23 @@ import { lexendDeca, radley } from "./fonts";
 import "./globals.css";
 import { Analytics } from '@vercel/analytics/react';
 
+// NOTE FOR WILLIAM — REVIEW BEFORE PUSHING.
+// The title/description below were still carrying "Vision. Strategy. Execution."
+// (pre-"run dark" tagline). This is the text Google and every social preview
+// actually show, so it was the loudest remaining place the old positioning was
+// still live. Rewritten against the Editorial Voice Guide: leads with the
+// client's outcome, no superlatives, reinforces all three Message House pillars.
+// Description is 152 characters, inside Google's truncation limit.
+const SITE_TITLE = 'Vibrant Technology | Virtual CIO & Managed IT Services';
+const SITE_DESCRIPTION =
+  'Quiet, disciplined IT for small and mid-sized professional services firms. vCIO leadership, security you can prove, and support you never have to manage.';
+
 export const metadata: Metadata = {
   title: {
-    default: "Vibrant Technology | Strategic Virtual CIO & Managed IT Services",
+    default: SITE_TITLE,
     template: "%s | Vibrant Technology"
   },
-  description: "Strategic Virtual CIO and Managed IT Services for ambitious small and mid-sized businesses. Vision. Strategy. Execution.",
+  description: SITE_DESCRIPTION,
   keywords: ["Virtual CIO", "vCIO", "Managed IT Services", "IT Strategy", "Cloud Solutions", "IT Consulting", "Technology Leadership", "SMB IT Services"],
   authors: [{ name: "Vibrant Technology" }],
   creator: "Vibrant Technology",
@@ -19,21 +30,21 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://vibet3k.com',
     siteName: 'Vibrant Technology',
-    title: 'Vibrant Technology | Strategic Virtual CIO & Managed IT Services',
-    description: 'Strategic Virtual CIO and Managed IT Services for ambitious small and mid-sized businesses. Vision. Strategy. Execution.',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
     images: [
       {
         url: '/images/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Vibrant Technology - Strategic IT Services',
+        alt: 'Vibrant Technology — Great IT runs dark.',
       }
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Vibrant Technology | Strategic Virtual CIO & Managed IT Services',
-    description: 'Strategic Virtual CIO and Managed IT Services for ambitious small and mid-sized businesses.',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
     images: ['/images/og-image.png'],
   },
   robots: {

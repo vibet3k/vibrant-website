@@ -14,24 +14,29 @@ interface GleamingCircle {
   filled: boolean;
 }
 
-export default function BackgroundLayout({ children }: { children: React.ReactNode }) {
-  const [gleamingCircles, setGleamingCircles] = useState<GleamingCircle[]>([]);
-  const circleCountRef = useRef(0); 
-  const lastCircleTimeRef = useRef(0);
-  
-  const GRID_SIZE = 33; // Size of our grid cells
-  const BRAND_COLORS = {
-    pink: "#ef5ba1",
-    green: "#39b54a",
-    white: "white"
-  };
-  
-  // Base circle pattern SVG
-  const svgCircle = encodeURIComponent(`
+// These live at module scope on purpose. When they were declared inside the
+// component they were new objects on every render, which changed the identity
+// of createGleamingCircle (they're in its dependency array), which in turn made
+// the effect below tear down and re-establish its 300ms interval on every
+// single render.
+const GRID_SIZE = 33; // Size of our grid cells
+const BRAND_COLORS = {
+  pink: '#e21677',
+  green: '#2a8637',
+  white: 'white',
+};
+
+// Base circle pattern SVG
+const svgCircle = encodeURIComponent(`
     <svg width="33" height="33" viewBox="0 0 33 33" xmlns="http://www.w3.org/2000/svg">
       <circle cx="16.5" cy="16.5" r="14" fill="none" stroke="white" stroke-width="2"/>
     </svg>
   `);
+
+export default function BackgroundLayout({ children }: { children: React.ReactNode }) {
+  const [gleamingCircles, setGleamingCircles] = useState<GleamingCircle[]>([]);
+  const circleCountRef = useRef(0);
+  const lastCircleTimeRef = useRef(0);
 
   // Function to create a new gleaming circle on the grid
   const createGleamingCircle = useCallback((): GleamingCircle => {
@@ -89,7 +94,7 @@ export default function BackgroundLayout({ children }: { children: React.ReactNo
       color: color,
       filled: filled
     };
-  }, [GRID_SIZE, BRAND_COLORS.white, BRAND_COLORS.pink, BRAND_COLORS.green]);
+  }, []);
 
   // Add circles with varying timing for organic effect
   const addRandomCircle = useCallback(() => {
@@ -123,24 +128,35 @@ export default function BackgroundLayout({ children }: { children: React.ReactNo
       return;
     }
 
-    // Initial circles
-    const initialCircles = Array(3).fill(null).map(() => createGleamingCircle());
-    setGleamingCircles(initialCircles);
-    lastCircleTimeRef.current = Date.now();
-
-    // Update on window resize
-    const handleResize = () => {
+    // Seed the initial circles on the next frame rather than synchronously in
+    // the effect body. Calling setState directly here triggers a cascading
+    // render (react-hooks/set-state-in-effect), and for a purely decorative
+    // animation there's no reason to block paint on it.
+    const seedFrame = requestAnimationFrame(() => {
       setGleamingCircles(Array(3).fill(null).map(() => createGleamingCircle()));
       lastCircleTimeRef.current = Date.now();
+    });
+
+    // Update on window resize — debounced, so a drag-resize doesn't fire the
+    // state setter on every intermediate pixel.
+    let resizeTimer: ReturnType<typeof setTimeout>;
+    const handleResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        setGleamingCircles(Array(3).fill(null).map(() => createGleamingCircle()));
+        lastCircleTimeRef.current = Date.now();
+      }, 200);
     };
     window.addEventListener('resize', handleResize);
 
     // Frequently check if we should add a new circle (more organic timing)
     const circleInterval = setInterval(addRandomCircle, 300);
-    
+
     // Cleanup
     return () => {
+      cancelAnimationFrame(seedFrame);
       clearInterval(circleInterval);
+      clearTimeout(resizeTimer);
       window.removeEventListener('resize', handleResize);
     };
   }, [createGleamingCircle, addRandomCircle]);

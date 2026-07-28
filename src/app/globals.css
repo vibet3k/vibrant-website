@@ -2,16 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* The site is light-only. The create-next-app prefers-color-scheme: dark block
+   that used to live here was inverting these two variables on any visitor with
+   dark mode enabled, for no benefit. */
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
@@ -142,24 +138,36 @@ html {
   margin-top: 0.25em;
 }
 
-/* Add these stronger overrides */
-.prose * {
-  margin-top: 0.5em !important;
-  margin-bottom: 0.5em !important;
+/* Tighten the vertical rhythm of @tailwindcss/typography.
+
+   This replaces a `.prose * { margin: 0.5em !important }` sledgehammer, which
+   applied to every descendant — inline <strong>, <a>, <code>, images, callout
+   internals — not just block elements, and used !important to win a specificity
+   fight it didn't need to have.
+
+   :is() takes the specificity of its most specific argument (an element, 0-0-1),
+   so `.prose :is(p)` scores 0-1-1 and cleanly beats typography's own
+   `.prose :where(p)` at 0-1-0. No !important required. */
+.prose :is(p, ul, ol, blockquote, figure, pre, table) {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose :is(h1, h2, h3, h4) {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
 }
 
 .prose li {
-  margin-top: 0.25em !important;
-  margin-bottom: 0.25em !important;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
 }
 
-.prose ul {
-  margin-top: 0.5em !important;
-  margin-bottom: 0.5em !important;
-  padding-left: 1em !important;
+.prose :is(ul, ol) {
+  padding-left: 1em;
 }
 
-.prose > div.callout {
-  padding: 0.5em !important;
-  margin: 0.75em 0 !important;
+.prose div.callout {
+  padding: 0.5em;
+  margin: 0.75em 0;
 }

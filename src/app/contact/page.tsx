@@ -6,6 +6,7 @@ import BackgroundLayout from '@/components/BackgroundLayout';
 export const metadata: Metadata = {
   title: 'Contact Us',
   description: 'Reach out to our team to chart your course with strategic technology guidance.',
+  alternates: { canonical: '/contact' },
 };
 
 export default function ContactPage() {
@@ -39,7 +40,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-white font-lexend-deca">Email</h3>
-                  <a href="mailto:info@vibet3k.com" className="text-white hover:text-white/80 transition-colors font-lexend-deca">info@vibet3k.com</a>
+                  <a href="mailto:info@vibet3k.com" className="text-white hover:underline transition-colors font-lexend-deca">info@vibet3k.com</a>
                 </div>
               </div>
               
@@ -51,7 +52,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-white font-lexend-deca">Phone</h3>
-                  <a href="tel:+12163533124" className="text-white hover:text-white/80 transition-colors font-lexend-deca">(216) 353-3124</a>
+                  <a href="tel:+12163533124" className="text-white hover:underline transition-colors font-lexend-deca">(216) 353-3124</a>
                 </div>
               </div>
             </div>

@@ -4,6 +4,7 @@ import BackgroundLayout from '@/components/BackgroundLayout';
 export const metadata: Metadata = {
   title: 'About Us',
   description: 'Learn about our team and our approach to strategic IT services.',
+  alternates: { canonical: '/about' },
 };
 
 export default function AboutPage() {

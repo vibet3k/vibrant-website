@@ -32,6 +32,10 @@ export const postQuery = groq`
   }
 `;
 
+export const postSlugsQuery = groq`
+  *[_type == "post" && defined(slug.current)].slug.current
+`;
+
 export const postsQuery = groq`
   *[_type == "post"] | order(publishedAt desc) {
     _id,

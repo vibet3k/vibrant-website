@@ -22,16 +22,22 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
         {/* Hero statement — fills the first screen on desktop; text anchored high (on the blue), cards below the fold */}
         <div className="relative flex flex-col items-center text-center px-6 pt-24 md:pt-[24vh] pb-16 md:pb-0 md:min-h-[calc(100dvh-4rem)]">
           {/* Primary Headline - Three-part tagline with stepwise indentation */}
+          {/*
+            <h1> only permits phrasing content, so these are spans, not divs.
+            Nested <div> inside a heading is invalid HTML.
+          */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white font-lexend-deca leading-tight drop-shadow-lg">
-            <div className="text-left">
-              Great IT runs dark<span className="text-vt-pink">.</span><br />
-              <div className="ml-4 sm:ml-8 md:ml-12">
-                You don&apos;t see it working<span className="text-white">.</span><br />
-              </div>
-              <div className="ml-8 sm:ml-16 md:ml-24">
-                You just see that it works<span className="text-white">.</span>
-              </div>
-            </div>
+            <span className="block text-left">
+              <span className="block">
+                Great IT runs dark<span className="text-vt-pink">.</span>
+              </span>
+              <span className="block ml-4 sm:ml-8 md:ml-12">
+                You don&apos;t see it working.
+              </span>
+              <span className="block ml-8 sm:ml-16 md:ml-24">
+                You just see that it works.
+              </span>
+            </span>
           </h1>
           
           {/* Supporting Copy - Updated roof message - prevent wrapping */}
@@ -42,7 +48,7 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
         {/* CTA Button */}
         <Link 
           href="/contact" 
-          className="relative overflow-hidden mt-8 inline-block bg-vt-pink/85 text-white rounded-md text-lg font-semibold hover:bg-vt-pink/90 transition-all duration-300 shadow-2xl hover:shadow-[0_20px_50px_rgba(239,91,161,0.5)] hover:-translate-y-1 hover:scale-105"
+          className="relative overflow-hidden mt-8 inline-block bg-vt-pink/85 text-white rounded-md text-lg font-semibold hover:bg-vt-pink/90 transition-all duration-300 shadow-2xl hover:shadow-[0_20px_50px_rgba(226,22,119,0.5)] hover:-translate-y-1 hover:scale-105"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-90 pointer-events-none"></div>
           <span className="relative shadow-[inset_0_3px_6px_rgba(255,255,255,0.6),inset_0_-2px_4px_rgba(0,0,0,0.1)] z-10 block px-8 py-3">
@@ -53,7 +59,7 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
         {/* Scroll cue — desktop only, VT-blue so it reads on the lighter lower gradient */}
         <a
           href="#pillars"
-          aria-label="Scroll to services"
+          aria-label="Scroll to how we work"
           className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 text-vt-pink/80 hover:text-vt-pink transition-colors animate-hero-bob"
         >
           <ChevronDown size={36} strokeWidth={2} />
@@ -114,7 +120,7 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
             
             {/* Pillar 2: Security & Compliance */}
             <Link href="/services#security-compliance" className="block">
-              <div className="relative bg-vt-green/90 backdrop-blur-sm rounded-lg shadow-2xl hover:shadow-[0_25px_60px_rgba(57,181,74,0.4)] hover:-translate-y-2 hover:scale-105 transition-all duration-300 group cursor-pointer border border-white/40 overflow-hidden">
+              <div className="relative bg-vt-green/90 backdrop-blur-sm rounded-lg shadow-2xl hover:shadow-[0_25px_60px_rgba(42,134,55,0.4)] hover:-translate-y-2 hover:scale-105 transition-all duration-300 group cursor-pointer border border-white/40 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-white/25 to-transparent opacity-90 pointer-events-none"></div>
               <div className="relative shadow-[inset_0_3px_6px_rgba(255,255,255,0.5),inset_0_-2px_4px_rgba(0,0,0,0.1)] p-6 z-10">
               {/* Shield with lock icon */}
@@ -143,7 +149,7 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
             
             {/* Pillar 3: Service Experience */}
             <Link href="/services#service-experience" className="block">
-              <div className="relative bg-vt-pink/90 backdrop-blur-sm rounded-lg shadow-2xl hover:shadow-[0_25px_60px_rgba(239,91,161,0.4)] hover:-translate-y-2 hover:scale-105 transition-all duration-300 group cursor-pointer border border-white/40 overflow-hidden">
+              <div className="relative bg-vt-pink/90 backdrop-blur-sm rounded-lg shadow-2xl hover:shadow-[0_25px_60px_rgba(226,22,119,0.4)] hover:-translate-y-2 hover:scale-105 transition-all duration-300 group cursor-pointer border border-white/40 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-white/25 to-transparent opacity-90 pointer-events-none"></div>
               <div className="relative shadow-[inset_0_3px_6px_rgba(255,255,255,0.5),inset_0_-2px_4px_rgba(0,0,0,0.1)] p-6 z-10">
               {/* Handled / resolved icon */}
@@ -211,7 +217,7 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
             </p>
             <Link 
               href="/contact" 
-              className="relative overflow-hidden inline-block bg-vt-pink/85 text-white rounded-md text-lg font-semibold hover:bg-vt-pink/90 transition-all duration-300 shadow-2xl hover:shadow-[0_20px_50px_rgba(239,91,161,0.5)] hover:-translate-y-1 hover:scale-105"
+              className="relative overflow-hidden inline-block bg-vt-pink/85 text-white rounded-md text-lg font-semibold hover:bg-vt-pink/90 transition-all duration-300 shadow-2xl hover:shadow-[0_20px_50px_rgba(226,22,119,0.5)] hover:-translate-y-1 hover:scale-105"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-90 pointer-events-none"></div>
               <span className="relative shadow-[inset_0_3px_6px_rgba(255,255,255,0.9),inset_0_-2px_4px_rgba(0,0,0,0.1)] z-10 block px-10 py-4">

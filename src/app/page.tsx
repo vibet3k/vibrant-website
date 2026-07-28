@@ -1,20 +1,12 @@
 import Hero from '@/components/Hero';
-import { client, projectId } from '@/lib/sanity';
-import { postsQuery } from '@/lib/sanity/queries';
-import { Post } from '@/lib/sanity/types';
+import { getPostsSafe } from '@/lib/sanity/fetch';
 
-export const revalidate = 0;
+// Revalidate hourly. The homepage only surfaces the three most recent posts,
+// so it does not need to be dynamic on every request.
+export const revalidate = 3600;
 
 export default async function Home() {
-  let recentPosts: Post[] = [];
-  try {
-    if (client && projectId) {
-      const allPosts = await client.fetch(postsQuery);
-      recentPosts = allPosts.slice(0, 3);
-    }
-  } catch (error) {
-    console.error('Error fetching recent posts:', error);
-  }
+  const recentPosts = (await getPostsSafe()).slice(0, 3);
 
   return (
     <div className="w-full min-h-screen font-lexend-deca">
