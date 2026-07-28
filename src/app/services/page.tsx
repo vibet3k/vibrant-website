@@ -82,11 +82,11 @@ export default function ServicesPage() {
                 <div className="flex items-center mb-6">
                   {/* Shield with lock icon */}
                   <div className="w-16 h-16 mr-6 text-white shrink-0">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 1 L3 5 L3 11 C3 16.55 6.84 21.74 12 23 C17.16 21.74 21 16.55 21 11 L21 5 L12 1 Z"/>
-                      <rect x="8" y="11" width="8" height="5" rx="1" fill="none" stroke="currentColor" strokeWidth="1.5"/>
-                      <circle cx="12" cy="9" r="1.5" fill="none" stroke="currentColor" strokeWidth="1.5"/>
-                      <path d="M12 9 L12 11" stroke="currentColor" strokeWidth="1.5"/>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+                      <rect x="9" y="11" width="6" height="5" rx="1"/>
+                      <path d="M11 11V9a1 1 0 0 1 2 0v2"/>
+                      <circle cx="12" cy="13" r="0.5" fill="currentColor"/>
                     </svg>
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold text-white font-lexend-deca">
@@ -134,13 +134,11 @@ export default function ServicesPage() {
             <section id="service-experience" className="max-w-6xl mx-auto">
               <div className="bg-vt-pink/80 backdrop-blur-sm rounded-lg p-5 sm:p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div className="flex items-center mb-6">
-                  {/* Headset / support icon */}
+                  {/* Handled / resolved icon */}
                   <div className="w-16 h-16 mr-6 text-white shrink-0">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M4 14v-2a8 8 0 0 1 16 0v2"/>
-                      <rect x="2" y="13" width="4" height="7" rx="1.5"/>
-                      <rect x="18" y="13" width="4" height="7" rx="1.5"/>
-                      <path d="M20 20a3 3 0 0 1-3 3h-3"/>
+                      <circle cx="12" cy="12" r="10"/>
+                      <path d="m9 12 2 2 4-4"/>
                     </svg>
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold text-white font-lexend-deca">

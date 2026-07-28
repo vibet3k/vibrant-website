@@ -91,16 +91,14 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
                   <path d="M1 12 L10.2 12.8 L12 12 L10.2 11.2 Z"/>
                   
                   {/* NE point */}
-                  <path d="M19.5 4.5 L13.4 10.6 L12 12 L13.4 10.6 Z"/>
+                  <path d="M19.07 4.93 L13.41 10.59 L12 12 L13.41 13.41 Z"/>
                   {/* SE point */}
-                  <path d="M19.5 19.5 L13.4 13.4 L12 12 L13.4 13.4 Z"/>
+                  <path d="M19.07 19.07 L13.41 13.41 L12 12 L10.59 13.41 Z"/>
                   {/* SW point */}
-                  <path d="M4.5 19.5 L10.6 13.4 L12 12 L10.6 13.4 Z"/>
+                  <path d="M4.93 19.07 L10.59 13.41 L12 12 L10.59 10.59 Z"/>
                   {/* NW point */}
-                  <path d="M4.5 4.5 L10.6 10.6 L12 12 L10.6 10.6 Z"/>
-                  
-                  {/* Center circle */}
-                  <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" strokeWidth="0.8"/>
+                  <path d="M4.93 4.93 L10.59 10.59 L12 12 L13.41 10.59 Z"/>
+                  <circle cx="12" cy="12" r="2"/>
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
@@ -148,13 +146,11 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
               <div className="relative bg-vt-pink/90 backdrop-blur-sm rounded-lg shadow-2xl hover:shadow-[0_25px_60px_rgba(239,91,161,0.4)] hover:-translate-y-2 hover:scale-105 transition-all duration-300 group cursor-pointer border border-white/40 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-90 pointer-events-none"></div>
               <div className="relative shadow-[inset_0_3px_6px_rgba(255,255,255,0.9),inset_0_-2px_4px_rgba(0,0,0,0.1)] p-6 z-10">
-              {/* Headset / support icon */}
+              {/* Handled / resolved icon */}
               <div className="w-12 h-12 mb-4 text-white">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 14v-2a8 8 0 0 1 16 0v2"/>
-                  <rect x="2" y="13" width="4" height="7" rx="1.5"/>
-                  <rect x="18" y="13" width="4" height="7" rx="1.5"/>
-                  <path d="M20 20a3 3 0 0 1-3 3h-3"/>
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="m9 12 2 2 4-4"/>
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
