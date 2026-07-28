@@ -17,7 +17,7 @@ export default function ServicesPage() {
           {/* Page Header/Intro */}
           <div className="text-center px-4 sm:px-6 pt-20 md:pt-24 pb-8 sm:pb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-white font-lexend-deca mb-6 drop-shadow-lg">
-              The Discipline Behind Running Dark
+              The Discipline to Run Dark
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed drop-shadow-md">
               Good IT doesn&apos;t announce itself. Here&apos;s the work that keeps it quiet — how we plan,
@@ -175,11 +175,10 @@ export default function ServicesPage() {
           <div className="px-4 sm:px-12 pt-4 pb-24">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-white font-lexend-deca mb-4 drop-shadow-lg">
-                Curious what running dark feels like?
+                Curious what it feels like to run dark?
               </h2>
               <p className="text-lg text-white font-lexend-deca mb-8 leading-relaxed drop-shadow-md">
-                Most of what makes this work only shows up once you&apos;ve lived it. A short conversation
-                is the fastest way to see the difference.
+                You have to live it to really get it. A short call is the best place to start.
               </p>
               <Link
                 href="/contact"

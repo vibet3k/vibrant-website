@@ -76,8 +76,8 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
             {/* Pillar 1: Strategic IT Leadership */}
             <Link href="/services#strategic-partnership" className="block">
               <div className="relative bg-vt-blue/90 backdrop-blur-sm rounded-lg shadow-2xl hover:shadow-[0_25px_60px_rgba(0,116,188,0.4)] hover:-translate-y-2 hover:scale-105 transition-all duration-300 group cursor-pointer border border-white/40 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-90 pointer-events-none"></div>
-              <div className="relative shadow-[inset_0_3px_6px_rgba(255,255,255,0.9),inset_0_-2px_4px_rgba(0,0,0,0.1)] p-6 z-10">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/25 to-transparent opacity-90 pointer-events-none"></div>
+              <div className="relative shadow-[inset_0_3px_6px_rgba(255,255,255,0.5),inset_0_-2px_4px_rgba(0,0,0,0.1)] p-6 z-10">
               {/* Compass star icon */}
               <div className="w-12 h-12 mb-4 text-white">
                 <svg viewBox="0 0 24 24" fill="currentColor">
@@ -115,8 +115,8 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
             {/* Pillar 2: Security & Compliance */}
             <Link href="/services#security-compliance" className="block">
               <div className="relative bg-vt-green/90 backdrop-blur-sm rounded-lg shadow-2xl hover:shadow-[0_25px_60px_rgba(57,181,74,0.4)] hover:-translate-y-2 hover:scale-105 transition-all duration-300 group cursor-pointer border border-white/40 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-90 pointer-events-none"></div>
-              <div className="relative shadow-[inset_0_3px_6px_rgba(255,255,255,0.9),inset_0_-2px_4px_rgba(0,0,0,0.1)] p-6 z-10">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/25 to-transparent opacity-90 pointer-events-none"></div>
+              <div className="relative shadow-[inset_0_3px_6px_rgba(255,255,255,0.5),inset_0_-2px_4px_rgba(0,0,0,0.1)] p-6 z-10">
               {/* Shield with lock icon */}
               <div className="w-12 h-12 mb-4 text-white">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -144,8 +144,8 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
             {/* Pillar 3: Service Experience */}
             <Link href="/services#service-experience" className="block">
               <div className="relative bg-vt-pink/90 backdrop-blur-sm rounded-lg shadow-2xl hover:shadow-[0_25px_60px_rgba(239,91,161,0.4)] hover:-translate-y-2 hover:scale-105 transition-all duration-300 group cursor-pointer border border-white/40 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-90 pointer-events-none"></div>
-              <div className="relative shadow-[inset_0_3px_6px_rgba(255,255,255,0.9),inset_0_-2px_4px_rgba(0,0,0,0.1)] p-6 z-10">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/25 to-transparent opacity-90 pointer-events-none"></div>
+              <div className="relative shadow-[inset_0_3px_6px_rgba(255,255,255,0.5),inset_0_-2px_4px_rgba(0,0,0,0.1)] p-6 z-10">
               {/* Handled / resolved icon */}
               <div className="w-12 h-12 mb-4 text-white">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
