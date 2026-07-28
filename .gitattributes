@@ -1,0 +1,4 @@
+# Normalize line endings across the repo.
+# Store text files as LF in git and check them out as LF on every platform,
+# so files stop showing as "modified" just because of CRLF/LF differences.
+* text=auto eol=lf
