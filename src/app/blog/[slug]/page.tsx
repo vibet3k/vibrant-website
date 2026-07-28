@@ -96,7 +96,7 @@ export default async function Page(props: BlogPostPageProps) {
     image: imageUrl ? [imageUrl] : undefined,
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://vibet3k.com/blog/${slug}`,
+      '@id': `https://www.vibet3k.com/blog/${slug}`,
     },
     author: post.author?.name
       ? { '@type': 'Person', name: post.author.name }
@@ -106,7 +106,7 @@ export default async function Page(props: BlogPostPageProps) {
       name: 'Vibrant Technology',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://vibet3k.com/images/vibrant-tech-logo-noTL.png',
+        url: 'https://www.vibet3k.com/images/vibrant-tech-logo-noTL.png',
       },
     },
   };

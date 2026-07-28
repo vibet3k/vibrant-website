@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://vibet3k.com/sitemap.xml',
-    host: 'https://vibet3k.com',
+    sitemap: 'https://www.vibet3k.com/sitemap.xml',
+    host: 'https://www.vibet3k.com',
   };
 }

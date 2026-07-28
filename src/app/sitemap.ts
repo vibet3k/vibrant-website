@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { getPostsSafe } from '@/lib/sanity/fetch';
 
-const BASE_URL = 'https://vibet3k.com';
+const BASE_URL = 'https://www.vibet3k.com';
 
 export const revalidate = 3600;
 
