@@ -26,13 +26,6 @@ export default function ServicesPage() {
             Good IT doesn&apos;t announce itself. Here&apos;s the work that keeps it quiet — how we plan,
             how we protect, and how we show up when you need us.
           </p>
-          {/* Service-area line. Deliberately subordinate to the headline — it's
-              here to let a prospect confirm fit, not to carry geography for
-              search. Sits high in the viewport, so white/90 clears AA. */}
-          <p className="mt-6 text-base sm:text-lg text-white/90 max-w-3xl mx-auto font-lexend-deca drop-shadow-md">
-            Serving law firms, CPA practices, and professional services firms across
-            Northeast Ohio.
-          </p>
         </div>
 
         {/* Three Pillar Sections */}
