@@ -91,14 +91,14 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
                   <path d="M1 12 L10.2 12.8 L12 12 L10.2 11.2 Z"/>
                   
                   {/* NE point */}
-                  <path d="M19.07 4.93 L13.41 10.59 L12 12 L13.41 13.41 Z"/>
+                  <path d="M19.5 4.5 L13.4 10.6 L12 12 L13.4 10.6 Z"/>
                   {/* SE point */}
-                  <path d="M19.07 19.07 L13.41 13.41 L12 12 L10.59 13.41 Z"/>
+                  <path d="M19.5 19.5 L13.4 13.4 L12 12 L13.4 13.4 Z"/>
                   {/* SW point */}
-                  <path d="M4.93 19.07 L10.59 13.41 L12 12 L10.59 10.59 Z"/>
+                  <path d="M4.5 19.5 L10.6 13.4 L12 12 L10.6 13.4 Z"/>
                   {/* NW point */}
-                  <path d="M4.93 4.93 L10.59 10.59 L12 12 L13.41 10.59 Z"/>
-                  <circle cx="12" cy="12" r="2"/>
+                  <path d="M4.5 4.5 L10.6 10.6 L12 12 L10.6 10.6 Z"/>
+                  <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" strokeWidth="0.8"/>
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-white font-lexend-deca mb-3">
