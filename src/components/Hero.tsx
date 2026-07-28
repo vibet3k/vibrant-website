@@ -18,7 +18,10 @@ interface HeroProps {
 const Hero = ({ recentPosts = [] }: HeroProps) => {
   return (
     <BackgroundLayout>
-      <div className="w-full flex flex-col">
+      {/* <main> lives here, inside BackgroundLayout, matching Services / About /
+          Blog / Contact. It used to wrap BackgroundLayout from page.tsx, which
+          put the header and footer inside the main landmark. */}
+      <main className="w-full flex flex-col">
         {/* Hero statement — fills the first screen on desktop; text anchored high (on the blue), cards below the fold */}
         <div className="relative flex flex-col items-center text-center px-6 pt-24 md:pt-[24vh] pb-16 md:pb-0 md:min-h-[calc(100dvh-4rem)]">
           {/* Primary Headline - Three-part tagline with stepwise indentation */}
@@ -236,7 +239,7 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
             </Link>
           </div>
         </div>
-      </div>
+      </main>
     </BackgroundLayout>
   );
 };

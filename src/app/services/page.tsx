@@ -16,7 +16,7 @@ export default function ServicesPage() {
           scrolling column. A second overflow-y-auto made this the only page
           with an inner scroll region, which breaks anchor links from the
           homepage cards (#strategic-partnership etc.). */}
-      <div className="w-full">
+      <main className="w-full">
         {/* Page Header/Intro */}
         <div className="text-center px-4 sm:px-6 pt-20 md:pt-24 pb-8 sm:pb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white font-lexend-deca mb-6 drop-shadow-lg">
@@ -196,7 +196,7 @@ export default function ServicesPage() {
             </Link>
           </div>
         </div>
-      </div>
+      </main>
     </BackgroundLayout>
   );
 }

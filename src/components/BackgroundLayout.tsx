@@ -235,8 +235,12 @@ export default function BackgroundLayout({ children }: { children: React.ReactNo
         ))}
       </div>
 
-      {/* Scrollable Content Layer - scrolls independently */}
-      <div className="relative flex flex-col min-h-screen">
+      {/* Scrollable Content Layer - scrolls independently.
+          w-full is load-bearing: this div is the containing block for the
+          absolutely-positioned footer logo. If a page wraps BackgroundLayout in
+          a flex container with align-items other than stretch, this collapses to
+          content width and the logo stops reaching the right edge. */}
+      <div className="relative flex flex-col min-h-screen w-full">
         {/* Skip link — first focusable element, visible only on keyboard focus */}
         <a
           href="#main-content"

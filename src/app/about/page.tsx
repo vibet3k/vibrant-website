@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <BackgroundLayout>
-      <div className="w-full">
+      <main className="w-full">
         {/* Page header — white on the gradient, matching Services and Blog.
             This page was previously the only one that opened on a white card
             instead of using the gradient as a stage. */}
@@ -136,7 +136,7 @@ export default function AboutPage() {
             </Link>
           </div>
         </div>
-      </div>
+      </main>
     </BackgroundLayout>
   );
 }

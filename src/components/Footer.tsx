@@ -36,9 +36,8 @@ export default function Footer() {
             Contact
           </Link>
         </nav>
-        <p className="mt-3 mb-1 max-w-xs sm:max-w-lg text-center text-xs sm:text-sm text-gray-600 font-lexend-deca">
-          Serving law firms, CPA practices, and professional services firms across
-          Northeast Ohio.
+        <p className="mt-3 mb-1 text-center text-xs sm:text-sm text-gray-600 font-lexend-deca">
+          Serving professional services firms across Northeast Ohio.
         </p>
       </div>
       
