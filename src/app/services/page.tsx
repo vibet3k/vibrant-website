@@ -174,18 +174,21 @@ export default function ServicesPage() {
           {/* Closing CTA */}
           <div className="px-4 sm:px-12 pt-4 pb-24">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-vt-blue font-lexend-deca mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-white font-lexend-deca mb-4 drop-shadow-lg">
                 Curious what running dark feels like?
               </h2>
-              <p className="text-lg text-gray-700 font-lexend-deca mb-8 leading-relaxed">
+              <p className="text-lg text-white font-lexend-deca mb-8 leading-relaxed drop-shadow-md">
                 Most of what makes this work only shows up once you&apos;ve lived it. A short conversation
                 is the fastest way to see the difference.
               </p>
               <Link
                 href="/contact"
-                className="inline-block bg-vt-pink text-white px-8 py-4 rounded-lg font-semibold hover:bg-vt-pink/90 transition-colors shadow-lg"
+                className="relative overflow-hidden inline-block bg-vt-pink/85 text-white rounded-md text-lg font-semibold hover:bg-vt-pink/90 transition-all duration-300 shadow-2xl hover:shadow-[0_20px_50px_rgba(239,91,161,0.5)] hover:-translate-y-1 hover:scale-105"
               >
-                Let&apos;s Talk
+                <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-90 pointer-events-none"></div>
+                <span className="relative shadow-[inset_0_3px_6px_rgba(255,255,255,0.9),inset_0_-2px_4px_rgba(0,0,0,0.1)] z-10 block px-10 py-4">
+                  Let&apos;s Talk
+                </span>
               </Link>
             </div>
           </div>
