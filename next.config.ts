@@ -12,10 +12,12 @@ import type { NextConfig } from 'next';
  * devtools open and confirm there are zero CSP violation reports.
  *
  * Third parties currently in play:
- *   - HubSpot tracking     (js-na2.hs-scripts.com + analytics/forms subdomains)
  *   - Vercel Analytics     (va.vercel-scripts.com, vitals.vercel-insights.com)
  *   - Sanity image CDN     (cdn.sanity.io)
  *   - Formspree form POST  (formspree.io)
+ *
+ * HubSpot was removed along with its tracking script — if it ever comes back,
+ * script-src, img-src, connect-src and frame-src all need its domains again.
  *
  * 'unsafe-inline' on script-src is required by the Organization JSON-LD block in
  * layout.tsx. 'unsafe-inline' on style-src is required by Next's inline critical
@@ -23,12 +25,11 @@ import type { NextConfig } from 'next';
  */
 const contentSecurityPolicy = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.hs-scripts.com https://*.hs-analytics.net https://*.hscollectedforms.net https://*.hsforms.net https://*.hubspot.com https://va.vercel-scripts.com",
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob: https://cdn.sanity.io https://*.hubspot.com https://*.hsforms.com https://*.hs-analytics.net",
+  "img-src 'self' data: blob: https://cdn.sanity.io",
   "font-src 'self' data:",
-  "connect-src 'self' https://*.sanity.io https://*.hubspot.com https://*.hubapi.com https://*.hs-analytics.net https://*.hscollectedforms.net https://va.vercel-scripts.com https://vitals.vercel-insights.com https://formspree.io",
-  "frame-src https://*.hubspot.com",
+  "connect-src 'self' https://*.sanity.io https://va.vercel-scripts.com https://vitals.vercel-insights.com https://formspree.io",
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self' https://formspree.io",
