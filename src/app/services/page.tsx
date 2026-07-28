@@ -30,7 +30,7 @@ export default function ServicesPage() {
 
             {/* Pillar 1: Strategic IT Leadership */}
             <section id="strategic-partnership" className="max-w-6xl mx-auto">
-              <div className="bg-vt-blue/80 backdrop-blur-sm rounded-lg p-5 sm:p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-300">
+              <div className="bg-vt-blue/80 backdrop-blur-sm rounded-lg p-5 sm:p-8 md:p-12 border border-white/40 shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div className="flex items-center mb-6">
                   {/* Compass star icon */}
                   <div className="w-16 h-16 mr-6 text-white shrink-0">
@@ -78,7 +78,7 @@ export default function ServicesPage() {
 
             {/* Pillar 2: Security & Compliance */}
             <section id="security-compliance" className="max-w-6xl mx-auto">
-              <div className="bg-vt-green/80 backdrop-blur-sm rounded-lg p-5 sm:p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-300">
+              <div className="bg-vt-green/80 backdrop-blur-sm rounded-lg p-5 sm:p-8 md:p-12 border border-white/40 shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div className="flex items-center mb-6">
                   {/* Shield with lock icon */}
                   <div className="w-16 h-16 mr-6 text-white shrink-0">
@@ -132,7 +132,7 @@ export default function ServicesPage() {
 
             {/* Pillar 3: Service Experience */}
             <section id="service-experience" className="max-w-6xl mx-auto">
-              <div className="bg-vt-pink/80 backdrop-blur-sm rounded-lg p-5 sm:p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-300">
+              <div className="bg-vt-pink/80 backdrop-blur-sm rounded-lg p-5 sm:p-8 md:p-12 border border-white/40 shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div className="flex items-center mb-6">
                   {/* Handled / resolved icon */}
                   <div className="w-16 h-16 mr-6 text-white shrink-0">
