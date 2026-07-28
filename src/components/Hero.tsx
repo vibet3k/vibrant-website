@@ -205,9 +205,19 @@ const Hero = ({ recentPosts = [] }: HeroProps) => {
         </div>
         )}
 
-        {/* Final CTA */}
+        {/* Final CTA.
+            The panel is solid vt-blue, not translucent, and that's load-bearing.
+            BackgroundLayout's gradient is fixed to the viewport, so it is always
+            white at the bottom of the screen — and this block, being the last
+            thing before the footer, always lands there. White copy on that pale
+            band measures ~2.3:1 against a 4.5:1 requirement. On solid vt-blue it
+            reads 4.97:1, and the bg-vt-pink/85 button's label goes from 4.31:1
+            to 5.51:1, regardless of window size or scroll position.
+            Don't make this translucent and don't reuse it higher up the page —
+            it exists to put something opaque behind text that has nowhere safe
+            to sit. */}
         <div className="mt-16 mb-16 md:mt-32 md:mb-32 px-6 sm:px-12">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto bg-vt-blue rounded-lg border border-white/40 shadow-xl px-6 py-10 sm:px-10 sm:py-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white font-lexend-deca mb-6 drop-shadow-lg">
               Ready to Rethink Your IT Strategy?
             </h2>

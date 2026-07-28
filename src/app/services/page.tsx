@@ -174,9 +174,11 @@ export default function ServicesPage() {
           </section>
         </div>
 
-        {/* Closing CTA */}
+        {/* Closing CTA. Solid vt-blue panel — see the note on the same block in
+            Hero.tsx. The gradient is fixed to the viewport and always pale at
+            the bottom of the screen, which is exactly where this block sits. */}
         <div className="px-4 sm:px-12 pt-4 pb-24">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-3xl mx-auto bg-vt-blue rounded-lg border border-white/40 shadow-xl px-6 py-10 sm:px-10 sm:py-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white font-lexend-deca mb-4 drop-shadow-lg">
               Curious what it feels like to run dark?
             </h2>
