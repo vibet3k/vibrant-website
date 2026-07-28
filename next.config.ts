@@ -3,13 +3,20 @@ import type { NextConfig } from 'next';
 /**
  * Content Security Policy.
  *
- * Shipped in REPORT-ONLY mode: violations are logged to the browser console but
- * nothing is blocked. This lets us confirm the allowlist is complete against
- * real traffic before enforcing it.
+ * ENFORCING. Verified against production on 2026-07-28 by enumerating every
+ * resource each page actually fetched (Performance API) and listening for
+ * securitypolicyviolation events across a client-side navigation. Zero
+ * violations on Home, Services, About, Contact, Blog and a blog post.
  *
- * To enforce: rename the header below to 'Content-Security-Policy'.
- * Before doing that, load every page (especially /contact and a blog post) with
- * devtools open and confirm there are zero CSP violation reports.
+ * Worth knowing before you edit this: every request the site makes is
+ * same-origin except the Formspree POST. Vercel Analytics is proxied through
+ * /_vercel/insights/*, and Sanity images are proxied through Next's image
+ * optimizer at /_next/image, so neither hits its own CDN from the browser.
+ * The external entries below are kept as headroom, not because they're
+ * currently used — see the note on each.
+ *
+ * If something breaks, flip this back to 'Content-Security-Policy-Report-Only'
+ * to observe without blocking rather than guessing at the missing directive.
  *
  * Third parties currently in play:
  *   - Vercel Analytics     (va.vercel-scripts.com, vitals.vercel-insights.com)
@@ -25,14 +32,22 @@ import type { NextConfig } from 'next';
  */
 const contentSecurityPolicy = [
   "default-src 'self'",
+  // va.vercel-scripts.com is unused today (the script is proxied same-origin),
+  // kept because Vercel Analytics falls back to it if the proxy path is blocked.
   "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com",
   "style-src 'self' 'unsafe-inline'",
+  // cdn.sanity.io is unused today (images go through /_next/image), kept so a
+  // raw <img> pointing at the Sanity CDN doesn't silently break.
   "img-src 'self' data: blob: https://cdn.sanity.io",
   "font-src 'self' data:",
+  // formspree.io is the one genuinely-needed external entry: ContactForm POSTs
+  // there via fetch(), which connect-src governs.
   "connect-src 'self' https://*.sanity.io https://va.vercel-scripts.com https://vitals.vercel-insights.com https://formspree.io",
   "object-src 'none'",
   "base-uri 'self'",
-  "form-action 'self' https://formspree.io",
+  // 'self' only — the contact form uses fetch() with preventDefault(), so it
+  // never performs a native form navigation. form-action doesn't govern it.
+  "form-action 'self'",
   "frame-ancestors 'none'",
   'upgrade-insecure-requests',
 ].join('; ');
@@ -51,8 +66,7 @@ const securityHeaders = [
     value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
   },
   { key: 'X-DNS-Prefetch-Control', value: 'on' },
-  // Observation only — see the note above before flipping this to enforcing.
-  { key: 'Content-Security-Policy-Report-Only', value: contentSecurityPolicy },
+  { key: 'Content-Security-Policy', value: contentSecurityPolicy },
 ];
 
 const nextConfig: NextConfig = {
