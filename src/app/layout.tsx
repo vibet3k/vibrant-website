@@ -77,11 +77,18 @@ export default function RootLayout({
     url: 'https://www.vibet3k.com',
     logo: 'https://www.vibet3k.com/images/vibrant-tech-logo-noTL.png',
     description: SITE_DESCRIPTION,
+    // City-level only, deliberately. Vibrant is a service-area business with no
+    // premises clients visit, so there is no street address here and there
+    // shouldn't be one. areaServed is what actually communicates coverage.
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Lakewood',
       addressRegion: 'OH',
       addressCountry: 'US'
+    },
+    areaServed: {
+      '@type': 'AdministrativeArea',
+      name: 'Northeast Ohio'
     },
     contactPoint: {
       '@type': 'ContactPoint',
